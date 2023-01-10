@@ -1,21 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\WebSiteController;
+use App\Http\Controllers\Backend\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
+// Frontend view Show All Route 
+Route::get('/',[WebSiteController::class, 'index'])->name('home');
 
-Route::get('/', function () {
-    return view('frontend/pages/index');
-});
+// Backend view Show All Route 
+Route::get('/login',[DashboardController::class, 'index'])->name('login');
 
 Route::middleware([
     'auth:sanctum',
@@ -25,4 +23,5 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
 });
