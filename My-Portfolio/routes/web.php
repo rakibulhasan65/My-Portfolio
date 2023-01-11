@@ -12,7 +12,6 @@ use App\Http\Controllers\Backend\DashboardController;
 // Frontend view Show All Route 
 Route::get('/',[WebSiteController::class, 'index'])->name('home');
 
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
