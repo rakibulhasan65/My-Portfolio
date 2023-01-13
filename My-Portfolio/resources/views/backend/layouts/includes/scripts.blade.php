@@ -33,3 +33,5 @@
     <script src="{{ asset('backend/assets') }}/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('backend/assets') }}/dist/js/pages/dashboard.js"></script>
+    <script src="{{ asset('backend/assets') }}/dist/js/ajax.js"></script>
+    @stack('js')

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Rakibul | Hasan</title>
 
     <!-- Google Font: Source Sans Pro -->
@@ -28,6 +29,9 @@
     <link rel="stylesheet" href="{{ asset('backend/assets') }}/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('backend/assets') }}/plugins/summernote/summernote-bs4.min.css">
+
+    {{-- css Link Others Pages  --}}
+    @stack('css')
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

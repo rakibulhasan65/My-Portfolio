@@ -1,4 +1,7 @@
 @extends('backend/layouts/master')
+@push('css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+@endpush
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -30,7 +33,9 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
-                                <div class="card">
+
+                              
+                                    <div class="card">
                                     <div class="card-header">
                                         <h3 class="card-title">Portfolio Banners</h3>
                                     </div>
@@ -40,10 +45,10 @@
                                             {{-- Banner Image  --}}
                                             <div class="row p-2">
                                                 <div class="col-2">
-                                                    <label for="image">Banner Image</label>
+                                                    <label for="bannerImage">Banner Image</label>
                                                 </div>
                                                 <div class="col-10">
-                                                    <input type="file" class="form-control" name="image"
+                                                    <input type="file" class="form-control" id="bannerImage"
                                                         id="">
                                                 </div>
                                             </div>
@@ -53,8 +58,8 @@
                                                     <label for="name">Developer Name</label>
                                                 </div>
                                                 <div class="col-10">
-                                                    <input type="text" class="form-control" name="image" id=""
-                                                        placeholder="Developer Name">
+                                                    <input type="text" class="form-control" id="developerName"
+                                                        id="" placeholder="Developer Name">
                                                 </div>
                                             </div>
                                             {{-- Skills Select  --}}
@@ -63,12 +68,13 @@
                                                     <label for="skills">Skills</label>
                                                 </div>
                                                 <div class="col-10">
-                                                    <select name="skills[]" multiple="multiple" class="form-control" id="">
+                                                    <select class="form-control" id="skills"
+                                                        multiple="multiple">
                                                         <option value="">Select</option>
-                                                        <option value="">Web Development</option>
-                                                        <option value="">Web Application</option>
-                                                        <option value="">API Developmet</option>
-                                                        <option value="">Web Design</option>
+                                                        <option value="Web Development">Web Development</option>
+                                                        <option value="Web Application">Web Application</option>
+                                                        <option value="PI Developmet">API Developmet</option>
+                                                        <option value="Web Design">Web Design</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -78,7 +84,7 @@
                                                     <label for="resume">Resume PDF</label>
                                                 </div>
                                                 <div class="col-10">
-                                                    <input type="file" class="form-control" name="resume"
+                                                    <input type="file" class="form-control" id="resume"
                                                         id="">
                                                 </div>
                                             </div>
@@ -88,14 +94,20 @@
                                                     <label for="resumeVideo">Professional Video</label>
                                                 </div>
                                                 <div class="col-10">
-                                                    <input type="text" class="form-control" name="resumeVideo"
-                                                        id="" placeholder="Video Link">
+                                                    <input type="text" class="form-control" id="resumeVideo"
+                                                         placeholder="Video Link">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
+                                    <div class="">
+                                        <button id="bannerButton"
+                                            class="btn btn-info form-control">Save</button>
+                                    </div>
                                 </div>
+
+
 
                             </div>
                             <!-- /.col -->
@@ -113,3 +125,10 @@
 
     </div>
 @endsection
+@push('js')
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+
+    <script>
+        new MultiSelectTag('skills') // id
+    </script>
+@endpush
