@@ -36,7 +36,7 @@
                                     <div class="card-header">
                                         <h3 class="card-title">Portfolio Banners</h3>
                                     </div>
-                                    <form id="FormData" enctype="multipart/form-data">
+                                    <form id="BannerData" enctype="multipart/form-data">
                                         @csrf
                                         @method('POST')
                                         <!-- /.card-header -->
