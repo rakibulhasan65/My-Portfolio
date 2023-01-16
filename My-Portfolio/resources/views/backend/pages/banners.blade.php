@@ -27,88 +27,84 @@
         <section class="content">
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
-
                 <!-- Main content -->
                 <section class="content">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
-
-                              
-                                    <div class="card">
+                                <div class="card">
                                     <div class="card-header">
                                         <h3 class="card-title">Portfolio Banners</h3>
                                     </div>
-                                    <!-- /.card-header -->
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            {{-- Banner Image  --}}
-                                            <div class="row p-2">
-                                                <div class="col-2">
-                                                    <label for="bannerImage">Banner Image</label>
+                                    <form id="FormData" enctype="multipart/form-data">
+                                        @csrf
+                                        @method('POST')
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                {{-- Banner Image  --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="image">Banner Image</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="file" class="form-control" name="image"
+                                                            id="">
+                                                    </div>
                                                 </div>
-                                                <div class="col-10">
-                                                    <input type="file" class="form-control" id="bannerImage"
-                                                        id="">
+                                                {{-- Banner Developer Name  --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="name">Developer Name</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="name"
+                                                            id="" placeholder="Developer Name">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            {{-- Banner Developer Name  --}}
-                                            <div class="row p-2">
-                                                <div class="col-2">
-                                                    <label for="name">Developer Name</label>
+                                                {{-- Skills Select  --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="skills">Skills</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <select class="form-control" id="devSkillsCategory" name="devSkillsCategory[]" multiple="multiple">
+                                                            <option value="">Select</option>
+                                                            <option value="Web Development">Web Development</option>
+                                                            <option value="Web Application">Web Application</option>
+                                                            <option value="API Developmet">API Developmet</option>
+                                                            <option value="Web Design">Web Design</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                                <div class="col-10">
-                                                    <input type="text" class="form-control" id="developerName"
-                                                        id="" placeholder="Developer Name">
+                                                {{-- Resume file   --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="resume">Resume PDF</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="file" class="form-control" name="resume"
+                                                            id="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            {{-- Skills Select  --}}
-                                            <div class="row p-2">
-                                                <div class="col-2">
-                                                    <label for="skills">Skills</label>
-                                                </div>
-                                                <div class="col-10">
-                                                    <select class="form-control" id="skills"
-                                                        multiple="multiple">
-                                                        <option value="">Select</option>
-                                                        <option value="Web Development">Web Development</option>
-                                                        <option value="Web Application">Web Application</option>
-                                                        <option value="PI Developmet">API Developmet</option>
-                                                        <option value="Web Design">Web Design</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            {{-- Resume file   --}}
-                                            <div class="row p-2">
-                                                <div class="col-2">
-                                                    <label for="resume">Resume PDF</label>
-                                                </div>
-                                                <div class="col-10">
-                                                    <input type="file" class="form-control" id="resume"
-                                                        id="">
-                                                </div>
-                                            </div>
-                                            {{-- Professional Video  --}}
-                                            <div class="row p-2">
-                                                <div class="col-2">
-                                                    <label for="resumeVideo">Professional Video</label>
-                                                </div>
-                                                <div class="col-10">
-                                                    <input type="text" class="form-control" id="resumeVideo"
-                                                         placeholder="Video Link">
+                                                {{-- Professional Video  --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="resumeVideo">Professional Video</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="resumeVideo"
+                                                            placeholder="Video Link">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- /.card-body -->
-                                    <div class="">
-                                        <button id="bannerButton"
-                                            class="btn btn-info form-control">Save</button>
-                                    </div>
+                                        <!-- /.card-body -->
+                                        <div class="">
+                                            <button type="submit" class="btn btn-info form-control">Save</button>
+                                        </div>
+                                    </form>
                                 </div>
-
-
-
                             </div>
                             <!-- /.col -->
                         </div>
@@ -117,18 +113,15 @@
                     <!-- /.container-fluid -->
                 </section>
                 <!-- /.content -->
-
                 {{-- Main Body Container Section End Dashboard  --}}
-
             </div>
         </section>
-
     </div>
 @endsection
 @push('js')
     <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
 
     <script>
-        new MultiSelectTag('skills') // id
+        new MultiSelectTag('devSkillsCategory') // id
     </script>
 @endpush

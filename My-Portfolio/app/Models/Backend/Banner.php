@@ -11,8 +11,8 @@ class Banner extends Model
     protected $fillable = [
         'image',
         'name',
-        'profession',
         'resume',
         'resumeVideo',
+        'status'
     ];
 }

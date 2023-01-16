@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->string('name')->nullable();
-            $table->string('profession')->nullable();
             $table->string('resume')->nullable();
             $table->string('resumeVideo')->nullable();
             $table->integer('status')->default('1');

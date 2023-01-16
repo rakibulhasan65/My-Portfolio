@@ -22,4 +22,5 @@ Route::middleware([
     Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
     // Banners Route 
     Route::resource('banners', BannerController::class);
+
 });

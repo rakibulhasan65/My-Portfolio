@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('professions', function (Blueprint $table) {
             $table->id();
+            $table->integer('banner_id');
+            $table->string('devSkillsCategory')->nullable();
+            $table->integer('status')->default('1');
+
             $table->timestamps();
         });
     }
