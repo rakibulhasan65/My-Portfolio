@@ -114,8 +114,13 @@
                                                         <label for="birth">Date Of Birth</label>
                                                     </div>
                                                     <div class="col-10">
-                                                        <input type="date" class="form-control" name="birth">
+                                                        <input type="date" class="form-control" id="birth">
                                                     </div>
+                                                </div>
+                                                {{-- Date Of Birth Calculate Input --}}
+                                                <div>
+                                                    <input type="text" class="form-control" hidden id="dateOfBirth"
+                                                        name="birth">
                                                 </div>
                                                 {{-- Experience  --}}
                                                 <div class="row p-2">

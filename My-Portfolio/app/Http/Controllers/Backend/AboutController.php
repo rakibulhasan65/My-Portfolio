@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Backend\About;
+use Image;
+use File;
 
 class AboutController extends Controller
 {
@@ -26,9 +28,9 @@ class AboutController extends Controller
         if ($request->aboutImage) {
             $aboutImage = $request->file('aboutImage');
             $customImageName = time() . '-' . rand() . '.' . $aboutImage->getClientOriginalExtension();
-            $location = public_path('images/Banners/' . $customImageName);
+            $location = public_path('backend/images/About/' . $customImageName);
             Image::make($aboutImage)->resize(600, 600)->save($location);
-            $aboutData->image = $request->customImageName;
+            $aboutData->aboutImage = $customImageName;
         }
         $aboutData->aboutTitle = $request->aboutTitle;
         $aboutData->aboutDescription = $request->aboutDescription;
@@ -36,7 +38,16 @@ class AboutController extends Controller
         $aboutData->degree = $request->degree;
         $aboutData->phone = $request->phone;
         $aboutData->address = $request->address;
-        $aboutData->birth = $
+        $aboutData->birth = $request->birth;
+        $aboutData->experience = $request->experience;
+        $aboutData->freelance = $request->freelance;
+        $aboutData->status = $request->status;
+        $aboutData->save();
+        if ($aboutData) {
+            return response()->json([
+                "status" => "success"
+            ]);
+        }
     }
 
     public function show($id)

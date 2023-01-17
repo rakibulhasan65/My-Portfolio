@@ -68,7 +68,8 @@
                                                         <label for="skills">Skills</label>
                                                     </div>
                                                     <div class="col-10">
-                                                        <select class="form-control" id="devSkillsCategory" name="devSkillsCategory[]" multiple="multiple">
+                                                        <select class="form-control" id="devSkillsCategory"
+                                                            name="devSkillsCategory[]" multiple="multiple">
                                                             <option value="">Select</option>
                                                             <option value="Web Development">Web Development</option>
                                                             <option value="Web Application">Web Application</option>

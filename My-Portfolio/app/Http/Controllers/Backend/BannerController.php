@@ -52,7 +52,8 @@ class BannerController extends Controller
             }
         }
         if ($bannerData) {
-            return response()->json(["name" => "success",
+            return response()->json([
+                "name" => "success",
             ]);
         }
     }
