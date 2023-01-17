@@ -21,7 +21,22 @@ class AboutController extends Controller
 
     public function store(Request $request)
     {
-        //
+        // return response()->json($request);
+        $aboutData = new About;
+        if ($request->aboutImage) {
+            $aboutImage = $request->file('aboutImage');
+            $customImageName = time() . '-' . rand() . '.' . $aboutImage->getClientOriginalExtension();
+            $location = public_path('images/Banners/' . $customImageName);
+            Image::make($aboutImage)->resize(600, 600)->save($location);
+            $aboutData->image = $request->customImageName;
+        }
+        $aboutData->aboutTitle = $request->aboutTitle;
+        $aboutData->aboutDescription = $request->aboutDescription;
+        $aboutData->name = $request->name;
+        $aboutData->degree = $request->degree;
+        $aboutData->phone = $request->phone;
+        $aboutData->address = $request->address;
+        $aboutData->birth = $
     }
 
     public function show($id)

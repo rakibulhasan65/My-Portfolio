@@ -41,7 +41,117 @@
                                         <!-- /.card-header -->
                                         <div class="card-body">
                                             <div class="form-group">
-                                                
+                                                {{-- About Image --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="aboutImage">About Image</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="file" class="form-control" name="aboutImage">
+                                                    </div>
+                                                </div>
+                                                {{-- About Title --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="aboutTitle">About Title</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="aboutTitle"
+                                                            placeholder="About Title">
+                                                    </div>
+                                                </div>
+                                                {{-- About Description --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="aboutDescription">About Description</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <textarea class="form-control" name="aboutDescription" cols="10" rows="3" placeholder="Description"></textarea>
+                                                    </div>
+                                                </div>
+                                                {{-- name  --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="Name">Name</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="name"
+                                                            placeholder="Name">
+                                                    </div>
+                                                </div>
+                                                {{-- Degree --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="degree">Degree</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="degree"
+                                                            placeholder="Degree">
+                                                    </div>
+                                                </div>
+                                                {{-- Phone --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="phone">Phone</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="phone"
+                                                            placeholder="Phone">
+                                                    </div>
+                                                </div>
+                                                {{-- Address --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="address">Address</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <textarea class="form-control" name="address" cols="10" rows="3" placeholder="Address"></textarea>
+                                                    </div>
+                                                </div>
+                                                {{-- Date Of Birth --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="birth">Date Of Birth</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="date" class="form-control" name="birth">
+                                                    </div>
+                                                </div>
+                                                {{-- Experience  --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="experience">Experience</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="experience"
+                                                            placeholder="Experience">
+                                                    </div>
+                                                </div>
+                                                {{-- Freelance --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="freelance">Freelance</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <select name="freelance" class="form-control">
+                                                            <option value="1">Avaiable</option>
+                                                            <option value="0">Not Avaiable</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                {{-- Status --}}
+                                                <div class="row p-2">
+                                                    <div class="col-2">
+                                                        <label for="status">Status</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <select name="status" class="form-control">
+                                                            <option value="1">Active</option>
+                                                            <option value="0">Inactive</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
                                         <!-- /.card-body -->
@@ -64,5 +174,4 @@
     </div>
 @endsection
 @push('js')
-
 @endpush

@@ -27,7 +27,7 @@ class BannerController extends Controller
         if ($request->image) {
             $image = $request->file('image');
             $customImageName = time() . '-' . rand() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('images/Banners/' . $customImageName);
+            $location = public_path('backend/images/Banners/' . $customImageName);
             Image::make($image)->resize(600, 600)->save($location);
             $bannerData->image = $request->customImageName;
         }
@@ -35,7 +35,7 @@ class BannerController extends Controller
         if ($request->resume) {
             $resume = $request->file('resume');
             $customResumeName = time() . '-' . rand() . '.' . $resume->getClientOriginalExtension();
-            $location = public_path('images/Banners/' . $customResumeName);
+            $location = public_path('backend/images/Banners/' . $customResumeName);
             Image::make($resume)->save($location);
             $bannerData->resume = $customResumeName;
         }

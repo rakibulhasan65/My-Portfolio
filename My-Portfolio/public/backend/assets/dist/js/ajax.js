@@ -22,13 +22,13 @@ jQuery(document).ready(function () {
     // Banners Us End
 
     // About Us Start
-    jQuery("#BannerData").on("submit", function (e) {
+    jQuery("#AboutData").on("submit", function (e) {
         e.preventDefault();
-        var BannerData = new BannerData(this);
+        var AboutData = new AboutData(this);
         $.ajax({
             url: "/about",
             type: "POST",
-            data: BannerData,
+            data: AboutData,
             dataType: "JSON",
             contentType: false,
             processData: false,
