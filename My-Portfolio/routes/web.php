@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\WebSiteController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\EducationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,8 @@ Route::middleware([
     Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
     // Banners Route 
     Route::resource('banners', BannerController::class);
-    // About Controller
+    // About Route
     Route::resource('about', AboutController::class);
-
-
+    // Education Route
+    Route::resource('educations', EducationController::class);
 });

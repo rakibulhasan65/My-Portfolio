@@ -1,6 +1,6 @@
 jQuery(document).ready(function () {
     // Banners Us Start
-    jQuery("#BannerData").on("submit", function (e) {
+    jQuery("#BannerSave").on("submit", function (e) {
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
@@ -47,7 +47,6 @@ jQuery(document).ready(function () {
     jQuery("#birth").on("change", function () {
         var birthCalculate = jQuery(this).val();
         var dateOfBirth = new Date(birthCalculate);
-
         var birthDate = dateOfBirth.getDate();
         var birthMonth = dateOfBirth.getMonth();
         var birthYear = dateOfBirth.getFullYear();

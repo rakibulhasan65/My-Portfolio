@@ -14,7 +14,9 @@ class BannerController extends Controller
 
     public function index()
     {
-        return view("backend.pages.banners");
+        $bannerUpdate = Banner::first();
+        $profession = Profession::where('banner_id', 'id')->get();
+        return view("backend.pages.banners", compact('bannerUpdate', 'profession'));
     }
 
     public function create()
@@ -29,7 +31,7 @@ class BannerController extends Controller
             $customImageName = time() . '-' . rand() . '.' . $image->getClientOriginalExtension();
             $location = public_path('backend/images/Banners/' . $customImageName);
             Image::make($image)->resize(600, 600)->save($location);
-            $bannerData->image = $request->customImageName;
+            $bannerData->image = $customImageName;
         }
         $bannerData->name = $request->name;
         if ($request->resume) {
@@ -70,7 +72,7 @@ class BannerController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     public function destroy($id)

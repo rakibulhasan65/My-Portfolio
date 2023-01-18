@@ -36,7 +36,8 @@
                                     <div class="card-header">
                                         <h3 class="card-title">Portfolio Banners</h3>
                                     </div>
-                                    <form id="BannerData" enctype="multipart/form-data">
+                                    {{-- Banner Data Save Start Form --}}
+                                    <form id="BannerSave" enctype="multipart/form-data">
                                         @csrf
                                         @method('POST')
                                         <!-- /.card-header -->
@@ -68,7 +69,7 @@
                                                         <label for="skills">Skills</label>
                                                     </div>
                                                     <div class="col-10">
-                                                        <select class="form-control" id="devSkillsCategory"
+                                                        <select class="form-control" id="devSkillsCategorySave"
                                                             name="devSkillsCategory[]" multiple="multiple">
                                                             <option value="">Select</option>
                                                             <option value="Web Development">Web Development</option>
@@ -105,6 +106,11 @@
                                             <button type="submit" class="btn btn-info form-control">Save</button>
                                         </div>
                                     </form>
+                                    {{-- Banner Data Save End Form  --}}
+
+                                    {{-- Banner Data Save Start Form --}}
+                                
+                                    {{-- Banner Data Save End Form  --}}
                                 </div>
                             </div>
                             <!-- /.col -->
@@ -123,6 +129,9 @@
     <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
 
     <script>
-        new MultiSelectTag('devSkillsCategory') // id
+        new MultiSelectTag('devSkillsCategorySave') // id
+    </script>
+        <script>
+        new MultiSelectTag('devSkillsCategoryUpdate') // id
     </script>
 @endpush
