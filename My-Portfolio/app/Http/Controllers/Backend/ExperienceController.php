@@ -43,11 +43,20 @@ class ExperienceController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $experienceUpdate = Experience::find($id);
+        $experienceUpdate->experienceTitle = $request->experienceTitle;
+        $experienceUpdate->companyName = $request->companyName;
+        $experienceUpdate->years = $request->years;
+        $experienceUpdate->description = $request->description;
+        $experienceUpdate->status = $request->status;
+        $experienceUpdate->update();
+        return redirect()->back();
     }
 
     public function destroy($id)
     {
-        //
+        $deleteExp = Experience::find($id);
+        $deleteExp->delete();
+        return redirect()->back();
     }
 }
