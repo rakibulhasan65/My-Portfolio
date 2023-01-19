@@ -7,6 +7,8 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
+use App\Http\Controllers\Backend\SkillsController;
+use App\Http\Controllers\Backend\ServicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +33,9 @@ Route::middleware([
     Route::resource('educations', EducationController::class);
     // Experience Route
     Route::resource('experiences', ExperienceController::class);
+    // Skills Route
+    Route::resource('skills', SkillsController::class);
+    // Services Route
+    Route::resource('services', ServicesController::class);
+
 });
