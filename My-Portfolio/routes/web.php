@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\WebSiteController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\EducationController;
+use App\Http\Controllers\Backend\ExperienceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,6 @@ Route::middleware([
     Route::resource('about', AboutController::class);
     // Education Route
     Route::resource('educations', EducationController::class);
+    // Experience Route
+    Route::resource('experiences', ExperienceController::class);
 });
