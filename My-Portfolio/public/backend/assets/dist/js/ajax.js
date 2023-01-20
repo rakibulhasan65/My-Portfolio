@@ -74,4 +74,28 @@ jQuery(document).ready(function () {
         jQuery("#dateOfBirth").val(toDate + "-" + toMonth + "-" + toYear);
     });
     // Age Calculate End
+
+    // Gallery Image Start
+
+    jQuery("#GallerySave").on("submit", function (e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            url: "/gallerySave",
+            type: "POST",
+            data: formData,
+            dataType: "JSON",
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response.name == "success") {
+                    alert("OK Data Saved!");
+                } else {
+                    alert("Data Not Saved!");
+                }
+            },
+        });
+    });
+
+    // Gallery Image End
 });

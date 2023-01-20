@@ -81,6 +81,15 @@
                           </p>
                       </a>
                   </li>
+
+                  <li class="nav-item menu-open">
+                      <a href="{{ Route('gallery.gallery') }}" class="nav-link">
+                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <p>
+                              Gallery
+                          </p>
+                      </a>
+                  </li>
               </ul>
           </nav>
           <!-- /.sidebar-menu -->

@@ -49,7 +49,7 @@
                                                         <label for="image">Banner Image</label>
                                                     </div>
                                                     <div class="col-10">
-                                                        <input type="file" class="form-control" name="image"
+                                                        <input type="file" class="" name="image"
                                                             id="">
                                                     </div>
                                                 </div>
@@ -85,7 +85,7 @@
                                                         <label for="resume">Resume PDF</label>
                                                     </div>
                                                     <div class="col-10">
-                                                        <input type="file" class="form-control" name="resume"
+                                                        <input type="file" class="" name="resume"
                                                             id="">
                                                     </div>
                                                 </div>

@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\SkillsController;
 use App\Http\Controllers\Backend\ServicesController;
+use App\Http\Controllers\Backend\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +38,12 @@ Route::middleware([
     Route::resource('skills', SkillsController::class);
     // Services Route
     Route::resource('services', ServicesController::class);
+    // Gallery Route
+    Route::group([
+        'prefix' => 'gallery', 'as' => 'gallery.'
+    ], function () {
+        Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+        Route::post('/gallerySave', [GalleryController::class, 'store'])->name('gallerySave');
+    });
 
 });

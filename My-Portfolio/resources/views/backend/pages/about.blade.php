@@ -47,7 +47,7 @@
                                                         <label for="aboutImage">About Image</label>
                                                     </div>
                                                     <div class="col-10">
-                                                        <input type="file" class="form-control" name="aboutImage">
+                                                        <input type="file" class="" name="aboutImage">
                                                     </div>
                                                 </div>
                                                 {{-- About Title --}}
