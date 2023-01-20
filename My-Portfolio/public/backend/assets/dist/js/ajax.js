@@ -81,14 +81,14 @@ jQuery(document).ready(function () {
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
-            url: "/gallerySave",
+            url: "/gallery/gallerySave",
             type: "POST",
             data: formData,
             dataType: "JSON",
             contentType: false,
             processData: false,
             success: function (response) {
-                if (response.name == "success") {
+                if (response.status == "success") {
                     alert("OK Data Saved!");
                 } else {
                     alert("Data Not Saved!");
@@ -96,6 +96,5 @@ jQuery(document).ready(function () {
             },
         });
     });
-
     // Gallery Image End
 });

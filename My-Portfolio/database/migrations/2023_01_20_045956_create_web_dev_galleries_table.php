@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('web_dev_galleries', function (Blueprint $table) {
             $table->id();
+            $table->string('webDevelopment')->nullable();
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }

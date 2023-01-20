@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('web_design_galleries', function (Blueprint $table) {
             $table->id();
+            $table->string('webDesign')->nullable();
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }

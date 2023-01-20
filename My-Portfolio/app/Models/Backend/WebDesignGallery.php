@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class WebDesignGallery extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'webDesign',
+        'status'
+    ];
 }

@@ -1,4 +1,6 @@
 @extends('backend/layouts/master')
+@push('css')
+@endpush
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -21,7 +23,7 @@
         <!-- /.content-header -->
 
         <!-- Main content -->
-       <section class="content">
+        <section class="content">
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-- Main content -->
@@ -36,18 +38,21 @@
                                     {{-- Gallery Data Save Start Form --}}
                                     <form id="GallerySave" enctype="multipart/form-data">
                                         @csrf
-                                        @method('POST')
+                                        {{-- @method('POST') --}}
                                         <!-- /.card-header -->
                                         <div class="card-body">
                                             {{-- Web Development  --}}
                                             <div class="form-group row">
                                                 <div class="col-2">
-                                                    <label for="webDeveloment">Web Development</label>
+                                                    <label for="webDevelopment">Web Development</label>
                                                 </div>
                                                 <div class="col-10">
-                                                    <input type="file" name="webDeveloment[]">
+                                                    <input type="file" name="webDevelopment[]" multiple>
                                                     <div class="webDevImage bg-gray my-3">
-                                                        <img src="" alt="Development">
+                                                        {{-- @foreach ($webDevDataShow as $item)
+                                                            <img src="{{ asset('backend/images/Gallery/'.$item->webDevelopment) }}" width="100" alt="Development">
+                                                        @endforeach --}}
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -58,8 +63,8 @@
                                                     <label for="webDesign">Web Design</label>
                                                 </div>
                                                 <div class="col-10">
-                                                    <input type="file" name="webDesign[]">
-                                                    <div class="webDevImage bg-gray my-3">
+                                                    <input type="file" name="webDesign[]" multiple>
+                                                    <div class="webDesignImage bg-gray my-3">
                                                         <img src="" alt="Design">
                                                     </div>
 
