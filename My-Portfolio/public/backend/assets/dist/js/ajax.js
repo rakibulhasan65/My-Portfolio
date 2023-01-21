@@ -75,26 +75,15 @@ jQuery(document).ready(function () {
     });
     // Age Calculate End
 
-    // Gallery Image Start
-
-    jQuery("#GallerySave").on("submit", function (e) {
+    // Gallery Delete start
+    jQuery("#deleteGalleryImage").on("click", function (e) {
         e.preventDefault();
-        var formData = new FormData(this);
-        $.ajax({
-            url: "/gallery/gallerySave",
-            type: "POST",
-            data: formData,
-            dataType: "JSON",
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                if (response.status == "success") {
-                    alert("OK Data Saved!");
-                } else {
-                    alert("Data Not Saved!");
-                }
-            },
-        });
+        // $.ajax({
+        //     url: "/gallery/galleryImageDelete",
+        //     type: "POST",
+        //     success: function (response) {},
+        // });
+        alert("OK");
     });
-    // Gallery Image End
+    // Gallery Delete End
 });

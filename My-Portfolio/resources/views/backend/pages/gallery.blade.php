@@ -1,6 +1,8 @@
 @extends('backend/layouts/master')
-@push('css')
-@endpush
+@prepend('css')
+    <link rel="stylesheet" href="{{ asset('backend/assets/dist/css/gallaryStyle.css') }}">
+@endprepend
+
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -36,7 +38,8 @@
                                         <h3 class="card-title">Portfolio Gallerys</h3>
                                     </div>
                                     {{-- Gallery Data Save Start Form --}}
-                                    <form id="GallerySave" enctype="multipart/form-data">
+                                    <form id="GallerySave" action="{{ Route('gallery.gallerySave') }}" method="POST"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         {{-- @method('POST') --}}
                                         <!-- /.card-header -->
@@ -48,11 +51,17 @@
                                                 </div>
                                                 <div class="col-10">
                                                     <input type="file" name="webDevelopment[]" multiple>
-                                                    <div class="webDevImage bg-gray my-3">
-                                                        {{-- @foreach ($webDevDataShow as $item)
-                                                            <img src="{{ asset('backend/images/Gallery/'.$item->webDevelopment) }}" width="100" alt="Development">
-                                                        @endforeach --}}
-
+                                                    <div class="webDevImage row my-3">
+                                                        @foreach ($webDevDataShow as $item)
+                                                            <div class="galleryImage col-2">
+                                                                <img src="{{ asset('backend/images/Gallery/' . $item->webDevelopment) }}"
+                                                                    alt="Development">
+                                                                <div class="deleteGallery">
+                                                                    <button id="deleteGalleryImage"
+                                                                        class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -64,8 +73,17 @@
                                                 </div>
                                                 <div class="col-10">
                                                     <input type="file" name="webDesign[]" multiple>
-                                                    <div class="webDesignImage bg-gray my-3">
-                                                        <img src="" alt="Design">
+                                                    <div class="webDesignImage row my-3">
+                                                        @foreach ($webDesignDataShow as $item)
+                                                            <div class="galleryImage col-2">
+                                                                <img src="{{ asset('backend/images/Gallery/' . $item->webDesign) }}"
+                                                                    alt="Development">
+                                                                <div class="deleteGallery">
+                                                                    <button id="deleteGalleryImage"
+                                                                        class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
                                                     </div>
 
                                                 </div>

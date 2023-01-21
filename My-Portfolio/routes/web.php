@@ -43,7 +43,11 @@ Route::middleware([
         'prefix' => 'gallery', 'as' => 'gallery.'
     ], function () {
         Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
-        Route::post('/gallerySave', [GalleryController::class, 'store'])->name('gallerySave');
+        Route::post(
+            '/gallerySave',
+            [GalleryController::class, 'store']
+        )->name('gallerySave');
+        Route::get('/galleryImageDelete', [GalleryController::class, 'galleryImageDelete'])->name('galleryImageDelete');
     });
 
 });

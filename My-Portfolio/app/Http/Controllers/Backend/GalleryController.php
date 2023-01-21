@@ -14,7 +14,8 @@ class GalleryController extends Controller
     function index()
     {
         $webDevDataShow = WebDevGallery::all();
-        return view('backend.pages.gallery', compact('webDevDataShow'));
+        $webDesignDataShow = WebDesignGallery::all();
+        return view('backend.pages.gallery', compact('webDevDataShow', 'webDesignDataShow'));
     }
 
     function store(Request $request)
@@ -41,8 +42,9 @@ class GalleryController extends Controller
                 $galleyDesignSaveData->save();
             }
         }
-        return response()->json([
-            "status" => "success"
-        ]);
+    }
+    function galleryImageDelete($id)
+    {
+        
     }
 }
