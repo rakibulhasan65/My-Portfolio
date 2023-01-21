@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\SkillsController;
 use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Backend\TechnicalSupportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,8 @@ Route::middleware([
     Route::resource('skills', SkillsController::class);
     // Services Route
     Route::resource('services', ServicesController::class);
+    // Technical Support
+    Route::resource('support', TechnicalSupportController::class);
     // Gallery Route
     Route::group([
         'prefix' => 'gallery', 'as' => 'gallery.'
