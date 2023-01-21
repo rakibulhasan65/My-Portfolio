@@ -47,7 +47,9 @@ Route::middleware([
             '/gallerySave',
             [GalleryController::class, 'store']
         )->name('gallerySave');
-        Route::get('/galleryImageDelete', [GalleryController::class, 'galleryImageDelete'])->name('galleryImageDelete');
+        Route::post('/devImgDelete/{id}', [GalleryController::class, 'devImgDelete'])->name('devImgDelete');
+        Route::post('/designImgDelete/{id}', [GalleryController::class, 'designImgDelete'])->name('designImgDelete');
+        
     });
 
 });

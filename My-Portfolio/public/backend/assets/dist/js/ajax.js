@@ -75,15 +75,5 @@ jQuery(document).ready(function () {
     });
     // Age Calculate End
 
-    // Gallery Delete start
-    jQuery("#deleteGalleryImage").on("click", function (e) {
-        e.preventDefault();
-        // $.ajax({
-        //     url: "/gallery/galleryImageDelete",
-        //     type: "POST",
-        //     success: function (response) {},
-        // });
-        alert("OK");
-    });
-    // Gallery Delete End
+
 });

@@ -42,9 +42,25 @@ class GalleryController extends Controller
                 $galleyDesignSaveData->save();
             }
         }
+        return redirect()->back();
     }
-    function galleryImageDelete($id)
+    function devImgDelete($id)
     {
-        
+        $devImgDelete = WebDevGallery::find($id);
+        if (File::exists('backend/images/Gallery/' . $devImgDelete->webDevelopment)) {
+            File::delete('backend/images/Gallery/' . $devImgDelete->webDevelopment);
+        }
+        $devImgDelete->delete();
+        return redirect()->back();
     }
+    function designImgDelete($id)
+    {
+        $designImgDelete = WebDesignGallery::find($id);
+        if (File::exists('backend/images/Gallery/' . $designImgDelete->webDesign)) {
+            File::delete('backend/images/Gallery/' . $designImgDelete->webDesign);
+        }
+        $designImgDelete->delete();
+        return redirect()->back();
+    }
+    
 }
