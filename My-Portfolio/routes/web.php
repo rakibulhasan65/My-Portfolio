@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\SkillsController;
 use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Backend\ProfileSettingController;
 use App\Http\Controllers\Backend\TechnicalSupportController;
 
 /*
@@ -53,6 +54,12 @@ Route::middleware([
         Route::post('/devImgDelete/{id}', [GalleryController::class, 'devImgDelete'])->name('devImgDelete');
         Route::post('/designImgDelete/{id}', [GalleryController::class, 'designImgDelete'])->name('designImgDelete');
         
+    });
+    Route::group([
+        'prefix' => 'profiles', 'as' => 'profile.'
+    ], function () {
+        Route::get('/profileIndex', [ProfileSettingController::class, 'profileIndex'])->name('profileIndex');
+        Route::post('/profileStore', [ProfileSettingController::class, 'profileStore'])->name('profileStore');
     });
 
 });

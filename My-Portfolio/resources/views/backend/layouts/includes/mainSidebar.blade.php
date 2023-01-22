@@ -20,6 +20,7 @@
           <nav class="mt-2">
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                   data-accordion="false">
+                  {{-- Dashboard  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('admin') }}" class="nav-link active">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -28,6 +29,7 @@
                           </p>
                       </a>
                   </li>
+                  {{-- Banners  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('banners.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -36,7 +38,7 @@
                           </p>
                       </a>
                   </li>
-
+                  {{-- About Us  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('about.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -45,7 +47,7 @@
                           </p>
                       </a>
                   </li>
-
+                  {{-- Eduactions  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('educations.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -54,7 +56,7 @@
                           </p>
                       </a>
                   </li>
-
+                  {{-- Experience  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('experiences.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -63,7 +65,7 @@
                           </p>
                       </a>
                   </li>
-
+                  {{-- Skills  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('skills.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -72,7 +74,7 @@
                           </p>
                       </a>
                   </li>
-
+                  {{-- Services  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('services.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -81,7 +83,7 @@
                           </p>
                       </a>
                   </li>
-
+                  {{-- Gallery  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('gallery.gallery') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -90,12 +92,21 @@
                           </p>
                       </a>
                   </li>
-
+                  {{-- Technical Support  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('support.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
                               Technical Support
+                          </p>
+                      </a>
+                  </li>
+                  {{-- Profile Setting --}}
+                  <li class="nav-item menu-open">
+                      <a href="{{ Route('profile.profileIndex') }}" class="nav-link">
+                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <p>
+                              Profile Setting
                           </p>
                       </a>
                   </li>

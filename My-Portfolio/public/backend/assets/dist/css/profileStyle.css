@@ -1,0 +1,32 @@
+.profileImage {
+    text-align: center;
+}
+
+.uploadImage {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.uploadImage img {
+    height: 120px;
+    width: 120px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.uploadImage input {
+    position: absolute;
+    height: 100px;
+    width: 60px;
+    top: 10%;
+    left: 40%;
+    opacity: .0;
+}
+
+.uploadImage p {
+    position: absolute;
+    color: white;
+    font-weight: 600;
+    top: 70%;
+}
