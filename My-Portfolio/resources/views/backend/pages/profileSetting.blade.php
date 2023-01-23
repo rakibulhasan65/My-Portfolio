@@ -30,7 +30,7 @@
                                             @csrf
                                             <div class="uploadImage">
                                                 <img class=""
-                                                    src="{{ asset('backend/images/About/' . $userShow->userImage) }}"
+                                                    src="{{ asset('backend/images/Profile/' . $userShow->userImage) }}"
                                                     alt="profile">
                                                 <input class="" type="file" name="userImage" id="">
                                                 <p>Choice</p>
@@ -46,7 +46,6 @@
 
                         {{-- Profile Details  --}}
                         <div class="col-md-8">
-
                             <div class="profileInputField">
                                 <div class="card">
                                     <div class="card-header">
@@ -56,21 +55,21 @@
                                         {{-- Name   --}}
                                         <div class="row form-group">
                                             <div class="col-md-3">
-                                                <label for="gmail">Name</label>
+                                                <label for="name">Name</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="name" class="form-control" name="name" placeholder="text"
+                                                <input type="text" class="form-control" name="name" placeholder="Name"
                                                     value="{{ $userShow->name }}">
                                             </div>
                                         </div> <!-- row end -->
-                                        {{-- Gmail   --}}
+                                        {{-- Email   --}}
                                         <div class="row form-group">
                                             <div class="col-md-3">
-                                                <label for="gmail">Gmail</label>
+                                                <label for="email">Email</label>
                                             </div>
                                             <div class="col-md-9">
                                                 <input type="email" class="form-control" name="email"
-                                                    placeholder="Gmail" value="{{ $userShow->email }}">
+                                                    placeholder="Email" value="{{ $userShow->email }}">
                                             </div>
                                         </div> <!-- row end -->
                                         {{--  Password   --}}
@@ -99,7 +98,7 @@
                                             </div>
                                             <div class="col-md-9">
                                                 <select name="status" class="form-control">
-                                                    <option value="{{ $userShow->email }}">
+                                                    <option value="{{ $userShow->status }}">
                                                         @if ($userShow->status == 1)
                                                             Active
                                                         @else
@@ -114,6 +113,11 @@
                                     </div> <!-- Card Body end -->
                                 </div>
                             </div><!-- profileInputField end -->
+                            <div class="saveChange">
+                                <button type="submit" class="btn btn-info">Save Change</button>
+                            </div>
+                            </form>
+                            {{-- Web Site Setting  --}}
                             <div class="webSiteSetting">
                                 <div class="card">
                                     <div class="card-header">
@@ -171,14 +175,14 @@
                                                     placeholder="Twitter Link">
                                             </div>
                                         </div> <!-- row end -->
-                                        {{-- Instragram Link  --}}
+                                        {{-- instagram Link  --}}
                                         <div class="row form-group">
                                             <div class="col-md-3">
-                                                <label for="instragram">Instragram Link</label>
+                                                <label for="instagram">instagram Link</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" name="instragram"
-                                                    placeholder="Instragram Link">
+                                                <input type="text" class="form-control" name="instagram"
+                                                    placeholder="instagram Link">
                                             </div>
                                         </div> <!-- row end -->
                                         {{-- linkedin Link  --}}
@@ -205,10 +209,6 @@
                                 </div><!-- Card end -->
                             </div><!-- socialLink end -->
 
-                            <div class="saveChange">
-                                <button type="submit" class="btn btn-info">Save Change</button>
-                            </div>
-                            </form>
                         </div>
                     </div>
                 </div>

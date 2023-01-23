@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('profile_settings', function (Blueprint $table) {
             $table->id();
+            $table->string('websiteTitle')->nullable();
+            $table->string('siteLogo')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('github')->nullable();
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }

@@ -14,12 +14,14 @@ class ProfileSettingController extends Controller
 {
     function profileIndex()
     {
-        $userShow = User::first();
+        $id = Auth::user()->id;
+        $userShow = User::find($id);
         return view('backend.pages.profileSetting', compact('userShow'));
     }
     function profileUpdate(Request $request)
     {
-        $userUpdate = User::first();
+        $id = Auth::user()->id;
+        $userUpdate = User::find($id);
         if ($request->userImage) {
             $userImage = $request->file('userImage');
             $customResumeName = time() . '-' . rand() . '.' . $userImage->getClientOriginalExtension();
@@ -29,7 +31,12 @@ class ProfileSettingController extends Controller
         }
         $userUpdate->name = $request->name;
         $userUpdate->email = $request->email;
-        $userUpdate->password = $request->password;
+        if ($request->password) {
+            if ($request->password == $userUpdate->password) {
+                $userUpdate->password = $request->password;
+            } else {
+            }
+        }
         $userUpdate->status = $request->status;
         $userUpdate->update();
         return redirect()->back();
