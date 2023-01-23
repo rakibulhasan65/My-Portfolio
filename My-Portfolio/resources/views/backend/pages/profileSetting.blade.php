@@ -25,16 +25,19 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="profileImage">
-                                        <div class="uploadImage">
-                                            <img class=""
-                                                src="{{ asset('backend/images/About/1673925569-1521335986.jpg') }}"
-                                                alt="profile">
-                                            <input class="" type="file" name="" id="">
-                                            <p>Choice</p>
-                                        </div>
-                                        <!--uploadImage end--->
-                                        <h4 class=""><i class="fas fa-edit p-2"></i>Md Rakibul Hasan</h4>
-                                        <a class="text-sm" href="#">rakibulhasan5665@gmail.com</a>
+                                        <form action="{{ Route('profile.profileUpdate') }}" method="POST"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="uploadImage">
+                                                <img class=""
+                                                    src="{{ asset('backend/images/About/' . $userShow->userImage) }}"
+                                                    alt="profile">
+                                                <input class="" type="file" name="userImage" id="">
+                                                <p>Choice</p>
+                                            </div>
+                                            <!--uploadImage end--->
+                                            <h4 class="">{{ $userShow->name }}</h4>
+                                            <a class="text-sm" href="#">{{ $userShow->email }}</a>
                                     </div>
                                     <!--profileImage end--->
                                 </div>
@@ -43,42 +46,31 @@
 
                         {{-- Profile Details  --}}
                         <div class="col-md-8">
-                            <form action="{{ Route('profile.profileStore') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <div class="profileInputField">
+
+                            <div class="profileInputField">
                                 <div class="card">
                                     <div class="card-header">
                                         <h5>User Profile</h5>
                                     </div><!-- Card header end -->
                                     <div class="card-body">
-                                        {{-- Website Title  --}}
+                                        {{-- Name   --}}
                                         <div class="row form-group">
                                             <div class="col-md-3">
-                                                <label for="websiteTitle">Website Title</label>
+                                                <label for="gmail">Name</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" name="websiteTitle"
-                                                    placeholder="Website Title">
+                                                <input type="name" class="form-control" name="name" placeholder="text"
+                                                    value="{{ $userShow->name }}">
                                             </div>
                                         </div> <!-- row end -->
-                                        {{-- Site Logo  --}}
-                                        <div class="row form-group">
-                                            <div class="col-md-3">
-                                                <label for="siteLogo">Site Logo</label>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <input type="file" class="" name="siteLogo">
-                                            </div>
-                                        </div> <!-- row end -->
-                                        
                                         {{-- Gmail   --}}
                                         <div class="row form-group">
                                             <div class="col-md-3">
                                                 <label for="gmail">Gmail</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="gmail" class="form-control" name="gmail"
-                                                    placeholder="Gmail">
+                                                <input type="email" class="form-control" name="email"
+                                                    placeholder="Gmail" value="{{ $userShow->email }}">
                                             </div>
                                         </div> <!-- row end -->
                                         {{--  Password   --}}
@@ -103,10 +95,17 @@
                                         {{--  Permission   --}}
                                         <div class="row form-group">
                                             <div class="col-md-3">
-                                                <label for="permission">Permission</label>
+                                                <label for="status">Permission</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <select name="permission" class="form-control">
+                                                <select name="status" class="form-control">
+                                                    <option value="{{ $userShow->email }}">
+                                                        @if ($userShow->status == 1)
+                                                            Active
+                                                        @else
+                                                            Deactive
+                                                        @endif
+                                                    </option>
                                                     <option value="1">Active</option>
                                                     <option value="0">Deactived</option>
                                                 </select>
@@ -115,6 +114,37 @@
                                     </div> <!-- Card Body end -->
                                 </div>
                             </div><!-- profileInputField end -->
+                            <div class="webSiteSetting">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Website</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        {{-- Website Title  --}}
+                                        <div class="row form-group">
+                                            <div class="col-md-3">
+                                                <label for="websiteTitle">Website Title</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="websiteTitle"
+                                                    placeholder="Website Title">
+                                            </div>
+                                        </div> <!-- row end -->
+                                        {{-- Site Logo  --}}
+                                        <div class="row form-group">
+                                            <div class="col-md-3">
+                                                <label for="siteLogo">Site Logo</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="file" class="" name="siteLogo">
+                                            </div>
+                                        </div> <!-- row end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--webSiteSetting end--->
+
+                            {{-- socialLink  --}}
                             <div class="socialLink">
                                 <div class="card">
                                     <div class="card-header">
@@ -122,7 +152,7 @@
                                     </div>
                                     <div class="card-body">
                                         {{-- Facebook Link  --}}
-                                       <div class="row form-group">
+                                        <div class="row form-group">
                                             <div class="col-md-3">
                                                 <label for="facebook">Facebook Link</label>
                                             </div>
@@ -132,7 +162,7 @@
                                             </div>
                                         </div> <!-- row end -->
                                         {{-- Twitter Link  --}}
-                                       <div class="row form-group">
+                                        <div class="row form-group">
                                             <div class="col-md-3">
                                                 <label for="twitter">Twitter Link</label>
                                             </div>
@@ -142,7 +172,7 @@
                                             </div>
                                         </div> <!-- row end -->
                                         {{-- Instragram Link  --}}
-                                       <div class="row form-group">
+                                        <div class="row form-group">
                                             <div class="col-md-3">
                                                 <label for="instragram">Instragram Link</label>
                                             </div>
@@ -152,7 +182,7 @@
                                             </div>
                                         </div> <!-- row end -->
                                         {{-- linkedin Link  --}}
-                                       <div class="row form-group">
+                                        <div class="row form-group">
                                             <div class="col-md-3">
                                                 <label for="linkedin">Linkedin Link</label>
                                             </div>
@@ -162,7 +192,7 @@
                                             </div>
                                         </div> <!-- row end -->
                                         {{-- GitHub Link  --}}
-                                       <div class="row form-group">
+                                        <div class="row form-group">
                                             <div class="col-md-3">
                                                 <label for="github">GitHub Link</label>
                                             </div>
@@ -171,12 +201,13 @@
                                                     placeholder="GitHub Link">
                                             </div>
                                         </div> <!-- row end -->
-                                        <div class="saveChange">
-                                            <button type="submit" class="btn btn-info">Save Change</button>
-                                        </div>
                                     </div><!-- Card Body end -->
                                 </div><!-- Card end -->
                             </div><!-- socialLink end -->
+
+                            <div class="saveChange">
+                                <button type="submit" class="btn btn-info">Save Change</button>
+                            </div>
                             </form>
                         </div>
                     </div>

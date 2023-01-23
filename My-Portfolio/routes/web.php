@@ -59,7 +59,7 @@ Route::middleware([
         'prefix' => 'profiles', 'as' => 'profile.'
     ], function () {
         Route::get('/profileIndex', [ProfileSettingController::class, 'profileIndex'])->name('profileIndex');
-        Route::post('/profileStore', [ProfileSettingController::class, 'profileStore'])->name('profileStore');
+        Route::post('/profileUpdate', [ProfileSettingController::class, 'profileUpdate'])->name('profileUpdate');
     });
 
 });
