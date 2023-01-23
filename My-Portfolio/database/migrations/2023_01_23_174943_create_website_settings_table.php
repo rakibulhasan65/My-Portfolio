@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('profile_settings', function (Blueprint $table) {
+        Schema::create('website_settings', function (Blueprint $table) {
             $table->id();
             $table->string('websiteTitle')->nullable();
             $table->string('siteLogo')->nullable();
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile_settings');
+        Schema::dropIfExists('website_settings');
     }
 };

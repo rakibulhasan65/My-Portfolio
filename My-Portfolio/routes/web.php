@@ -5,13 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\WebSiteController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\SkillsController;
 use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\GalleryController;
-use App\Http\Controllers\Backend\ProfileSettingController;
 use App\Http\Controllers\Backend\TechnicalSupportController;
+use App\Http\Controllers\Backend\WebsiteSettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,8 +59,14 @@ Route::middleware([
     Route::group([
         'prefix' => 'profiles', 'as' => 'profile.'
     ], function () {
-        Route::get('/profileIndex', [ProfileSettingController::class, 'profileIndex'])->name('profileIndex');
-        Route::post('/profileUpdate', [ProfileSettingController::class, 'profileUpdate'])->name('profileUpdate');
+        Route::get('/profileIndex', [AdminProfileController::class, 'profileIndex'])->name('profileIndex');
+        Route::post('/profileUpdate', [AdminProfileController::class, 'profileUpdate'])->name('profileUpdate');
+    });
+    Route::group([
+        'prefix' => 'websiteSetting', 'as' => 'websiteSetting.'
+    ], function () {
+        Route::get('/settingIndex', [WebsiteSettingController::class, 'settingIndex'])->name('settingIndex');
+        Route::post('/settingUpdate', [WebsiteSettingController::class, 'settingUpdate'])->name('settingUpdate');
     });
 
 });

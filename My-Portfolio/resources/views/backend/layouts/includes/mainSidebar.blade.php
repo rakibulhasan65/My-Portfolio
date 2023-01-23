@@ -101,12 +101,21 @@
                           </p>
                       </a>
                   </li>
-                  {{-- Profile Setting --}}
+                  {{-- Admin Profile Setting --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('profile.profileIndex') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
-                              Profile Setting
+                             Admin Profile
+                          </p>
+                      </a>
+                  </li>
+                  {{-- Admin Profile Setting --}}
+                  <li class="nav-item menu-open">
+                      <a href="{{ Route('websiteSetting.settingIndex') }}" class="nav-link">
+                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <p>
+                              Website Setting
                           </p>
                       </a>
                   </li>
