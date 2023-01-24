@@ -54,19 +54,22 @@ Route::middleware([
         )->name('gallerySave');
         Route::post('/devImgDelete/{id}', [GalleryController::class, 'devImgDelete'])->name('devImgDelete');
         Route::post('/designImgDelete/{id}', [GalleryController::class, 'designImgDelete'])->name('designImgDelete');
-        
-    });
+    }); // gallery
     Route::group([
         'prefix' => 'profiles', 'as' => 'profile.'
     ], function () {
         Route::get('/profileIndex', [AdminProfileController::class, 'profileIndex'])->name('profileIndex');
         Route::post('/profileUpdate', [AdminProfileController::class, 'profileUpdate'])->name('profileUpdate');
-    });
+    }); // profiles
     Route::group([
         'prefix' => 'websiteSetting', 'as' => 'websiteSetting.'
     ], function () {
         Route::get('/settingIndex', [WebsiteSettingController::class, 'settingIndex'])->name('settingIndex');
         Route::post('/settingUpdate/{id}', [WebsiteSettingController::class, 'settingUpdate'])->name('settingUpdate');
-    });
+    }); // websiteSetting
 
 });
+
+// Frontend Route External File
+
+require __DIR__ . '/frontend.php';
