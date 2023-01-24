@@ -42,6 +42,6 @@ class AdminProfileController extends Controller
         $userUpdate->status = $request->status;
         $userUpdate->update();
         return redirect()->back();
-        return response()->json($request);
+        // return response()->json($request);
     }
 }

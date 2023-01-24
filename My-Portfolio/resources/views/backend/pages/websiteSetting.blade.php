@@ -31,7 +31,7 @@
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="websiteTitle"
-                                                    placeholder="Website Title">
+                                                    placeholder="Website Title" value="{{ $websiteDataShow->websiteTitle }}">
                                             </div>
                                         </div> <!-- row end -->
                                         {{-- Site Logo  --}}
@@ -41,6 +41,9 @@
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="file" class="" name="siteLogo">
+                                                <div class="wibsiteLogo my-2 border p-2">
+                                                    <img src="{{ asset('backend/images/Logo/'.$websiteDataShow->siteLogo) }}" alt="logo">
+                                                </div>
                                             </div>
                                         </div> <!-- row end -->
                                     </div>
@@ -62,7 +65,7 @@
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="facebook"
-                                                    placeholder="Facebook Link">
+                                                    placeholder="Facebook Link" value="{{ $websiteDataShow->facebook }}">
                                             </div>
                                         </div> <!-- row end -->
                                         {{-- Twitter Link  --}}
@@ -72,7 +75,7 @@
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="twitter"
-                                                    placeholder="Twitter Link">
+                                                    placeholder="Twitter Link" value="{{ $websiteDataShow->twitter }}">
                                             </div>
                                         </div> <!-- row end -->
                                         {{-- instagram Link  --}}
@@ -82,7 +85,7 @@
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="instagram"
-                                                    placeholder="instagram Link">
+                                                    placeholder="instagram Link" value="{{ $websiteDataShow->instagram }}">
                                             </div>
                                         </div> <!-- row end -->
                                         {{-- linkedin Link  --}}
@@ -92,7 +95,7 @@
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="linkedin"
-                                                    placeholder="Linkedin Link">
+                                                    placeholder="Linkedin Link" value="{{ $websiteDataShow->linkedin }}">
                                             </div>
                                         </div> <!-- row end -->
                                         {{-- GitHub Link  --}}
@@ -102,7 +105,7 @@
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="github"
-                                                    placeholder="GitHub Link">
+                                                    placeholder="GitHub Link" value="{{ $websiteDataShow->github }}">
                                             </div>
                                         </div> <!-- row end -->
                                     </div><!-- Card Body end -->
