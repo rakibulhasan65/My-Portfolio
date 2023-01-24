@@ -66,7 +66,7 @@ Route::middleware([
         'prefix' => 'websiteSetting', 'as' => 'websiteSetting.'
     ], function () {
         Route::get('/settingIndex', [WebsiteSettingController::class, 'settingIndex'])->name('settingIndex');
-        Route::post('/settingUpdate', [WebsiteSettingController::class, 'settingUpdate'])->name('settingUpdate');
+        Route::post('/settingUpdate/{id}', [WebsiteSettingController::class, 'settingUpdate'])->name('settingUpdate');
     });
 
 });

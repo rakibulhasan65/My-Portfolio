@@ -14,7 +14,7 @@
                 {{-- Profile Images  --}}
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ Route('websiteSetting.settingUpdate') }}" method="POST"
+                        <form action="{{ Route('websiteSetting.settingUpdate',$websiteDataShow->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             {{-- Web Site Setting  --}}

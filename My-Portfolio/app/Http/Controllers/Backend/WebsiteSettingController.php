@@ -16,20 +16,17 @@ class WebsiteSettingController extends Controller
         return view('backend.pages.websiteSetting', compact('websiteDataShow'));
     }
 
-    function settingUpdate(Request $request)
+    function settingUpdate(Request $request, $id)
     {
-        $id = WebsiteSetting::first();
         $settingDataUpdate = WebsiteSetting::find($id);
         if ($request->siteLogo) {
+            File::exists('backend/images/Logo/' . $settingDataUpdate->siteLogo);
+            File::delete('backend/images/Logo/' . $settingDataUpdate->siteLogo);
             $siteLogo = $request->file('siteLogo');
             $customResumeName = time() . '-' . rand() . '.' . $siteLogo->getClientOriginalExtension();
             $location = public_path('backend/images/Logo/' . $customResumeName);
             Image::make($siteLogo)->resize(168, 48)->save($location);
             $settingDataUpdate->siteLogo = $customResumeName;
-            if ($request->siteLogo) {
-                File::exists('backend/images/Logo/' . $settingDataUpdate->siteLogo);
-                File::delete('backend/images/Logo/' . $settingDataUpdate->siteLogo);
-            }
         }
         $settingDataUpdate->websiteTitle = $request->websiteTitle;
         $settingDataUpdate->facebook = $request->facebook;
@@ -37,7 +34,6 @@ class WebsiteSettingController extends Controller
         $settingDataUpdate->instagram = $request->instagram;
         $settingDataUpdate->linkedin = $request->linkedin;
         $settingDataUpdate->github = $request->github;
-        // return response()->json($settingDataUpdate);
         $settingDataUpdate->update();
         return redirect()->back();
     }
