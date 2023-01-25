@@ -49,8 +49,11 @@
                                                         <label for="image">Banner Image</label>
                                                     </div>
                                                     <div class="col-10">
-                                                        <input type="file" class="" name="image"
-                                                            id="">
+                                                        <input type="file" name="image">
+                                                        <div class="bannerImage py-2">
+                                                            <img src="{{ asset('backend/images/Banners/' . $bannerUpdate->image) }}"
+                                                                alt="Banner" style="height: 100px;width:120px;">
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 {{-- Banner Developer Name  --}}
@@ -60,7 +63,7 @@
                                                     </div>
                                                     <div class="col-10">
                                                         <input type="text" class="form-control" name="name"
-                                                            id="" placeholder="Developer Name">
+                                                            value="{{ $bannerUpdate->name }}" placeholder="Developer Name">
                                                     </div>
                                                 </div>
                                                 {{-- Skills Select  --}}
@@ -69,14 +72,16 @@
                                                         <label for="skills">Skills</label>
                                                     </div>
                                                     <div class="col-10">
+
                                                         <select class="form-control" id="devSkillsCategorySave"
                                                             name="devSkillsCategory[]" multiple="multiple">
-                                                            <option value="">Select</option>
-                                                            <option value="Web Development">Web Development</option>
                                                             <option value="Web Application">Web Application</option>
                                                             <option value="API Developmet">API Developmet</option>
                                                             <option value="Web Design">Web Design</option>
                                                         </select>
+                                                        @foreach ($skillsDataShow as $skillsData)
+                                                        <button type="text" class="my-2 btn btn-light">{{ $skillsData->devSkillsCategory }}</button>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                                 {{-- Resume file   --}}
@@ -85,8 +90,7 @@
                                                         <label for="resume">Resume PDF</label>
                                                     </div>
                                                     <div class="col-10">
-                                                        <input type="file" class="" name="resume"
-                                                            id="">
+                                                        <input type="file" class="" name="resume" id="">
                                                     </div>
                                                 </div>
                                                 {{-- Professional Video  --}}
@@ -109,7 +113,7 @@
                                     {{-- Banner Data Save End Form  --}}
 
                                     {{-- Banner Data Save Start Form --}}
-                                
+
                                     {{-- Banner Data Save End Form  --}}
                                 </div>
                             </div>
@@ -131,7 +135,7 @@
     <script>
         new MultiSelectTag('devSkillsCategorySave') // id
     </script>
-        <script>
+    <script>
         new MultiSelectTag('devSkillsCategoryUpdate') // id
     </script>
 @endpush

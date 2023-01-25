@@ -15,8 +15,9 @@ class BannerController extends Controller
     public function index()
     {
         $bannerUpdate = Banner::first();
-        $profession = Profession::where('banner_id', 'id')->get();
-        return view("backend.pages.banners", compact('bannerUpdate', 'profession'));
+        $skillsDataShow = Profession::where('banner_id', $bannerUpdate->id)->get();
+        // return response()->json($skillsDataShow);
+        return view("backend.pages.banners", compact('bannerUpdate', 'skillsDataShow'));
     }
 
     public function create()
@@ -42,7 +43,6 @@ class BannerController extends Controller
             $bannerData->resume = $customResumeName;
         }
         $bannerData->resumeVideo = $request->resumeVideo;
-        $bannerData->save();
         $findLastId = Banner::all()->last();
         $devSkillsCategory = $request->devSkillsCategory;
         if ($devSkillsCategory) {
@@ -53,6 +53,7 @@ class BannerController extends Controller
                 $devSkills->save();
             }
         }
+        $bannerData->save();
         if ($bannerData) {
             return response()->json([
                 "name" => "success",
