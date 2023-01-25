@@ -75,5 +75,24 @@ jQuery(document).ready(function () {
     });
     // Age Calculate End
 
-
+    // Contact Us Start
+    // jQuery("#contactMailForm").on("submit", function (event) {
+    //     event.preventDefault();
+    //     var ContactMail = new FormData(this);
+    // $.ajax({
+    //     url: "/sendMessage",
+    //     type: "POST",
+    //     data: ContactMail,
+    //     dataType: "JSON",
+    //     success: function (response) {
+    //         if (response.success == "success") {
+    //             alert("Message Sended!");
+    //         } else {
+    //             alert("Message Not Send!");
+    //         }
+    //     },
+    // });
+    //     alert(ContactMail);
+    // });
+    // Contact Us End
 });

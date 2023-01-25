@@ -1,7 +1,6 @@
 @extends('frontend/layouts/master')
 
 @section('content')
-    
     <!-- Video Modal Start -->
     <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -9,10 +8,11 @@
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>        
+                    </button>
                     <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
@@ -26,13 +26,16 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="{{asset('frontend/assets')}}/img/profile.jpg" alt="">
+                    <img class="img-fluid w-100 rounded-circle shadow-sm"
+                        src="{{ asset('frontend/assets') }}/img/profile.jpg" alt="">
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Kate Winslet</h1>
+                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Kate
+                        Winslet</h1>
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer</div>
+                    <div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps
+                        Developer</div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="" class="btn btn-outline-light mr-5">Download CV</a>
                         <button type="button" class="btn-play" data-toggle="modal"
@@ -57,20 +60,38 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="{{asset('frontend/assets')}}/img/about.jpg" alt="">
+                    <img class="img-fluid rounded w-100" src="{{ asset('frontend/assets') }}/img/about.jpg" alt="">
                 </div>
                 <div class="col-lg-7">
                     <h3 class="mb-4">UI/UX Designer & Web Developer</h3>
-                    <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum. Amet dolor stet lorem diam dolor justo et dolor dolor dolor</p>
+                    <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est
+                        tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum. Amet dolor stet
+                        lorem diam dolor justo et dolor dolor dolor</p>
                     <div class="row mb-3">
-                        <div class="col-sm-6 py-2"><h6>Name: <span class="text-secondary">Kate Winslet</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Birthday: <span class="text-secondary">1 April 1990</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Degree: <span class="text-secondary">Master</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary">10 Years</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Phone: <span class="text-secondary">+012 345 6789</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">info@example.com</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">123 Street, New York, USA</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Freelance: <span class="text-secondary">Available</span></h6></div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Name: <span class="text-secondary">Kate Winslet</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Birthday: <span class="text-secondary">1 April 1990</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Degree: <span class="text-secondary">Master</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Experience: <span class="text-secondary">10 Years</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Phone: <span class="text-secondary">+012 345 6789</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Email: <span class="text-secondary">info@example.com</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Address: <span class="text-secondary">123 Street, New York, USA</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Freelance: <span class="text-secondary">Available</span></h6>
+                        </div>
                     </div>
                     <a href="" class="btn btn-outline-primary mr-4">Hire Me</a>
                     <a href="" class="btn btn-outline-primary">Learn More</a>
@@ -96,19 +117,26 @@
                             <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">Master In CSE</h5>
                             <p class="mb-2"><strong>Cambridge University</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
+                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
+                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
+                                lorem diam</p>
                         </div>
                         <div class="position-relative mb-4">
                             <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">Master In CSE</h5>
                             <p class="mb-2"><strong>Cambridge University</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
+                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
+                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
+                                lorem diam</p>
                         </div>
                         <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <i class="far fa-dot-circle text-primary position-absolute"
+                                style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">Master In CSE</h5>
                             <p class="mb-2"><strong>Cambridge University</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
+                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
+                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
+                                lorem diam</p>
                         </div>
                     </div>
                 </div>
@@ -116,22 +144,31 @@
                     <h3 class="mb-4">My Expericence</h3>
                     <div class="border-left border-primary pt-2 pl-4 ml-2">
                         <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <i class="far fa-dot-circle text-primary position-absolute"
+                                style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">Web Designer</h5>
                             <p class="mb-2"><strong>Soft Company</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
+                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
+                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
+                                lorem diam</p>
                         </div>
                         <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <i class="far fa-dot-circle text-primary position-absolute"
+                                style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">Web Designer</h5>
                             <p class="mb-2"><strong>Soft Company</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
+                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
+                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
+                                lorem diam</p>
                         </div>
                         <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <i class="far fa-dot-circle text-primary position-absolute"
+                                style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">Web Designer</h5>
                             <p class="mb-2"><strong>Soft Company</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
+                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
+                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
+                                lorem diam</p>
                         </div>
                     </div>
                 </div>
@@ -156,7 +193,8 @@
                             <h6 class="font-weight-bold">95%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="skill mb-4">
@@ -165,7 +203,8 @@
                             <h6 class="font-weight-bold">85%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="skill mb-4">
@@ -174,7 +213,8 @@
                             <h6 class="font-weight-bold">90%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
@@ -185,7 +225,8 @@
                             <h6 class="font-weight-bold">90%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="skill mb-4">
@@ -194,7 +235,8 @@
                             <h6 class="font-weight-bold">95%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="skill mb-4">
@@ -203,7 +245,8 @@
                             <h6 class="font-weight-bold">85%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
@@ -226,7 +269,8 @@
                         <i class="fa fa-2x fa-laptop service-icon bg-primary text-white mr-3"></i>
                         <h4 class="font-weight-bold m-0">Web Design</h4>
                     </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore eirmod erat clita</p>
+                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
+                        labore eirmod erat clita</p>
                     <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center mb-5">
@@ -234,7 +278,8 @@
                         <i class="fa fa-2x fa-laptop-code service-icon bg-primary text-white mr-3"></i>
                         <h4 class="font-weight-bold m-0">Web Development</h4>
                     </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore eirmod erat clita</p>
+                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
+                        labore eirmod erat clita</p>
                     <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center mb-5">
@@ -242,7 +287,8 @@
                         <i class="fab fa-2x fa-android service-icon bg-primary text-white mr-3"></i>
                         <h4 class="font-weight-bold m-0">Apps Design</h4>
                     </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore eirmod erat clita</p>
+                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
+                        labore eirmod erat clita</p>
                     <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center mb-5">
@@ -250,7 +296,8 @@
                         <i class="fab fa-2x fa-apple service-icon bg-primary text-white mr-3"></i>
                         <h4 class="font-weight-bold m-0">Apps Development</h4>
                     </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore eirmod erat clita</p>
+                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
+                        labore eirmod erat clita</p>
                     <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center mb-5">
@@ -258,7 +305,8 @@
                         <i class="fa fa-2x fa-search service-icon bg-primary text-white mr-3"></i>
                         <h4 class="font-weight-bold m-0">SEO</h4>
                     </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore eirmod erat clita</p>
+                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
+                        labore eirmod erat clita</p>
                     <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center mb-5">
@@ -266,7 +314,8 @@
                         <i class="fa fa-2x fa-edit service-icon bg-primary text-white mr-3"></i>
                         <h4 class="font-weight-bold m-0">Content Creating</h4>
                     </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore eirmod erat clita</p>
+                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
+                        labore eirmod erat clita</p>
                     <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
                 </div>
             </div>
@@ -285,7 +334,7 @@
             <div class="row">
                 <div class="col-12 text-center mb-2">
                     <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active"  data-filter="*">All</li>
+                        <li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">All</li>
                         <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Web Design</li>
                         <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Web Development</li>
                     </ul>
@@ -294,9 +343,10 @@
             <div class="row portfolio-container">
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{asset('frontend/assets')}}/img/portfolio-1.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ asset('frontend/assets') }}/img/portfolio-1.jpg"
+                            alt="">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{asset('frontend/assets')}}/img/portfolio-1.jpg" data-lightbox="portfolio">
+                            <a href="{{ asset('frontend/assets') }}/img/portfolio-1.jpg" data-lightbox="portfolio">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -304,9 +354,10 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{asset('frontend/assets')}}/img/portfolio-2.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ asset('frontend/assets') }}/img/portfolio-2.jpg"
+                            alt="">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{asset('frontend/assets')}}/img/portfolio-2.jpg" data-lightbox="portfolio">
+                            <a href="{{ asset('frontend/assets') }}/img/portfolio-2.jpg" data-lightbox="portfolio">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -314,9 +365,10 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{asset('frontend/assets')}}/img/portfolio-4.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ asset('frontend/assets') }}/img/portfolio-4.jpg"
+                            alt="">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{asset('frontend/assets')}}/img/portfolio-4.jpg" data-lightbox="portfolio">
+                            <a href="{{ asset('frontend/assets') }}/img/portfolio-4.jpg" data-lightbox="portfolio">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -324,15 +376,16 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{asset('frontend/assets')}}/img/portfolio-5.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ asset('frontend/assets') }}/img/portfolio-5.jpg"
+                            alt="">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{asset('frontend/assets')}}/img/portfolio-5.jpg" data-lightbox="portfolio">
+                            <a href="{{ asset('frontend/assets') }}/img/portfolio-5.jpg" data-lightbox="portfolio">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -351,22 +404,34 @@
                     <div class="owl-carousel testimonial-carousel">
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="{{asset('frontend/assets')}}/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum
+                                elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet
+                                eirmod eos, labore diam clita</h4>
+                            <img class="img-fluid rounded-circle mx-auto mb-3"
+                                src="{{ asset('frontend/assets') }}/img/testimonial-1.jpg"
+                                style="width: 80px; height: 80px;">
                             <h5 class="font-weight-bold m-0">Client Name</h5>
                             <span>Profession</span>
                         </div>
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="{{asset('frontend/assets')}}/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum
+                                elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet
+                                eirmod eos, labore diam clita</h4>
+                            <img class="img-fluid rounded-circle mx-auto mb-3"
+                                src="{{ asset('frontend/assets') }}/img/testimonial-2.jpg"
+                                style="width: 80px; height: 80px;">
                             <h5 class="font-weight-bold m-0">Client Name</h5>
                             <span>Profession</span>
                         </div>
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="{{asset('frontend/assets')}}/img/testimonial-3.jpg" style="width: 80px; height: 80px;">
+                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum
+                                elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet
+                                eirmod eos, labore diam clita</h4>
+                            <img class="img-fluid rounded-circle mx-auto mb-3"
+                                src="{{ asset('frontend/assets') }}/img/testimonial-3.jpg"
+                                style="width: 80px; height: 80px;">
                             <h5 class="font-weight-bold m-0">Client Name</h5>
                             <span>Profession</span>
                         </div>
@@ -436,32 +501,34 @@
                 <div class="col-lg-8">
                     <div class="contact-form text-center">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form action="{{ Route('sendMessage') }}" method="POST">
+                            @csrf
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
-                                        required="required" data-validation-required-message="Please enter your name" />
+                                    <input type="text" class="form-control p-4" name="name"
+                                        placeholder="Your Name" required="required"
+                                        data-validation-required-message="Please enter your name" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email"
-                                        required="required" data-validation-required-message="Please enter your email" />
+                                    <input type="email" class="form-control p-4" name="email"
+                                        placeholder="Your Email" required="required"
+                                        data-validation-required-message="Please enter your email" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject"
+                                <input type="text" class="form-control p-4" name="subject" placeholder="Subject"
                                     required="required" data-validation-required-message="Please enter a subject" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
-                                    required="required"
+                                <textarea class="form-control py-3 px-4" rows="5" name="message" placeholder="Message" required="required"
                                     data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
-                                <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send
+                                <button class="btn btn-outline-primary" type="submit">Send
                                     Message</button>
                             </div>
                         </form>
@@ -471,5 +538,4 @@
         </div>
     </div>
     <!-- Contact End -->
-
 @endsection
