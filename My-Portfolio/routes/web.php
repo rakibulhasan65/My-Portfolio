@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Backend\BannerController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Frontend\WebSiteController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminProfileController;
@@ -19,8 +18,6 @@ use App\Http\Controllers\Backend\WebsiteSettingController;
 | Web Routes
 |--------------------------------------------------------------------------
 */
-// Frontend view Show All Route 
-Route::get('/', [WebSiteController::class, 'index'])->name('home');
 
 Route::middleware([
     'auth:sanctum',

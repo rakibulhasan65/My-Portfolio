@@ -15,8 +15,7 @@ class BannerController extends Controller
     public function index()
     {
         $bannerUpdate = Banner::first();
-        $skillsDataShow = Profession::where('banner_id', $bannerUpdate->id)->get();
-        // return response()->json($skillsDataShow);
+        $skillsDataShow = Profession::first()::where('banner_id', $bannerUpdate->id)->get();
         return view("backend.pages.banners", compact('bannerUpdate', 'skillsDataShow'));
     }
 
@@ -26,39 +25,6 @@ class BannerController extends Controller
 
     public function store(Request $request)
     {
-        $bannerData = new Banner();
-        if ($request->image) {
-            $image = $request->file('image');
-            $customImageName = time() . '-' . rand() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('backend/images/Banners/' . $customImageName);
-            Image::make($image)->resize(600, 600)->save($location);
-            $bannerData->image = $customImageName;
-        }
-        $bannerData->name = $request->name;
-        if ($request->resume) {
-            $resume = $request->file('resume');
-            $customResumeName = time() . '-' . rand() . '.' . $resume->getClientOriginalExtension();
-            $location = public_path('backend/images/Banners/' . $customResumeName);
-            Image::make($resume)->save($location);
-            $bannerData->resume = $customResumeName;
-        }
-        $bannerData->resumeVideo = $request->resumeVideo;
-        $findLastId = Banner::all()->last();
-        $devSkillsCategory = $request->devSkillsCategory;
-        if ($devSkillsCategory) {
-            foreach ($devSkillsCategory as $devSkillsCategory) {
-                $devSkills = new Profession;
-                $devSkills->banner_id = $findLastId->id;
-                $devSkills->devSkillsCategory = $devSkillsCategory;
-                $devSkills->save();
-            }
-        }
-        $bannerData->save();
-        if ($bannerData) {
-            return response()->json([
-                "name" => "success",
-            ]);
-        }
     }
 
     public function show($id)
@@ -73,7 +39,41 @@ class BannerController extends Controller
 
     public function update(Request $request, $id)
     {
-        
+        $bannerData = Banner::find($id);
+        if ($request->image) {
+            File::exists('backend/images/Banners/' . $bannerData->image);
+            File::Delete('backend/images/Banners/' . $bannerData->image);
+            $image = $request->file('image');
+            $customImageName = time() . '-' . rand() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('backend/images/Banners/' . $customImageName);
+            Image::make($image)->resize(600, 600)->save($location);
+            $bannerData->image = $customImageName;
+        }
+        $bannerData->name = $request->name;
+        if ($request->resume) {
+            File::exists('backend/images/Banners/' . $bannerData->resume);
+            File::Delete('backend/images/Banners/' . $bannerData->resume);
+            $resume = $request->file('resume');
+            $customResumeName = time() . '-' . rand() . '.' . $resume->getClientOriginalExtension();
+            $location = public_path('backend/images/Banners/' . $customResumeName);
+            Image::make($resume)->save($location);
+            $bannerData->resume = $customResumeName;
+        }
+        $bannerData->resumeVideo = $request->resumeVideo;
+        $findLastId = Banner::all()->last();
+        $devSkillsCategory = $request->devSkillsCategory;
+        if ($devSkillsCategory) {
+            $deleteId = Profession::where('banner_id', $findLastId->id);
+            $deleteId->delete();
+            foreach ($devSkillsCategory as $devSkillsCategory) {
+                $devSkills = new Profession;
+                $devSkills->banner_id = $findLastId->id;
+                $devSkills->devSkillsCategory = $devSkillsCategory;
+                $devSkills->save();
+            }
+        }
+        $bannerData->update();
+        return back();
     }
 
     public function destroy($id)

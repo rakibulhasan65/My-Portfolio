@@ -13,7 +13,7 @@
             <a href="#skill" class="nav-item nav-link">Skill</a>
             <a href="#service" class="nav-item nav-link">Service</a>
             <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-            <a href="#testimonial" class="nav-item nav-link">Review</a>
+            <a href="#testimonial" class="nav-item nav-link">Support</a>
             <a href="#blog" class="nav-item nav-link">Blog</a>
             <a href="#contact" class="nav-item nav-link">Contact</a>
         </div>

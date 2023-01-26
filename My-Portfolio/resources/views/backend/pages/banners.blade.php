@@ -37,9 +37,10 @@
                                         <h3 class="card-title">Portfolio Banners</h3>
                                     </div>
                                     {{-- Banner Data Save Start Form --}}
-                                    <form id="BannerSave" enctype="multipart/form-data">
+                                    <form action="{{ Route('banners.update', $bannerUpdate->id) }}" method="POST"
+                                        enctype="multipart/form-data">
                                         @csrf
-                                        @method('POST')
+                                        @method('PUT')
                                         <!-- /.card-header -->
                                         <div class="card-body">
                                             <div class="form-group">
@@ -80,7 +81,8 @@
                                                             <option value="Web Design">Web Design</option>
                                                         </select>
                                                         @foreach ($skillsDataShow as $skillsData)
-                                                        <button type="text" class="my-2 btn btn-light">{{ $skillsData->devSkillsCategory }}</button>
+                                                            <button type="text"
+                                                                class="my-2 btn btn-light">{{ $skillsData->devSkillsCategory }}</button>
                                                         @endforeach
                                                     </div>
                                                 </div>
@@ -100,14 +102,15 @@
                                                     </div>
                                                     <div class="col-10">
                                                         <input type="text" class="form-control" name="resumeVideo"
-                                                            placeholder="Video Link">
+                                                            placeholder="Video Link"
+                                                            value="{{ $bannerUpdate->resumeVideo }}">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- /.card-body -->
                                         <div class="">
-                                            <button type="submit" class="btn btn-info form-control">Save</button>
+                                            <button type="submit" class="btn btn-info form-control">Update</button>
                                         </div>
                                     </form>
                                     {{-- Banner Data Save End Form  --}}

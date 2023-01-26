@@ -27,19 +27,23 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
                     <img class="img-fluid w-100 rounded-circle shadow-sm"
-                        src="{{ asset('frontend/assets') }}/img/profile.jpg" alt="">
+                        src="{{ asset('backend/images/Banners/' . $bannerDataShow->image) }}" alt="Banner">
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Kate
-                        Winslet</h1>
+                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
+                        {{ $bannerDataShow->name }}</h1>
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps
-                        Developer</div>
+                    <div class="typed-text d-none">
+                        @foreach ($skillsDataShow as $skillsData)
+                            <p>{{ $skillsData->devSkillsCategory }},</p>
+                        @endforeach
+                    </div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="" class="btn btn-outline-light mr-5">Download CV</a>
+                        <a href="{{ asset('backend/images/Banners/' . $bannerDataShow->resume) }}"
+                            class="btn btn-outline-light mr-5">Download CV</a>
                         <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                            data-src="{{ $bannerDataShow->resumeVideo }}" data-target="#videoModal">
                             <span></span>
                         </button>
                         <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Play Video</h5>
@@ -60,37 +64,42 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="{{ asset('frontend/assets') }}/img/about.jpg" alt="">
+                    <img class="img-fluid rounded w-100"
+                        src="{{ asset('backend/images/About/' . $aboutDataShow->aboutImage) }}" alt="">
                 </div>
                 <div class="col-lg-7">
-                    <h3 class="mb-4">UI/UX Designer & Web Developer</h3>
-                    <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est
-                        tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum. Amet dolor stet
-                        lorem diam dolor justo et dolor dolor dolor</p>
+                    <h3 class="mb-4">{{ $aboutDataShow->aboutTitle }}</h3>
+                    <p>{{ $aboutDataShow->aboutDescription }}</p>
                     <div class="row mb-3">
                         <div class="col-sm-6 py-2">
-                            <h6>Name: <span class="text-secondary">Kate Winslet</span></h6>
+                            <h6>Name: <span class="text-secondary">{{ $aboutDataShow->name }}</span></h6>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Birthday: <span class="text-secondary">1 April 1990</span></h6>
+                            <h6>Birthday: <span class="text-secondary">{{ $aboutDataShow->birth }}</span></h6>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Degree: <span class="text-secondary">Master</span></h6>
+                            <h6>Degree: <span class="text-secondary">{{ $aboutDataShow->degree }}</span></h6>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Experience: <span class="text-secondary">10 Years</span></h6>
+                            <h6>Experience: <span class="text-secondary">{{ $aboutDataShow->experience }}</span></h6>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Phone: <span class="text-secondary">+012 345 6789</span></h6>
+                            <h6>Phone: <span class="text-secondary">{{ $aboutDataShow->phone }}</span></h6>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Email: <span class="text-secondary">info@example.com</span></h6>
+                            <h6>Email: <span class="text-secondary">{{ $aboutDataShow->email }}</span></h6>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Address: <span class="text-secondary">123 Street, New York, USA</span></h6>
+                            <h6>Address: <span class="text-secondary">{{ $aboutDataShow->address }}</span></h6>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Freelance: <span class="text-secondary">Available</span></h6>
+                            <h6>Freelance: <span class="text-secondary">
+                                    @if ($aboutDataShow->freelance == 1)
+                                        Avaiable
+                                    @else
+                                        Not Avaiable
+                                    @endif
+                                </span></h6>
                         </div>
                     </div>
                     <a href="" class="btn btn-outline-primary mr-4">Hire Me</a>
@@ -113,63 +122,36 @@
                 <div class="col-lg-6">
                     <h3 class="mb-4">My Education</h3>
                     <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Master In CSE</h5>
-                            <p class="mb-2"><strong>Cambridge University</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
-                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
-                                lorem diam</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Master In CSE</h5>
-                            <p class="mb-2"><strong>Cambridge University</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
-                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
-                                lorem diam</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Master In CSE</h5>
-                            <p class="mb-2"><strong>Cambridge University</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
-                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
-                                lorem diam</p>
-                        </div>
+                        @foreach ($educationDataShow as $educationData)
+                            <div class="position-relative mb-4">
+                                <i class="far fa-dot-circle text-primary position-absolute"
+                                    style="top: 2px; left: -32px;"></i>
+                                <h5 class="font-weight-bold mb-1">{{ $educationData->educationTitle }}</h5>
+                                <p class="mb-2"><strong>{{ $educationData->instituteName }}</strong> |
+                                    <small>{{ $educationData->passingYears }}</small>
+                                </p>
+                                <p>{{ $educationData->description }}</p>
+                            </div>
+                            <!--End Education -->
+                        @endforeach
+                        {{-- End Education Foreach  --}}
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <h3 class="mb-4">My Expericence</h3>
                     <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Web Designer</h5>
-                            <p class="mb-2"><strong>Soft Company</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
-                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
-                                lorem diam</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Web Designer</h5>
-                            <p class="mb-2"><strong>Soft Company</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
-                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
-                                lorem diam</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Web Designer</h5>
-                            <p class="mb-2"><strong>Soft Company</strong> | <small>2000 - 2050</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
-                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
-                                lorem diam</p>
-                        </div>
+                        @foreach ($experienceDataShow as $experienceData)
+                            <div class="position-relative mb-4">
+                                <i class="far fa-dot-circle text-primary position-absolute"
+                                    style="top: 2px; left: -32px;"></i>
+                                <h5 class="font-weight-bold mb-1">{{ $experienceData->experienceTitle }}</h5>
+                                <p class="mb-2"><strong>{{ $experienceData->companyName }}</strong> |
+                                    <small>{{ $experienceData->years }}</small>
+                                </p>
+                                <p>{{ $experienceData->description }}</p>
+                            </div> <!-- Job Experiance End -->
+                        @endforeach
+                        <!-- foreach End -->
                     </div>
                 </div>
             </div>
@@ -264,60 +246,19 @@
                 <h1 class="position-absolute text-uppercase text-primary">My Services</h1>
             </div>
             <div class="row pb-3">
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-laptop service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Web Design</h4>
+                @foreach ($serviceDataShow as $serviceData)
+                    <div class="col-lg-4 col-md-6 text-center mb-5">
+                        <div class="d-flex align-items-center justify-content-center mb-4">
+                            <i
+                                class="fas fa-2x fa-{{ $serviceData->serviceIcon }} service-icon bg-primary text-white mr-3"></i>
+                            <h4 class="font-weight-bold m-0">{{ $serviceData->serviceTitle }}</h4>
+                        </div>
+                        <p>{{ $serviceData->serviceDescription }}</p>
+                        <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
                     </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
-                        labore eirmod erat clita</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-laptop-code service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Web Development</h4>
-                    </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
-                        labore eirmod erat clita</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fab fa-2x fa-android service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Apps Design</h4>
-                    </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
-                        labore eirmod erat clita</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fab fa-2x fa-apple service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Apps Development</h4>
-                    </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
-                        labore eirmod erat clita</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-search service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">SEO</h4>
-                    </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
-                        labore eirmod erat clita</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-edit service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Content Creating</h4>
-                    </div>
-                    <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet
-                        labore eirmod erat clita</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-                </div>
+                    <!--End Services-->
+                @endforeach
+
             </div>
         </div>
     </div>
@@ -341,51 +282,41 @@
                 </div>
             </div>
             <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ asset('frontend/assets') }}/img/portfolio-1.jpg"
-                            alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('frontend/assets') }}/img/portfolio-1.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
+                @foreach ($webDesignDataShow as $webDesignData)
+                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                        <div class="position-relative overflow-hidden mb-2">
+                            <img class="img-fluid rounded w-100"
+                                src="{{ asset('backend/images/Gallery/' . $webDesignData->webDesign) }}"
+                                alt="webDesignData">
+                            <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                                <a href="{{ asset('backend/images/Gallery/' . $webDesignData->webDesign) }}"
+                                    data-lightbox="portfolio">
+                                    <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ asset('frontend/assets') }}/img/portfolio-2.jpg"
-                            alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('frontend/assets') }}/img/portfolio-2.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ asset('frontend/assets') }}/img/portfolio-4.jpg"
-                            alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('frontend/assets') }}/img/portfolio-4.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ asset('frontend/assets') }}/img/portfolio-5.jpg"
-                            alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('frontend/assets') }}/img/portfolio-5.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                    <!--//Web Design--->
+                @endforeach
+                <!---//Web Design end---->
 
+                @foreach ($webDevGalleryShow as $webDevDataShow)
+                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+                        <div class="position-relative overflow-hidden mb-2">
+                            <img class="img-fluid rounded w-100"
+                                src="{{ asset('backend/images/Gallery/' . $webDevDataShow->webDevelopment) }}"
+                                alt="webDevelopment">
+                            <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                                <a href="{{ asset('backend/images/Gallery/' . $webDevDataShow->webDevelopment) }}"
+                                    data-lightbox="portfolio">
+                                    <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//Web Development--->
+                @endforeach
+                <!---//Web Development end---->
             </div>
         </div>
     </div>
@@ -396,45 +327,23 @@
     <div class="container-fluid py-5" id="testimonial">
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Review</h1>
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">SUPPORT</h1>
                 <h1 class="position-absolute text-uppercase text-primary">TECHNICAL SUPPORT</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="owl-carousel testimonial-carousel">
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum
-                                elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet
-                                eirmod eos, labore diam clita</h4>
-                            <img class="img-fluid rounded-circle mx-auto mb-3"
-                                src="{{ asset('frontend/assets') }}/img/testimonial-1.jpg"
-                                style="width: 80px; height: 80px;">
-                            <h5 class="font-weight-bold m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum
-                                elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet
-                                eirmod eos, labore diam clita</h4>
-                            <img class="img-fluid rounded-circle mx-auto mb-3"
-                                src="{{ asset('frontend/assets') }}/img/testimonial-2.jpg"
-                                style="width: 80px; height: 80px;">
-                            <h5 class="font-weight-bold m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum
-                                elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet
-                                eirmod eos, labore diam clita</h4>
-                            <img class="img-fluid rounded-circle mx-auto mb-3"
-                                src="{{ asset('frontend/assets') }}/img/testimonial-3.jpg"
-                                style="width: 80px; height: 80px;">
-                            <h5 class="font-weight-bold m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
+                        @foreach ($supportDataShow as $supportData)
+                            <div class="text-center">
+                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                <h4 class="font-weight-light mb-4">{{ $supportData->description }}</h4>
+                                <img class="img-fluid rounded-circle mx-auto mb-3"
+                                    src="{{ asset('backend/images/Support/'.$supportData->image) }}"
+                                    style="width: 80px; height: 80px;">
+                                <h5 class="font-weight-bold m-0">{{ $supportData->name }}</h5>
+                                <span>{{ $supportData->profession }}</span>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
