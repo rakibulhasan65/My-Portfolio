@@ -52,6 +52,7 @@ Route::middleware([
         Route::post('/devImgDelete/{id}', [GalleryController::class, 'devImgDelete'])->name('devImgDelete');
         Route::post('/designImgDelete/{id}', [GalleryController::class, 'designImgDelete'])->name('designImgDelete');
     }); // gallery
+    
     Route::group([
         'prefix' => 'profiles', 'as' => 'profile.'
     ], function () {

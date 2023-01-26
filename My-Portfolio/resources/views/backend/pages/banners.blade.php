@@ -43,75 +43,88 @@
                                         @method('PUT')
                                         <!-- /.card-header -->
                                         <div class="card-body">
-                                            <div class="form-group">
-                                                {{-- Banner Image  --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="image">Banner Image</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <input type="file" name="image">
-                                                        <div class="bannerImage py-2">
-                                                            <img src="{{ asset('backend/images/Banners/' . $bannerUpdate->image) }}"
-                                                                alt="Banner" style="height: 100px;width:120px;">
+                                            <div class="row">
+                                                <div class="col-6 col-md-6">
+                                                    <img src="{{ asset('backend/images/Banners/' . $bannerUpdate->image) }}"
+                                                        class="w-100" alt="Banner">
+                                                    <!-- Image Field Start-->
+                                                    <div class="input-group my-1">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">Upload</span>
+                                                        </div>
+                                                        <div class="custom-file">
+                                                            <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
+                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
+                                                                file</label>
                                                         </div>
                                                     </div>
+                                                    <div class="">
+                                                        <small>Requirements: jpg, jpeg or png | max: 10mb
+                                                            Size recommended: 600x600px</small>
+                                                    </div>
+                                                    <!--// Image Field end-->
                                                 </div>
-                                                {{-- Banner Developer Name  --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="name">Developer Name</label>
+                                                <div class="col-6 col-md-6">
+                                                    {{-- Banner Developer Name  --}}
+                                                    <div class="row p-2">
+                                                        <div class="col-12 col-md-12">
+                                                            <label for="name">Developer Name</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-12">
+                                                            <input type="text" class="form-control" name="name"
+                                                                value="{{ $bannerUpdate->name }}"
+                                                                placeholder="Developer Name">
+                                                        </div>
                                                     </div>
-                                                    <div class="col-10">
-                                                        <input type="text" class="form-control" name="name"
-                                                            value="{{ $bannerUpdate->name }}" placeholder="Developer Name">
-                                                    </div>
-                                                </div>
-                                                {{-- Skills Select  --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="skills">Skills</label>
-                                                    </div>
-                                                    <div class="col-10">
+                                                    {{-- Skills Select  --}}
+                                                    <div class="row p-2">
+                                                        <div class="col-12 col-md-12">
+                                                            <label for="skills">Skills</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-12">
 
-                                                        <select class="form-control" id="devSkillsCategorySave"
-                                                            name="devSkillsCategory[]" multiple="multiple">
-                                                            <option value="Web Application">Web Application</option>
-                                                            <option value="API Developmet">API Developmet</option>
-                                                            <option value="Web Design">Web Design</option>
-                                                        </select>
-                                                        @foreach ($skillsDataShow as $skillsData)
-                                                            <button type="text"
-                                                                class="my-2 btn btn-light">{{ $skillsData->devSkillsCategory }}</button>
-                                                        @endforeach
+                                                            <select class="form-control" id="devSkillsCategorySave"
+                                                                name="devSkillsCategory[]" multiple="multiple">
+                                                                <option value="Web Application">Web Application</option>
+                                                                <option value="API Developmet">API Developmet</option>
+                                                                <option value="Web Design">Web Design</option>
+                                                            </select>
+                                                            @foreach ($skillsDataShow as $skillsData)
+                                                                <button type="text"
+                                                                    class="my-2 btn btn-light">{{ $skillsData->devSkillsCategory }}</button>
+                                                            @endforeach
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                {{-- Resume file   --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="resume">Resume PDF</label>
+                                                    {{-- Resume file   --}}
+                                                    <div class="row p-2">
+                                                        <div class="col-12 col-md-12">
+                                                            <label for="resume">Resume PDF</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-12">
+                                                            <input type="file" class="form-control" name="resume"
+                                                                id="">
+                                                        </div>
                                                     </div>
-                                                    <div class="col-10">
-                                                        <input type="file" class="" name="resume" id="">
-                                                    </div>
-                                                </div>
-                                                {{-- Professional Video  --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="resumeVideo">Professional Video</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <input type="text" class="form-control" name="resumeVideo"
-                                                            placeholder="Video Link"
-                                                            value="{{ $bannerUpdate->resumeVideo }}">
+                                                    {{-- Professional Video  --}}
+                                                    <div class="row p-2">
+                                                        <div class="col-12 col-md-12">
+                                                            <label for="resumeVideo">Professional Video</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-12">
+                                                            <input type="text" class="form-control" name="resumeVideo"
+                                                                placeholder="Video Link"
+                                                                value="{{ $bannerUpdate->resumeVideo }}">
+                                                        </div>
+
+                                                        <div class="col-12 col-md-12 d-flex justify-content-end">
+                                                            <button type="submit" class="my-2 btn btn-info">Update</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- /.card-body -->
-                                        <div class="">
-                                            <button type="submit" class="btn btn-info form-control">Update</button>
-                                        </div>
+
                                     </form>
                                     {{-- Banner Data Save End Form  --}}
 
