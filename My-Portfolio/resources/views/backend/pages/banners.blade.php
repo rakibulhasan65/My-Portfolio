@@ -44,6 +44,9 @@
                                         <!-- /.card-header -->
                                         <div class="card-body">
                                             <div class="row">
+                                                <!--=====================
+                                                                Banner Image Section
+                                                                ===========================-->
                                                 <div class="col-6 col-md-6">
                                                     <img src="{{ asset('backend/images/Banners/' . $bannerUpdate->image) }}"
                                                         class="w-100" alt="Banner">
@@ -53,16 +56,22 @@
                                                             <span class="input-group-text">Upload</span>
                                                         </div>
                                                         <div class="custom-file">
-                                                            <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
+                                                            <input type="file" name="image" class="custom-file-input"
+                                                                id="inputGroupFile01">
                                                             <label class="custom-file-label" for="inputGroupFile01">Choose
                                                                 file</label>
                                                         </div>
                                                     </div>
                                                     <div class="">
-                                                        <small class="font-italic">Requirements: jpg, jpeg or png | max: 10mb
+                                                        <small class="font-italic">Requirements: jpg, jpeg or png | max:
+                                                            10mb
                                                             Size recommended: 600x600px</small>
                                                     </div>
                                                     <!--// Image Field end-->
+
+                                                    <!--=====================
+                                                                Banner All Input Field Section
+                                                                ===========================-->
                                                 </div>
                                                 <div class="col-6 col-md-6">
                                                     {{-- Banner Developer Name  --}}
@@ -95,24 +104,27 @@
                                                             @endforeach
                                                         </div>
                                                     </div>
-                                                     <!-- Resume Field Start-->
-                                                     <div class="col-12 col-md-12">
+                                                    <!-- Resume Field Start-->
+                                                    <div class="col-12 col-md-12">
                                                         <div class="input-group my-1">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Upload</span>
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">Upload</span>
+                                                            </div>
+                                                            <div class="custom-file">
+                                                                <input type="file" name="resume"
+                                                                    class="custom-file-input" id="inputGroupFile01">
+                                                                <label class="custom-file-label"
+                                                                    for="inputGroupFile01">Choose
+                                                                    file</label>
+                                                            </div>
                                                         </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="resume" class="custom-file-input" id="inputGroupFile01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                                file</label>
+                                                        <div class="">
+                                                            <small class="font-italic">Requirements: pdf | max: 10mb</small>
                                                         </div>
                                                     </div>
-                                                    <div class="">
-                                                        <small class="font-italic">Requirements: pdf | max: 10mb</small>
-                                                    </div>
-                                                     </div><!--// Resume Field end-->
-                                                     
-                                                    
+                                                    <!--// Resume Field end-->
+
+
                                                     {{-- Professional Video  --}}
                                                     <div class="row p-2">
                                                         <div class="col-12 col-md-12">

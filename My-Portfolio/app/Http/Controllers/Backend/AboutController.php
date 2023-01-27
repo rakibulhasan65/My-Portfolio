@@ -7,13 +7,15 @@ use Illuminate\Http\Request;
 use App\Models\Backend\About;
 use Image;
 use File;
+use Illuminate\Support\Arr;
 
 class AboutController extends Controller
 {
 
     public function index()
     {
-        return view('backend.pages.about');
+        $aboutDataShow = About::first();
+        return view('backend.pages.about', compact('aboutDataShow'));
     }
 
     public function create()
@@ -23,8 +25,23 @@ class AboutController extends Controller
 
     public function store(Request $request)
     {
-        // return response()->json($request);
-        $aboutData = new About;
+    }
+
+    public function show($id)
+    {
+        //
+    }
+
+
+    public function edit($id)
+    {
+        //
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $aboutData = About::find($id);
         if ($request->aboutImage) {
             $aboutImage = $request->file('aboutImage');
             $customImageName = time() . '-' . rand() . '.' . $aboutImage->getClientOriginalExtension();
@@ -42,29 +59,12 @@ class AboutController extends Controller
         $aboutData->experience = $request->experience;
         $aboutData->freelance = $request->freelance;
         $aboutData->status = $request->status;
-        $aboutData->save();
-        if ($aboutData) {
-            return response()->json([
-                "status" => "success"
-            ]);
-        }
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-
-    public function edit($id)
-    {
-        //
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
+        $aboutData->update();
+        $notification = array(
+            'message' => 'Data Successfully Update',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function destroy($id)

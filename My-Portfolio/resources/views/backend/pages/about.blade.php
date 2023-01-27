@@ -35,134 +35,180 @@
                                     <div class="card-header">
                                         <h3 class="card-title">About Us</h3>
                                     </div>
-                                    <form id="AboutData" enctype="multipart/form-data">
+                                    <form action="{{ Route('about.update',$aboutDataShow->id) }}" method="POST" enctype="multipart/form-data">
                                         @csrf
-                                        @method('POST')
+                                        @method('PUT')
                                         <!-- /.card-header -->
                                         <div class="card-body">
                                             <div class="form-group">
-                                                {{-- About Image --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="aboutImage">About Image</label>
+                                                <div class="row">
+                                                    <!--=====================
+                                                                                About Image Section
+                                                                                ===========================-->
+                                                    <div class="col-md-6 col-6">
+                                                        {{-- Image Show Of About Section  --}}
+                                                        <div class="col-12">
+                                                            <div class="aboutImage">
+                                                                <img class="w-100"
+                                                                    src="{{ asset('backend/images/About/' . $aboutDataShow->aboutImage) }}"
+                                                                    alt="Rakib">
+                                                            </div>
+                                                        </div>
+                                                        {{-- Image Upload File Field input  --}}
+                                                        <div class="col-12">
+                                                            <div class="input-group my-1">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">Upload</span>
+                                                                </div>
+                                                                <div class="custom-file">
+                                                                    <input type="file" name="aboutImage"
+                                                                        class="custom-file-input" id="inputGroupFile01">
+                                                                    <label class="custom-file-label"
+                                                                        for="inputGroupFile01">Choose
+                                                                        file</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        {{-- About Title --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="aboutTitle">About Title</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <input value="{{$aboutDataShow->aboutTitle}}" type="text" class="form-control" name="aboutTitle"
+                                                                    placeholder="About Title">
+                                                            </div>
+                                                        </div>
+                                                        {{-- About Description --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="aboutDescription">About Description</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <textarea class="form-control" name="aboutDescription" cols="10" rows="3" placeholder="Description">{{ $aboutDataShow->aboutDescription }}
+                                                                </textarea>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-10">
-                                                        <input type="file" class="" name="aboutImage">
-                                                    </div>
-                                                </div>
-                                                {{-- About Title --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="aboutTitle">About Title</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <input type="text" class="form-control" name="aboutTitle"
-                                                            placeholder="About Title">
-                                                    </div>
-                                                </div>
-                                                {{-- About Description --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="aboutDescription">About Description</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <textarea class="form-control" name="aboutDescription" cols="10" rows="3" placeholder="Description"></textarea>
-                                                    </div>
-                                                </div>
-                                                {{-- name  --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="Name">Name</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <input type="text" class="form-control" name="name"
-                                                            placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                {{-- Degree --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="degree">Degree</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <input type="text" class="form-control" name="degree"
-                                                            placeholder="Degree">
-                                                    </div>
-                                                </div>
-                                                {{-- Phone --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="phone">Phone</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <input type="text" class="form-control" name="phone"
-                                                            placeholder="Phone">
-                                                    </div>
-                                                </div>
-                                                {{-- Address --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="address">Address</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <textarea class="form-control" name="address" cols="10" rows="3" placeholder="Address"></textarea>
-                                                    </div>
-                                                </div>
-                                                {{-- Date Of Birth --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="birth">Date Of Birth</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <input type="date" class="form-control" id="birth">
-                                                    </div>
-                                                </div>
-                                                {{-- Date Of Birth Calculate Input --}}
-                                                <div>
-                                                    <input type="text" class="form-control" hidden id="dateOfBirth"
-                                                        name="birth">
-                                                </div>
-                                                {{-- Experience  --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="experience">Experience</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <input type="text" class="form-control" name="experience"
-                                                            placeholder="Experience">
-                                                    </div>
-                                                </div>
-                                                {{-- Freelance --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="freelance">Freelance</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <select name="freelance" class="form-control">
-                                                            <option value="1">Avaiable</option>
-                                                            <option value="0">Not Avaiable</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                {{-- Status --}}
-                                                <div class="row p-2">
-                                                    <div class="col-2">
-                                                        <label for="status">Status</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <select name="status" class="form-control">
-                                                            <option value="1">Active</option>
-                                                            <option value="0">Inactive</option>
-                                                        </select>
+
+                                                    <!--=====================
+                                                                                About All Input Field Section
+                                                                                ===========================-->
+                                                    <div class="col-md-6 col-6">
+
+                                                        {{-- name  --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="Name">Name</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <input value="{{$aboutDataShow->name}}" type="text" class="form-control" name="name"
+                                                                    placeholder="Name">
+                                                            </div>
+                                                        </div>
+                                                        {{-- Degree --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="degree">Degree</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <input value="{{$aboutDataShow->degree}}" type="text" class="form-control" name="degree"
+                                                                    placeholder="Degree">
+                                                            </div>
+                                                        </div>
+                                                        {{-- Phone --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="phone">Phone</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <input value="{{$aboutDataShow->phone}}" type="text" class="form-control" name="phone"
+                                                                    placeholder="Phone">
+                                                            </div>
+                                                        </div>
+                                                        {{-- Address --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="address">Address</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <textarea class="form-control" name="address" cols="10" rows="3" placeholder="Address">{{ $aboutDataShow->address }}</textarea>
+                                                            </div>
+                                                        </div>
+                                                        {{-- Date Of Birth --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="birth">Date Of Birth</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <input value="{{$aboutDataShow->birth}}" type="date" class="form-control" id="birth">
+                                                            </div>
+                                                        </div>
+                                                        {{-- Date Of Birth Calculate Input --}}
+                                                        <div>
+                                                            <input type="text" class="form-control"
+                                                                id="dateOfBirth" name="birth" value="26 Years" hidden>
+                                                        </div>
+                                                        {{-- Experience  --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="experience">Experience</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <input value="{{$aboutDataShow->experience}}" type="text" class="form-control"
+                                                                    name="experience" placeholder="Experience">
+                                                            </div>
+                                                        </div>
+                                                        {{-- Freelance --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="freelance">Freelance</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <select name="freelance" class="form-control">
+                                                                    <option value="{{ $aboutDataShow->freelance }}">
+                                                                        @if ($aboutDataShow->freelance==1)
+                                                                            Avaiable
+                                                                        @else
+                                                                            Not Avaiable
+                                                                        @endif
+                                                                    </option>
+                                                                    <option value="1">Avaiable</option>
+                                                                    <option value="0">Not Avaiable</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        {{-- Status --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="status">Status</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <select name="status" class="form-control">
+                                                                    <option value="{{ $aboutDataShow->status }}">
+                                                                        @if ($aboutDataShow->status==1)
+                                                                            Active
+                                                                        @else
+                                                                            Inactive
+                                                                        @endif
+                                                                    <option value="1">Active</option>
+                                                                    <option value="0">Inactive</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                            <div class="col-12 col-md-12 d-flex justify-content-end">
+                                                            <button type="submit" class="btn btn-info">Update</button>
+                                                        </div>
+                                                        
                                                     </div>
                                                 </div>
 
                                             </div>
                                         </div>
                                         <!-- /.card-body -->
-                                        <div class="">
-                                            <button type="submit" class="btn btn-info form-control">Save</button>
-                                        </div>
+
                                     </form>
                                 </div>
                             </div>
