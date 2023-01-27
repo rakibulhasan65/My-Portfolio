@@ -205,7 +205,7 @@
                         <div class="modal fade" id="experienceAdd">
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
-                                    <div class="modal-header bg-info">
+                                    <div class="modal-header">
                                         <h4 class="modal-title">Add Experiences</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -271,8 +271,11 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <div class="d-flex justify-content-end">
+                                                    <button type="submit" class="btn btn-info">Save</button>
+                                                </div>
                                             </div>
-                                            <button type="submit" class="form-control btn btn-info">Save</button>
+
                                         </div>
                                     </form>
 

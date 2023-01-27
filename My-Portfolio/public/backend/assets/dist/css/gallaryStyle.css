@@ -1,12 +1,12 @@
 .galleryImage {
     position: relative;
-    width: 100px;
+    width: 150px;
     margin: 5px;
 }
 
 .galleryImage img {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+        width: 200px;
 }
 
 .galleryImage img:hover+.deleteGallery {
@@ -18,7 +18,6 @@
     position: absolute;
     background-color: rgba(0, 0, 0, .7);
     width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     right: 0;
