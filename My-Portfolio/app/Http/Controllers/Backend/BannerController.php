@@ -73,7 +73,11 @@ class BannerController extends Controller
             }
         }
         $bannerData->update();
-        return back();
+        $notification = array(
+            'message' => 'Banner Successfully Updated!',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function destroy($id)

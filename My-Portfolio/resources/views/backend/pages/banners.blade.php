@@ -59,7 +59,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="">
-                                                        <small>Requirements: jpg, jpeg or png | max: 10mb
+                                                        <small class="font-italic">Requirements: jpg, jpeg or png | max: 10mb
                                                             Size recommended: 600x600px</small>
                                                     </div>
                                                     <!--// Image Field end-->
@@ -95,16 +95,24 @@
                                                             @endforeach
                                                         </div>
                                                     </div>
-                                                    {{-- Resume file   --}}
-                                                    <div class="row p-2">
-                                                        <div class="col-12 col-md-12">
-                                                            <label for="resume">Resume PDF</label>
+                                                     <!-- Resume Field Start-->
+                                                     <div class="col-12 col-md-12">
+                                                        <div class="input-group my-1">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">Upload</span>
                                                         </div>
-                                                        <div class="col-12 col-md-12">
-                                                            <input type="file" class="form-control" name="resume"
-                                                                id="">
+                                                        <div class="custom-file">
+                                                            <input type="file" name="resume" class="custom-file-input" id="inputGroupFile01">
+                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
+                                                                file</label>
                                                         </div>
                                                     </div>
+                                                    <div class="">
+                                                        <small class="font-italic">Requirements: pdf | max: 10mb</small>
+                                                    </div>
+                                                     </div><!--// Resume Field end-->
+                                                     
+                                                    
                                                     {{-- Professional Video  --}}
                                                     <div class="row p-2">
                                                         <div class="col-12 col-md-12">
