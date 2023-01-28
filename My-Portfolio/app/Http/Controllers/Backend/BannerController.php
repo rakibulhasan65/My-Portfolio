@@ -75,7 +75,7 @@ class BannerController extends Controller
         $bannerData->update();
         $notification = array(
             'message' => 'Banner Successfully Updated!',
-            'alert-type' => 'success'
+            'alert-type' => 'info'
         );
         return redirect()->back()->with($notification);
     }

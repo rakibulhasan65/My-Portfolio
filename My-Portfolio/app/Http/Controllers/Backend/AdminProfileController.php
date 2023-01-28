@@ -41,7 +41,11 @@ class AdminProfileController extends Controller
         }
         $userUpdate->status = $request->status;
         $userUpdate->update();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Successfully Update Admin Profile',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
         // return response()->json($request);
     }
 }

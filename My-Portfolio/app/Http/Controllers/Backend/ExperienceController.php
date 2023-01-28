@@ -28,7 +28,11 @@ class ExperienceController extends Controller
         $experienceAdd->description = $request->description;
         $experienceAdd->status = $request->status;
         $experienceAdd->save();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Saved Experience Data',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function show($id)
@@ -50,13 +54,21 @@ class ExperienceController extends Controller
         $experienceUpdate->description = $request->description;
         $experienceUpdate->status = $request->status;
         $experienceUpdate->update();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Update Experience Data',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function destroy($id)
     {
         $deleteExp = Experience::find($id);
         $deleteExp->delete();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Deleted Experience Data',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }

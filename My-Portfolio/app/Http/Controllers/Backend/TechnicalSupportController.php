@@ -37,7 +37,11 @@ class TechnicalSupportController extends Controller
         $supportStore->description = $request->description;
         $supportStore->status = $request->status;
         $supportStore->save();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Successfully Saved Support Data',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function show($id)
@@ -68,7 +72,11 @@ class TechnicalSupportController extends Controller
         $supportUpdate->description = $request->description;
         $supportUpdate->status = $request->status;
         $supportUpdate->update();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Successfully Update Support Data',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function destroy($id)
@@ -78,6 +86,10 @@ class TechnicalSupportController extends Controller
             File::delete('backend/images/Support/' . $supportStore->image);
         }
         $supportStore->delete();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Successfully Delete Support Data',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }

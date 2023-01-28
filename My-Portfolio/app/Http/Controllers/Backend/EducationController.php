@@ -29,7 +29,11 @@ class EducationController extends Controller
         $educationAdd->description = $request->description;
         $educationAdd->status = $request->status;
         $educationAdd->save();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Save Education Data',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function show($id)
@@ -50,13 +54,21 @@ class EducationController extends Controller
         $educationUpdate->description = $request->description;
         $educationUpdate->status = $request->status;
         $educationUpdate->update();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Update Education Data',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function destroy($id)
     {
         $educationDelete = Education::find($id);
         $educationDelete->delete();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Deleted Education Data',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }

@@ -28,7 +28,11 @@ class ServicesController extends Controller
         $serviceAdd->serviceDescription = $request->serviceDescription;
         $serviceAdd->status = $request->status;
         $serviceAdd->save();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Saved This Service Data',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function show($id)
@@ -49,13 +53,21 @@ class ServicesController extends Controller
         $serviceUpdate->serviceDescription = $request->serviceDescription;
         $serviceUpdate->status = $request->status;
         $serviceUpdate->update();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Update Service Data',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function destroy($id)
     {
         $servicesDelete = Services::find($id);
         $servicesDelete->delete();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Deleted Service Data',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }

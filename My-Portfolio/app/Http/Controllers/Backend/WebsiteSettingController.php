@@ -35,6 +35,10 @@ class WebsiteSettingController extends Controller
         $settingDataUpdate->linkedin = $request->linkedin;
         $settingDataUpdate->github = $request->github;
         $settingDataUpdate->update();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Successfully Update Setting Data',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
     }
 }

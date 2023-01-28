@@ -42,7 +42,11 @@ class GalleryController extends Controller
                 $galleyDesignSaveData->save();
             }
         }
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Successfully Gallery Image Saved',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
     function devImgDelete($id)
     {
@@ -51,7 +55,11 @@ class GalleryController extends Controller
             File::delete('backend/images/Gallery/' . $devImgDelete->webDevelopment);
         }
         $devImgDelete->delete();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Deleted Development Image',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
     function designImgDelete($id)
     {
@@ -60,7 +68,11 @@ class GalleryController extends Controller
             File::delete('backend/images/Gallery/' . $designImgDelete->webDesign);
         }
         $designImgDelete->delete();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Deleted Design Image',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
     
 }

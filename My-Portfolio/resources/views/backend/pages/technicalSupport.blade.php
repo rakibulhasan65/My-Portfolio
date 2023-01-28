@@ -108,7 +108,7 @@
                                     <div class="modal fade" id="SupportUpdate-{{ $supportDataShow->id }}">
                                         <div class="modal-dialog modal-xl">
                                             <div class="modal-content">
-                                                <div class="modal-header bg-info">
+                                                <div class="modal-header">
                                                     <h4 class="modal-title">Update Support</h4>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
@@ -188,9 +188,12 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
+                                                            <div class="d-flex justify-content-end">
+                                                                <button type="submit"
+                                                            class="btn btn-info">Update</button>
+                                                            </div>
                                                         </div>
-                                                        <button type="submit"
-                                                            class="form-control btn btn-info">Update</button>
+                                                        
                                                     </div>
                                                 </form>
 
@@ -209,7 +212,7 @@
                         <div class="modal fade" id="addSupportTeam">
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
-                                    <div class="modal-header bg-info">
+                                    <div class="modal-header">
                                         <h4 class="modal-title">Add Support Team</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -275,7 +278,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="form-control btn btn-info">Save</button>
+                                            <div class="d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-info">Save</button>
+                                            </div>
                                         </div>
                                     </form>
 

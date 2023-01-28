@@ -63,7 +63,7 @@ class AboutController extends Controller
         $aboutData->update();
         $notification = array(
             'message' => 'Data Successfully Update',
-            'alert-type' => 'success'
+            'alert-type' => 'info'
         );
         return redirect()->back()->with($notification);
     }
