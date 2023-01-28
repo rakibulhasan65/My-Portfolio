@@ -15,17 +15,18 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('aboutImage');
-            $table->string('aboutTitle');
-            $table->string('aboutDescription');
-            $table->string('name');
-            $table->string('degree');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('birth');
-            $table->string('experience');
-            $table->integer('freelance');
-            $table->integer('status');
+            $table->string('aboutImage')->nullable();
+            $table->string('aboutTitle')->nullable();
+            $table->string('aboutDescription')->nullable();
+            $table->string('name')->nullable();
+            $table->string('degree')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('address')->nullable();
+            $table->string('birth')->nullable();
+            $table->string('experience')->nullable();
+            $table->integer('freelance')->nullable();
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }

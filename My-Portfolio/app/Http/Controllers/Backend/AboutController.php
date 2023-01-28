@@ -54,6 +54,7 @@ class AboutController extends Controller
         $aboutData->name = $request->name;
         $aboutData->degree = $request->degree;
         $aboutData->phone = $request->phone;
+        $aboutData->email = $request->email;
         $aboutData->address = $request->address;
         $aboutData->birth = $request->birth;
         $aboutData->experience = $request->experience;

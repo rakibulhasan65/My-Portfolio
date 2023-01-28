@@ -15,6 +15,7 @@ class About extends Model
         'name',
         'degree',
         'phone',
+        'email',
         'address',
         'birth',
         'experience',

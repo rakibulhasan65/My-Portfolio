@@ -22,6 +22,7 @@ class AboutTableSeeder extends Seeder
             'name' => 'Rakibul Hasan',
             'degree' => 'Diploma',
             'phone' => '0178624264',
+            'email' => 'admin@gmail.com',
             'address' => 'Jamalpur',
             'birth' => '25-12-2000',
             'experience' => '1 Years',

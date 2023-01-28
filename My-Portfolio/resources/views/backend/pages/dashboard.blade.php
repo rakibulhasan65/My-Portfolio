@@ -61,9 +61,9 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
+                                <h3>{{ count($users) }}</h3>
 
-                                <p>User Registrations</p>
+                                <p>Total User Registrations</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-person-add"></i>
@@ -93,7 +93,51 @@
 
                 {{-- Main Body Container Section Satrt Dashboard  --}}
 
-
+                <div class="userTable">
+                    <table class="table table-hover">
+                        <thead class="bg-light">
+                            <tr>
+                                <th>User Name</th>
+                                <th>Email</th>
+                                <th>User Image</th>
+                                <th>Verified</th>
+                                <th>Created At</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($users as $user)
+                                
+                                    <tr>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>
+                                            <a href="{{ Route('profile.profileIndex') }}">
+                                                <img style="width: 50px;"
+                                                src="{{ asset('backend/images/Profile/' . $user->userImage) }}"
+                                                alt="User">
+                                            </a>
+                                        </td>
+                                        <td>
+                                            @if ($user->email_verified_at == 1)
+                                                Verified
+                                            @else
+                                                Not Verified
+                                            @endif
+                                        </td>
+                                        <td>{{ $user->created_at->diffForHumans() }}</td>
+                                        <td>
+                                            @if ($user->email == Auth::user()->email)
+                                                <span class="badge badge-info">Active</span>
+                                            @else
+                                                <span class="badge badge-danger">Inactive</span>
+                                            @endif
+                                        </td>
+                                    </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
 
 
                 {{-- Main Body Container Section End Dashboard  --}}

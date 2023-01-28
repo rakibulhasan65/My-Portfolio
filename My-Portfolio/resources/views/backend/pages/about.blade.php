@@ -35,7 +35,8 @@
                                     <div class="card-header">
                                         <h3 class="card-title">About Us</h3>
                                     </div>
-                                    <form action="{{ Route('about.update',$aboutDataShow->id) }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ Route('about.update', $aboutDataShow->id) }}" method="POST"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
                                         <!-- /.card-header -->
@@ -43,8 +44,8 @@
                                             <div class="form-group">
                                                 <div class="row">
                                                     <!--=====================
-                                                                                About Image Section
-                                                                                ===========================-->
+                                                                                    About Image Section
+                                                                                    ===========================-->
                                                     <div class="col-md-6 col-6">
                                                         {{-- Image Show Of About Section  --}}
                                                         <div class="col-12">
@@ -76,7 +77,8 @@
                                                                 <label for="aboutTitle">About Title</label>
                                                             </div>
                                                             <div class="col-12 col-md-12">
-                                                                <input value="{{$aboutDataShow->aboutTitle}}" type="text" class="form-control" name="aboutTitle"
+                                                                <input value="{{ $aboutDataShow->aboutTitle }}"
+                                                                    type="text" class="form-control" name="aboutTitle"
                                                                     placeholder="About Title">
                                                             </div>
                                                         </div>
@@ -93,8 +95,8 @@
                                                     </div>
 
                                                     <!--=====================
-                                                                                About All Input Field Section
-                                                                                ===========================-->
+                                                                                    About All Input Field Section
+                                                                                    ===========================-->
                                                     <div class="col-md-6 col-6">
 
                                                         {{-- name  --}}
@@ -103,8 +105,8 @@
                                                                 <label for="Name">Name</label>
                                                             </div>
                                                             <div class="col-12 col-md-12">
-                                                                <input value="{{$aboutDataShow->name}}" type="text" class="form-control" name="name"
-                                                                    placeholder="Name">
+                                                                <input value="{{ $aboutDataShow->name }}" type="text"
+                                                                    class="form-control" name="name" placeholder="Name">
                                                             </div>
                                                         </div>
                                                         {{-- Degree --}}
@@ -113,7 +115,8 @@
                                                                 <label for="degree">Degree</label>
                                                             </div>
                                                             <div class="col-12 col-md-12">
-                                                                <input value="{{$aboutDataShow->degree}}" type="text" class="form-control" name="degree"
+                                                                <input value="{{ $aboutDataShow->degree }}" type="text"
+                                                                    class="form-control" name="degree"
                                                                     placeholder="Degree">
                                                             </div>
                                                         </div>
@@ -123,8 +126,18 @@
                                                                 <label for="phone">Phone</label>
                                                             </div>
                                                             <div class="col-12 col-md-12">
-                                                                <input value="{{$aboutDataShow->phone}}" type="text" class="form-control" name="phone"
-                                                                    placeholder="Phone">
+                                                                <input value="{{ $aboutDataShow->phone }}" type="text"
+                                                                    class="form-control" name="phone" placeholder="Phone">
+                                                            </div>
+                                                        </div>
+                                                        {{-- Email --}}
+                                                        <div class="row p-2">
+                                                            <div class="col-12 col-md-12">
+                                                                <label for="email">Email</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-12">
+                                                                <input value="{{ $aboutDataShow->email }}" type="email"
+                                                                    class="form-control" name="email" placeholder="Email">
                                                             </div>
                                                         </div>
                                                         {{-- Address --}}
@@ -142,13 +155,14 @@
                                                                 <label for="birth">Date Of Birth</label>
                                                             </div>
                                                             <div class="col-12 col-md-12">
-                                                                <input value="{{$aboutDataShow->birth}}" type="date" class="form-control" id="birth">
+                                                                <input value="{{ $aboutDataShow->birth }}" type="date"
+                                                                    class="form-control" id="birth">
                                                             </div>
                                                         </div>
                                                         {{-- Date Of Birth Calculate Input --}}
                                                         <div>
-                                                            <input type="text" class="form-control"
-                                                                id="dateOfBirth" name="birth" value="26 Years" hidden>
+                                                            <input type="text" class="form-control" id="dateOfBirth"
+                                                                name="birth" hidden>
                                                         </div>
                                                         {{-- Experience  --}}
                                                         <div class="row p-2">
@@ -156,8 +170,9 @@
                                                                 <label for="experience">Experience</label>
                                                             </div>
                                                             <div class="col-12 col-md-12">
-                                                                <input value="{{$aboutDataShow->experience}}" type="text" class="form-control"
-                                                                    name="experience" placeholder="Experience">
+                                                                <input value="{{ $aboutDataShow->experience }}"
+                                                                    type="text" class="form-control" name="experience"
+                                                                    placeholder="Experience">
                                                             </div>
                                                         </div>
                                                         {{-- Freelance --}}
@@ -168,7 +183,7 @@
                                                             <div class="col-12 col-md-12">
                                                                 <select name="freelance" class="form-control">
                                                                     <option value="{{ $aboutDataShow->freelance }}">
-                                                                        @if ($aboutDataShow->freelance==1)
+                                                                        @if ($aboutDataShow->freelance == 1)
                                                                             Avaiable
                                                                         @else
                                                                             Not Avaiable
@@ -187,7 +202,7 @@
                                                             <div class="col-12 col-md-12">
                                                                 <select name="status" class="form-control">
                                                                     <option value="{{ $aboutDataShow->status }}">
-                                                                        @if ($aboutDataShow->status==1)
+                                                                        @if ($aboutDataShow->status == 1)
                                                                             Active
                                                                         @else
                                                                             Inactive
@@ -198,10 +213,10 @@
                                                             </div>
                                                         </div>
 
-                                                            <div class="col-12 col-md-12 d-flex justify-content-end">
+                                                        <div class="col-12 col-md-12 d-flex justify-content-end">
                                                             <button type="submit" class="btn btn-info">Update</button>
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </div>
 

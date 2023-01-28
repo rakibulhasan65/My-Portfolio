@@ -15,7 +15,7 @@ class BannerController extends Controller
     public function index()
     {
         $bannerUpdate = Banner::first();
-        $skillsDataShow = Profession::first()::where('banner_id', $bannerUpdate->id)->get();
+        $skillsDataShow = Profession::where('banner_id', $bannerUpdate->id)->get();
         return view("backend.pages.banners", compact('bannerUpdate', 'skillsDataShow'));
     }
 
