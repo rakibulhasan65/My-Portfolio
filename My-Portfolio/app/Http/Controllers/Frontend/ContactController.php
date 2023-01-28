@@ -14,6 +14,12 @@ class ContactController extends Controller
     }
     function sendMessage(Request $request)
     {
+        $validator = $request->validate([
+            'name' => ['required', 'max:16'],
+            'email' => ['required'],
+            'subject' => ['required'],
+            'message' => ['required'],
+        ]);
         $contactMailStore  = new ContactMail;
         $contactMailStore->name = $request->name;
         $contactMailStore->email = $request->email;
@@ -21,6 +27,10 @@ class ContactController extends Controller
         $contactMailStore->message = $request->message;
         $contactMailStore->time = now();
         $contactMailStore->save();
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Successfully Send Your Messages!',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
     }
 }
