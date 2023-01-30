@@ -44,7 +44,7 @@
                   {{-- Banners  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('banners.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <i class="nav-icon fas fa-image"></i>
                           <p>
                               Banners
                           </p>
@@ -53,7 +53,7 @@
                   {{-- About Us  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('about.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <i class="nav-icon fas fa-address-card"></i>
                           <p>
                               About Us
                           </p>
@@ -62,7 +62,7 @@
                   {{-- Eduactions  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('educations.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <i class="nav-icon fas fa-school"></i>
                           <p>
                               Eduactions
                           </p>
@@ -71,7 +71,7 @@
                   {{-- Experience  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('experiences.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <i class="nav-icon fas fa-lightbulb"></i>
                           <p>
                               Experience
                           </p>
@@ -80,7 +80,7 @@
                   {{-- Skills  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('skills.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <i class="nav-icon fas fa-tools"></i>
                           <p>
                               Skills
                           </p>
@@ -89,7 +89,7 @@
                   {{-- Services  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('services.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <i class="nav-icon fas fa-handshake"></i>
                           <p>
                               Services
                           </p>
@@ -97,8 +97,8 @@
                   </li>
                   {{-- Gallery  --}}
                   <li class="nav-item menu-open">
-                      <a href="{{ Route('gallery.gallery') }}" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                      <a href="{{ Route('gallery.index') }}" class="nav-link">
+                          <i class="nav-icon fas fa-images"></i>
                           <p>
                               Gallery
                           </p>
@@ -107,7 +107,7 @@
                   {{-- Technical Support  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('support.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <i class="nav-icon fas fa-headset"></i>
                           <p>
                               Technical Support
                           </p>
@@ -116,18 +116,18 @@
                   {{-- Admin Profile Setting --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('profile.profileIndex') }}" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <i class="nav-icon fas fa-user"></i>
                           <p>
-                             Admin Profile
+                            Profile
                           </p>
                       </a>
                   </li>
                   {{-- Admin Profile Setting --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('websiteSetting.settingIndex') }}" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <i class="nav-icon fas fa-cog"></i>
                           <p>
-                              Website Setting
+                            Setting
                           </p>
                       </a>
                   </li>

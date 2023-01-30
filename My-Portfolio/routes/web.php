@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\SkillsController;
 use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Backend\GalleryImageController;
 use App\Http\Controllers\Backend\TechnicalSupportController;
 use App\Http\Controllers\Backend\WebsiteSettingController;
 
@@ -40,20 +41,8 @@ Route::middleware([
     Route::resource('services', ServicesController::class);
     // Technical Support
     Route::resource('support', TechnicalSupportController::class);
-    // Gallery Route
-    Route::group([
-        'prefix' => 'gallery', 'as' => 'gallery.'
-    ], function () {
-        Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
-        Route::post(
-            '/gallerySave',
-            [GalleryController::class, 'store']
-        )->name('gallerySave');
-        Route::get('/devImgShow', [GalleryController::class, 'devImgShow'])->name('devImgShow');
-        Route::post('/devImgDelete/{id}', [GalleryController::class, 'devImgDelete'])->name('devImgDelete');
-        Route::post('/designImgDelete/{id}', [GalleryController::class, 'designImgDelete'])->name('designImgDelete');
-    }); // gallery
-    
+    // Gallery Images
+    Route::resource('gallery', GalleryImageController::class);
     Route::group([
         'prefix' => 'profiles', 'as' => 'profile.'
     ], function () {

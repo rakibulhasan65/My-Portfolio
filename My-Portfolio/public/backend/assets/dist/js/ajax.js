@@ -54,37 +54,26 @@ jQuery(document).ready(function () {
     });
     // Age Calculate End
 
-    function devImageDataShow() {
-        $.ajax({
-            url: "/gallery/devImgShow",
-            method: "GET",
-            success: function (response) {
-                console.log(response.devAllImage);
-            },
-        });
-    }
-    devImageDataShow();
-
     // Delete Skills Item Start
-    jQuery("#devImgDelete").on("click", function () {
-        var id = jQuery(this).data("id");
-        var _token = jQuery(this).data("token");
-        $.ajax({
-            url: "/gallery/devImgDelete/" + id,
-            type: "POST",
-            dataType: "JSON",
-            data: {
-                id: id,
-                _token: _token,
-            },
-            success: function (response) {
-                if (response.success == "success") {
-                    console.log("OK Data Saved!");
-                } else {
-                    console.log("Data Not Saved!");
-                }
-            },
-        });
-    });
+    // jQuery("#devImgDelete").on("click", function () {
+    //     var id = jQuery(this).data("id");
+    //     var _token = jQuery(this).data("token");
+    //     $.ajax({
+    //         url: "/gallery/devImgDelete/" + id,
+    //         type: "POST",
+    //         dataType: "JSON",
+    //         data: {
+    //             id: id,
+    //             _token: _token,
+    //         },
+    //         success: function (response) {
+    //             if (response.success == "success") {
+    //                 console.log("OK Data Saved!");
+    //             } else {
+    //                 console.log("Data Not Saved!");
+    //             }
+    //         },
+    //     });
+    // });
     // Delete Skills Item end
 });

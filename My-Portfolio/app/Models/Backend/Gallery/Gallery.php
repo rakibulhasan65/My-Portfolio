@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Models\Backend;
+namespace App\Models\Backend\Gallery;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WebDevGallery extends Model
+class Gallery extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'weDevelopment',
-        'status'
+        'sub_category',
+        'categoryName',
+        'status',
     ];
 }
