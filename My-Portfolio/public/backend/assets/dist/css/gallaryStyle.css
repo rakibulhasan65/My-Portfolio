@@ -1,28 +1,40 @@
-.galleryImage {
-    position: relative;
-    width: 150px;
-    margin: 5px;
-}
-
-.galleryImage img {
-    height: 150px;
-        width: 200px;
-}
-
-.galleryImage img:hover+.deleteGallery {
+.gallery {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
 }
 
-.deleteGallery {
-    display: none;
-    position: absolute;
-    background-color: rgba(0, 0, 0, .7);
+.gallery img {
     width: 100%;
+    margin: 1%;
+    border: 1px solid black;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    display: none;
+        transition: .5s;
+    }
+    
+    .gallery img:hover+.overlay {
+        display: flex;
+    }
+    
+    button {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
 }

@@ -29,9 +29,15 @@
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="uploadImage">
-                                                <img class=""
+                                                @if (Auth::user()->userImage == NULL)
+                                                    <img class=""
+                                                    src="{{ asset('backend/assets/dist/img/avatar.png')}}"
+                                                    alt="profile">
+                                                @else
+                                                    <img class=""
                                                     src="{{ asset('backend/images/Profile/' . $userShow->userImage) }}"
                                                     alt="profile">
+                                                @endif
                                                 <input class="" type="file" name="userImage" id="">
                                                 <p>Choice</p>
                                             </div>

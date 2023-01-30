@@ -8,16 +8,21 @@ use App\Models\Backend\WebDevGallery;
 use Illuminate\Http\Request;
 use Image;
 use File;
+use GrahamCampbell\ResultType\Success;
 
 class GalleryController extends Controller
 {
     function index()
     {
-        $webDevDataShow = WebDevGallery::all();
+        // $webDevDataShow = WebDevGallery::all();
         $webDesignDataShow = WebDesignGallery::all();
-        return view('backend.pages.gallery', compact('webDevDataShow', 'webDesignDataShow'));
+        return view('backend.pages.gallery', compact('webDesignDataShow'));
     }
-
+    function devImgShow()
+    {
+        $devAllImage = WebDevGallery::all();
+        return response()->json($devAllImage);
+    }
     function store(Request $request)
     {
         $imageDevelopment = $request->file('webDevelopment');
@@ -55,11 +60,9 @@ class GalleryController extends Controller
             File::delete('backend/images/Gallery/' . $devImgDelete->webDevelopment);
         }
         $devImgDelete->delete();
-        $notification = array(
-            'message' => 'Deleted Development Image',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notification);
+        return response()->json([
+            "success" => "success"
+        ]);
     }
     function designImgDelete($id)
     {
@@ -68,11 +71,7 @@ class GalleryController extends Controller
             File::delete('backend/images/Gallery/' . $designImgDelete->webDesign);
         }
         $designImgDelete->delete();
-        $notification = array(
-            'message' => 'Deleted Design Image',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notification);
+
     }
     
 }

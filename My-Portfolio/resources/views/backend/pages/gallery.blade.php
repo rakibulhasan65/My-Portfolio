@@ -28,127 +28,86 @@
         <section class="content">
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
-                <!-- Main content -->
-                <section class="content">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Portfolio Gallerys</h3>
+                <!-----------============================
+                                                             Gallery Image
+                                                ===================================------------->
+                <div class="row">
+                    <!-----------============================
+                                                            Developmet Gallery Image
+                                                ===================================------------->
+                    <div class="col-6">
+                        <div class="devGallery p-2 shadow-sm">
+                            <div class="imageInputField">
+                                <label for="webDevelopment">Web Development Gallary Image</label>
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Upload</span>
                                     </div>
-                                    {{-- Gallery Data Save Start Form --}}
-                                    <form id="GallerySave" action="{{ Route('gallery.gallerySave') }}" method="POST"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        {{-- @method('POST') --}}
-                                        <!-- /.card-header -->
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <!--===================================
-                                                                                                Web Development Section Start
-                                                                                                ==================================-->
-                                                <div class="col-6 col-md-6">
-                                                    <div class="form-group row">
-                                                        <div class="col-12 col-md-12">
-                                                            <label for="webDevelopment">Web Development</label>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <div class="input-group my-1">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">Upload</span>
-                                                                </div>
-                                                                <div class="custom-file">
-                                                                    <input type="file" name="webDevelopment[]" multiple
-                                                                        class="custom-file-input" id="inputGroupFile01">
-                                                                    <label class="custom-file-label"
-                                                                        for="inputGroupFile01">Choose
-                                                                        file</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {{-- Web Development Image Show  --}}
-                                                    <div class="webDevImage d-flex justify-content-center row my-3">
-                                                        @foreach ($webDevDataShow as $item)
-                                                            <div class="galleryImage col-4">
-                                                                <img src="{{ asset('backend/images/Gallery/' . $item->webDevelopment) }}"
-                                                                    alt="Development">
-                                                                <div class="deleteGallery">
-                                                                    <form
-                                                                        action="{{ Route('gallery.devImgDelete', $item->id) }}"
-                                                                        method="POST" enctype="multipart/form-data">
-                                                                        @csrf
-                                                                        <button type="submit" class="btn btn-danger"><i
-                                                                                class="fas fa-trash"></i></button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-
-                                                <!--===================================
-                                                                                                Web Design Section Start
-                                                                                                ==================================-->
-                                                <div class="col-6 col-md-6">
-                                                    {{-- Web Design  --}}
-                                                    <div class="form-group row">
-                                                        <div class="col-12 col-md-12">
-                                                            <label for="webDevelopment">Web Template Design</label>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <div class="input-group my-1">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">Upload</span>
-                                                                </div>
-                                                                <div class="custom-file">
-                                                                    <input type="file" name="webDesign[]" multiple
-                                                                        class="custom-file-input" id="inputGroupFile01">
-                                                                    <label class="custom-file-label"
-                                                                        for="inputGroupFile01">Choose
-                                                                        file</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {{-- Web Design Image Show  --}}
-                                                    <div class="webDesignImage d-flex justify-content-center row my-3">
-                                                        @foreach ($webDesignDataShow as $item)
-                                                            <div class="galleryImage col-4">
-                                                                <img src="{{ asset('backend/images/Gallery/' . $item->webDesign) }}"
-                                                                    alt="Development">
-                                                                <div class="deleteGallery">
-                                                                    <form
-                                                                        action="{{ Route('gallery.designImgDelete', $item->id) }}"
-                                                                        method="POST" enctype="multipart/form-data">
-                                                                        @csrf
-                                                                        <button type="submit" class="btn btn-danger"><i
-                                                                                class="fas fa-trash"></i></button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        @endforeach
-                                                    </div>
-                                                    <div class="d-flex justify-content-end">
-                                                        <button type="submit" class="btn btn-info">Upload</button>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <!-- /.card-body -->
-                                    </form>
-                                    {{-- Gallery Data Save End Form  --}}
+                                    <div class="custom-file">
+                                        <input type="file" name="webDevelopment" class="custom-file-input"
+                                            id="inputGroupFile01">
+                                        <label class="custom-file-label" for="inputGroupFile01">Choose
+                                            file</label>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- /.col -->
+                            <!-------Input Feild End--------->
+                            <div class="row">
+                                {{-- @foreach ($webDevDataShow as $webDevData) --}}
+                                    <div class="col-4 col-md-4">
+                                        <div class="gallery">
+                                            <img src=""
+                                                alt="Image 2">
+                                            <div class="overlay">
+                                                    <button id="devImgDelete" class="btn btn-danger" data-id="" data-token="{{ csrf_token() }}"><i class="fa fa-trash"></i></button>
+                                            </div>
+                                            <!-- Add more images and buttons here -->
+                                        </div>
+                                    </div>
+                                {{-- @endforeach --}}
+                            </div>
                         </div>
-                        <!-- /.row -->
                     </div>
-                    <!-- /.container-fluid -->
-                </section>
-                <!-- /.content -->
+                    <!-----------============================
+                                                                 Design Gallery Image
+                                                ===================================------------->
+                    <div class="col-6">
+                        <div class="designGallery p-2 shadow-sm">
+                            <div class="imageInputField">
+                                <label for="webDesign">Web Design Gallary Image</label>
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" name="webDesign" class="custom-file-input"
+                                            id="inputGroupFile01">
+                                        <label class="custom-file-label" for="inputGroupFile01">Choose
+                                            file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-------Input Feild End--------->
+                            <div class="row">
+                                @foreach ($webDesignDataShow as $webDesignData)
+                                    <div class="col-4 col-md-4">
+                                        <div class="gallery">
+                                            <img src="{{ asset('backend/images/Gallery/' . $webDesignData->webDesign) }}"
+                                                alt="Image 2">
+                                            <div class="overlay">
+                                                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            </div>
+                                            <!-- Add more images and buttons here -->
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
                 {{-- Main Body Container Section End Dashboard  --}}
             </div>
         </section>

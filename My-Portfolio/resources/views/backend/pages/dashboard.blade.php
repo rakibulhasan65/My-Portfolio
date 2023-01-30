@@ -61,7 +61,7 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>{{ count($users) }}</h3>
+                                <h3>{{ count($totalUser) }}</h3>
 
                                 <p>Total User Registrations</p>
                             </div>
@@ -93,29 +93,31 @@
 
                 {{-- Main Body Container Section Satrt Dashboard  --}}
 
-                <div class="userTable">
-                    <table class="table table-hover">
-                        <thead class="bg-light">
-                            <tr>
-                                <th>User Name</th>
-                                <th>Email</th>
-                                <th>User Image</th>
-                                <th>Verified</th>
-                                <th>Created At</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($users as $user)
-                                
+                <div class="userTable row">
+                    <div class="col-12">
+                        <table class="table table-hover">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th>#Sl</th>
+                                    <th>User Name</th>
+                                    <th>Email</th>
+                                    <th>User Image</th>
+                                    <th>Verified</th>
+                                    <th>Created At</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($users as $user)
                                     <tr>
+                                        <td>{{ $users->firstItem() + $loop->index }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
                                             <a href="{{ Route('profile.profileIndex') }}">
                                                 <img style="width: 50px;"
-                                                src="{{ asset('backend/images/Profile/' . $user->userImage) }}"
-                                                alt="User">
+                                                    src="{{ asset('backend/images/Profile/' . $user->userImage) }}"
+                                                    alt="User">
                                             </a>
                                         </td>
                                         <td>
@@ -134,9 +136,13 @@
                                             @endif
                                         </td>
                                     </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <span class="page-numbers current">{{ $users->links('pagination::bootstrap-4') }}</span>
+                    </div>
+
+
                 </div>
 
 
@@ -144,6 +150,5 @@
 
             </div>
         </section>
-
     </div>
 @endsection
