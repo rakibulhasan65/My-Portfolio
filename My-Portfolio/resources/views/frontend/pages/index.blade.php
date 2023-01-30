@@ -36,7 +36,7 @@
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
                     <div class="typed-text d-none">
                         @foreach ($skillsDataShow as $skillsData)
-                            <p>{{ $skillsData->devSkillsCategory }},</p>
+                            <text>{{ $skillsData->devSkillsCategory }},</text>
                         @endforeach
                     </div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
@@ -282,40 +282,37 @@
                 </div>
             </div>
             <div class="row portfolio-container">
-                @foreach ($webDesignDataShow as $webDesignData)
+                @foreach ($galleryDataShow as $galleryDataShow)
                     <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                         <div class="position-relative overflow-hidden mb-2">
                             <img class="img-fluid rounded w-100"
-                                src="{{ asset('backend/images/Gallery/' . $webDesignData->webDesign) }}"
-                                alt="webDesignData">
+                                src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
+                                alt="gallery">
                             <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                                <a href="{{ asset('backend/images/Gallery/' . $webDesignData->webDesign) }}"
+                                <a href="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
                                     data-lightbox="portfolio">
                                     <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <!--//Web Design--->
                 @endforeach
+                <!--//Web Design--->
                 <!---//Web Design end---->
-
-                @foreach ($webDevGalleryShow as $webDevDataShow)
-                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                        <div class="position-relative overflow-hidden mb-2">
-                            <img class="img-fluid rounded w-100"
-                                src="{{ asset('backend/images/Gallery/' . $webDevDataShow->webDevelopment) }}"
-                                alt="webDevelopment">
-                            <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                                <a href="{{ asset('backend/images/Gallery/' . $webDevDataShow->webDevelopment) }}"
-                                    data-lightbox="portfolio">
-                                    <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                                </a>
-                            </div>
+                {{-- @foreach ($galleryDataShow as $galleryShow) --}}
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100" src="{{ asset('backend/images/Gallery/') }}"
+                            alt="gallery">
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <a href="{{ asset('backend/images/Gallery/') }}" data-lightbox="portfolio">
+                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+                            </a>
                         </div>
                     </div>
-                    <!--//Web Development--->
-                @endforeach
+                </div>
+                <!--//Web Development--->
+                {{-- @endforeach --}}
                 <!---//Web Development end---->
             </div>
         </div>
@@ -338,7 +335,7 @@
                                 <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
                                 <h4 class="font-weight-light mb-4">{{ $supportData->description }}</h4>
                                 <img class="img-fluid rounded-circle mx-auto mb-3"
-                                    src="{{ asset('backend/images/Support/'.$supportData->image) }}"
+                                    src="{{ asset('backend/images/Support/' . $supportData->image) }}"
                                     style="width: 80px; height: 80px;">
                                 <h5 class="font-weight-bold m-0">{{ $supportData->name }}</h5>
                                 <span>{{ $supportData->profession }}</span>
@@ -352,51 +349,6 @@
     <!-- Testimonial End -->
 
 
-    <!-- Blog Start -->
-    <div class="container-fluid pt-5" id="blog">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Blog</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Latest Blog</h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-1.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">01</h4>
-                            <small class="text-white text-uppercase">Jan</small>
-                        </div>
-                    </div>
-                    <h5 class="font-weight-medium mb-4">Rebum lorem no eos ut ipsum diam tempor sed rebum elitr ipsum</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2" href="">Read More</a>
-                </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-2.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">01</h4>
-                            <small class="text-white text-uppercase">Jan</small>
-                        </div>
-                    </div>
-                    <h5 class="font-weight-medium mb-4">Rebum lorem no eos ut ipsum diam tempor sed rebum elitr ipsum</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2" href="">Read More</a>
-                </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-3.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">01</h4>
-                            <small class="text-white text-uppercase">Jan</small>
-                        </div>
-                    </div>
-                    <h5 class="font-weight-medium mb-4">Rebum lorem no eos ut ipsum diam tempor sed rebum elitr ipsum</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2" href="">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog End -->
 
 
     <!-- Contact Start -->

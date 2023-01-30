@@ -11,9 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\Backend\Profession;
 use App\Models\Backend\Services;
 use App\Models\Backend\TechnicalSupport;
-use App\Models\Backend\WebDesignGallery;
-use App\Models\Backend\WebDevGallery;
-
+use App\Models\Backend\Gallery\GalleryCategory;
 class WebSiteController extends Controller
 {
     public function index()
@@ -24,10 +22,9 @@ class WebSiteController extends Controller
         $educationDataShow = Education::all();
         $experienceDataShow = Experience::all();
         $serviceDataShow = Services::all();
-        $webDesignDataShow = WebDesignGallery::all();
-        $webDevGalleryShow = WebDevGallery::all();
+        $galleryDataShow = GalleryCategory::all();
         $supportDataShow = TechnicalSupport::all();
-        return view('frontend.pages.index', compact('bannerDataShow', 'skillsDataShow', 'aboutDataShow', 'educationDataShow', 'experienceDataShow', 'serviceDataShow', 'webDesignDataShow', 'webDevGalleryShow', 'supportDataShow'));
+        return view('frontend.pages.index', compact('bannerDataShow', 'skillsDataShow', 'aboutDataShow', 'educationDataShow', 'experienceDataShow', 'serviceDataShow', 'galleryDataShow', 'supportDataShow'));
         
     }
 }

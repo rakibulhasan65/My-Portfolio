@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function index()
     {
         $totalUser = User::all();
-        $users = User::latest()->paginate(2);
+        $users = User::latest()->paginate(3);
         return view('backend.pages.dashboard', compact('users', 'totalUser'));
     }
 
