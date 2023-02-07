@@ -29,8 +29,8 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                  Gallery Image
-                                    ===================================------------->
+                                                      Gallery Image
+                                                        ===================================------------->
 
                 <div class="card">
                     <div class="card-header">
@@ -53,26 +53,37 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($galleryData as $galleryData)
                                 @php
                                     $sl = 1;
                                 @endphp
-                                <tr>
-                                    <td>{{ $sl }}</td>
-                                    <td>{{ $galleryData->galleryCat->galleryImage }}</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
-                                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                @php
-                                    $sl++;
-                                @endphp
+                                @foreach ($galleryData as $galleryData)
+                                    <tr>
+                                        <td>{{ $sl }}</td>
+                                        <td>{{ $galleryData->galleryCatName ?? 'none' }}</td>
+                                        <td><img style="width: 100px;"
+                                                src="{{ asset('backend/images/Gallery/' . $galleryData->galleryImage) }}"
+                                                alt="Gallery"></td>
+                                        <td>
+                                            @if ($galleryData->status == 1)
+                                                <span class="badge badge-info">Active</span>
+                                            @else
+                                                <span class="badge badge-danger">Inactive</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                        </td>
+
+                                    </tr>
+                                    @php
+                                        $sl++;
+                                    @endphp
                                 @endforeach
+
                             </tbody>
                         </table>
+                        <span>{{ $galleryData->links() }}</span>
 
                     </div>
 
@@ -101,8 +112,8 @@
                                                         <span class="input-group-text">Upload</span>
                                                     </div>
                                                     <div class="custom-file">
-                                                        <input type="file" name="galleryImage[]" class="custom-file-input"
-                                                            id="inputGroupFile01" multiple>
+                                                        <input type="file" name="galleryImage[]"
+                                                            class="custom-file-input" id="inputGroupFile01" multiple>
                                                         <label class="custom-file-label" for="inputGroupFile01">Choose
                                                             file</label>
                                                     </div>
@@ -114,12 +125,12 @@
                                                 {{-- Category Name  --}}
                                                 <div class="form-group">
                                                     <label for="galleryCategory">Category Name</label>
-                                                <select name="sub_category" class="form-control">
-                                                    <option value="">Choice Category</option>
-                                                    <option value="Web Design">Web Design</option>
-                                                    <option value="Web Development">Web Development</option>
-                                                    <option value="Graphices Design">Graphices Design</option>
-                                                </select>
+                                                    <select name="sub_category" class="form-control">
+                                                        <option value="">Choice Category</option>
+                                                        <option value="Web Design">Web Design</option>
+                                                        <option value="Web Development">Web Development</option>
+                                                        <option value="Graphices Design">Graphices Design</option>
+                                                    </select>
                                                 </div>
                                                 {{-- Gallery Status Aria  --}}
                                                 <div class="form-group">

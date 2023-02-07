@@ -13,8 +13,7 @@ class GalleryImageController extends Controller
 
     public function index()
     {
-        $galleryData = Gallery::all();
-        return response()->json($galleryData->galleryCat);
+        $galleryData = GalleryCategory::paginate(5);
         return view('backend.pages.gallery', compact('galleryData'));
     }
 
