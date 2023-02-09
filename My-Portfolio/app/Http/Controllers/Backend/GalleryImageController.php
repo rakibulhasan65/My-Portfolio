@@ -13,7 +13,7 @@ class GalleryImageController extends Controller
 
     public function index()
     {
-        $galleryData = GalleryCategory::paginate(5);
+        $galleryData = GalleryCategory::all();
         return view('backend.pages.gallery', compact('galleryData'));
     }
 

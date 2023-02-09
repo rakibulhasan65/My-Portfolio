@@ -23,18 +23,27 @@
     align-items: center;
     justify-content: center;
     display: none;
-        transition: .5s;
-    }
-    
-    .gallery img:hover+.overlay {
-        display: flex;
-    }
-    
-    button {
-        background-color: white;
-        color: black;
-        border: 1px solid black;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
+    transition: 0.5s;
+}
+
+.gallery img:hover + .overlay {
+    display: flex;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.imageFieldAria {
+    width: 100%;
+    height: 165px;
+    background-color: rgb(202, 197, 197);
+}
+.galleryShowImage {
+    width: 100%;
+    height: 165px;
 }

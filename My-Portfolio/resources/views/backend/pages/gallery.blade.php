@@ -29,8 +29,8 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                                      Gallery Image
-                                                        ===================================------------->
+                                    Gallery Image
+                             ===================================------------->
 
                 <div class="card">
                     <div class="card-header">
@@ -74,21 +74,17 @@
                                             <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
                                             <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                         </td>
-
                                     </tr>
                                     @php
                                         $sl++;
                                     @endphp
                                 @endforeach
-
                             </tbody>
                         </table>
-                        <span>{{ $galleryData->links() }}</span>
-
                     </div>
-
-
-                    {{-- Gallery Add Form  --}}
+                    {{-- --------------------------- 
+                        Gallery Add Form  
+                        ------------------------------------ --}}
                     <div class="modal fade" id="galleryAdd">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -103,10 +99,17 @@
                                     @method('POST')
                                     <div class="modal-body">
                                         <div class="row">
-                                            {{-- Gallery Image Show Start --}}
+                                            {{-- Gallery Image Show --}}
                                             <div class="col-6">
-
-                                                <!-- Image Field Start-->
+                                                 <!-- Image Show -->
+                                                <div class="imageFieldAria">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <img class="galleryShowImage" src="{{ asset('backend/assets/dist/img/default-150x150.png') }}" alt="image">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Image Field input-->
                                                 <div class="input-group my-1">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Upload</span>
@@ -120,7 +123,7 @@
                                                 </div>
                                             </div>{{-- / Gallery Image Show End --}}
 
-                                            {{-- Gallery Input Show Start --}}
+                                            {{-- Gallery Input Show --}}
                                             <div class="col-6">
                                                 {{-- Category Name  --}}
                                                 <div class="form-group">
