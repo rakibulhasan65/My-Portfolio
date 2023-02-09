@@ -2,7 +2,6 @@
 @prepend('css')
     <link rel="stylesheet" href="{{ asset('backend/assets/dist/css/gallaryStyle.css') }}">
 @endprepend
-
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -23,15 +22,13 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                    Gallery Image
-                             ===================================------------->
-
+                                        Gallery Image
+                                 ===================================------------->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
@@ -59,7 +56,7 @@
                                 @foreach ($galleryData as $galleryData)
                                     <tr>
                                         <td>{{ $sl }}</td>
-                                        <td>{{ $galleryData->galleryCatName ?? 'none' }}</td>
+                                        <td>{{ $galleryData->galleryCat->sub_category ?? 'none' }}</td>
                                         <td><img style="width: 100px;"
                                                 src="{{ asset('backend/images/Gallery/' . $galleryData->galleryImage) }}"
                                                 alt="Gallery"></td>
@@ -101,11 +98,13 @@
                                         <div class="row">
                                             {{-- Gallery Image Show --}}
                                             <div class="col-6">
-                                                 <!-- Image Show -->
+                                                <!-- Image Show -->
                                                 <div class="imageFieldAria">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <img class="galleryShowImage" src="{{ asset('backend/assets/dist/img/default-150x150.png') }}" alt="image">
+                                                            <img class="galleryShowImage"
+                                                                src="{{ asset('backend/assets/dist/img/default-150x150.png') }}"
+                                                                alt="image">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -122,7 +121,6 @@
                                                     </div>
                                                 </div>
                                             </div>{{-- / Gallery Image Show End --}}
-
                                             {{-- Gallery Input Show --}}
                                             <div class="col-6">
                                                 {{-- Category Name  --}}
@@ -153,7 +151,6 @@
                                         </div>
                                     </div>
                                 </form>
-
                             </div>
                             <!-- /.modal-content -->
                         </div>
@@ -161,10 +158,8 @@
                     </div>
                     {{-- Gallery Add Form  --}}
                 </div>
-
                 {{-- Main Body Container Section End Dashboard  --}}
             </div>
         </section>
-
     </div>
 @endsection

@@ -36,7 +36,6 @@ class GalleryImageController extends Controller
                 $subCategory = new GalleryCategory;
                 $subCategory->category_id = $findGalleryId->id;
                 $subCategory->galleryImage = $customImageName;
-                $subCategory->galleryCatName = $findGalleryId->sub_category;
                 $subCategory->save();
             }
         }
