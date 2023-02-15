@@ -10,6 +10,6 @@ class Gallery extends Model
     use HasFactory;
     protected $fillable = [
         'sub_category',
-        'status',
+        'status'
     ];
 }

@@ -27,8 +27,8 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                                                Gallery Image
-                                                         ===================================------------->
+                                        Gallery Image
+                ===================================------------->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
@@ -56,12 +56,12 @@
                                 @foreach ($galleryData as $galleryData)
                                     <tr>
                                         <td>{{ $sl }}</td>
-                                        <td>{{ $galleryData->galleryCat->sub_category ?? 'none' }}</td>
+                                        <td>{{ $galleryData->sub_category ?? 'none' }}</td>
                                         <td><img style="width: 100px;"
                                                 src="{{ asset('backend/images/Gallery/' . $galleryData->galleryImage) }}"
                                                 alt="Gallery"></td>
                                         <td>
-                                            @if ($galleryData->galleryCat->status == 1)
+                                            @if ($galleryData->status == 1)
                                                 <span class="badge badge-info">Active</span>
                                             @else
                                                 <span class="badge badge-danger">Inactive</span>
@@ -171,8 +171,8 @@
                                                                     <label for="galleryCategory">Category Name</label>
                                                                     <select name="sub_category" class="form-control">
                                                                         <option
-                                                                            value="{{ $galleryData->galleryCat->sub_category }}">
-                                                                            {{ $galleryData->galleryCat->sub_category }}
+                                                                            value="{{ $galleryData->sub_category }}">
+                                                                            {{ $galleryData->sub_category }}
                                                                         </option>
                                                                         <option value="Web Design">Web Design</option>
                                                                         <option value="Web Development">Web Development
@@ -186,8 +186,8 @@
                                                                     <label for="status">Status</label>
                                                                     <select name="status" class="form-control">
                                                                         <option
-                                                                            value="{{ $galleryData->galleryCat->status }}">
-                                                                            @if ($galleryData->galleryCat->status == 1)
+                                                                            value="{{ $galleryData->status }}">
+                                                                            @if ($galleryData->status == 1)
                                                                                 Active
                                                                             @else
                                                                                 Inactive

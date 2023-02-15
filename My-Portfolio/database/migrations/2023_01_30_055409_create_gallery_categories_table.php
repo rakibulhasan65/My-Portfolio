@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->integer('category_id');
             $table->string('galleryImage');
-            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }

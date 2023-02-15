@@ -45,8 +45,8 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <!--=====================
-                                                                Banner Image Section
-                                                                ===========================-->
+                                                                    Banner Image Section
+                                                                    ===========================-->
                                                 <div class="col-6 col-md-6">
                                                     <img src="{{ asset('backend/images/Banners/' . $bannerUpdate->image) }}"
                                                         class="w-100" alt="Banner">
@@ -70,8 +70,8 @@
                                                     <!--// Image Field end-->
 
                                                     <!--=====================
-                                                                Banner All Input Field Section
-                                                                ===========================-->
+                                                                    Banner All Input Field Section
+                                                                    ===========================-->
                                                 </div>
                                                 <div class="col-6 col-md-6">
                                                     {{-- Banner Developer Name  --}}
