@@ -7,6 +7,7 @@ use App\Models\Backend\Gallery\Gallery;
 use App\Models\Backend\Gallery\GalleryCategory;
 use Illuminate\Http\Request;
 use File;
+use Illuminate\Support\Facades\DB;
 use Image;
 
 class GalleryImageController extends Controller
@@ -70,14 +71,25 @@ class GalleryImageController extends Controller
             if (File::exists('backend/images/Gallery/' . $deleteImage->galleryImage)) {
                 File::delete('backend/images/Gallery/' . $deleteImage->galleryImage);
             }
+
+            // $findSubCategoryId = GalleryCategory::find($id);
+            // $findSubCategoryId = $findSubCategoryId->category_id;
+
+            $findGalleryIdDelete = Gallery::find($deleteImage->id);
+            $findGalleryItem = $findGalleryIdDelete->id;
+
             $deleteImage->delete();
+
+            if (!($deleteImage->category_id === $findGalleryItem)) {
+
+                // $findGalleryIdDelete->delete();
+            }
         }
 
-        $deleteGallery = Gallery::all();
-        if ($deleteGallery) {
-            $findGalleryId = GalleryCategory::where('category_id', $deleteGallery->id)->get();
-            return response()->json($findGalleryId);
-        }
+        // return response()->json($findIdSubCat);
+        // return response()->json($findGalleryItem <= $findSubCategoryId);
+
+
         $notification = array(
             'message' => 'Successfully Delete This Item!',
             'alert-type' => 'info'
