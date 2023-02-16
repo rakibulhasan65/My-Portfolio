@@ -11,6 +11,7 @@ class GalleryCategory extends Model
     protected $fillable = [
         'category_id',
         'galleryImage',
+        'status'
     ];
     function galleryCat()
     {

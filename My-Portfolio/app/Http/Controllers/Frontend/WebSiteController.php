@@ -12,12 +12,13 @@ use App\Models\Backend\Profession;
 use App\Models\Backend\Services;
 use App\Models\Backend\TechnicalSupport;
 use App\Models\Backend\Gallery\GalleryCategory;
+
 class WebSiteController extends Controller
 {
     public function index()
     {
         $bannerDataShow = Banner::first();
-        $skillsDataShow = Profession::first()::where('banner_id', $bannerDataShow->id)->get();
+        $skillsDataShow = Profession::first()::where('banner_id', $bannerDataShow->id && 'None')->get();
         $aboutDataShow = About::first();
         $educationDataShow = Education::all();
         $experienceDataShow = Experience::all();
@@ -25,6 +26,5 @@ class WebSiteController extends Controller
         $galleryDataShow = GalleryCategory::all();
         $supportDataShow = TechnicalSupport::all();
         return view('frontend.pages.index', compact('bannerDataShow', 'skillsDataShow', 'aboutDataShow', 'educationDataShow', 'experienceDataShow', 'serviceDataShow', 'galleryDataShow', 'supportDataShow'));
-        
     }
 }

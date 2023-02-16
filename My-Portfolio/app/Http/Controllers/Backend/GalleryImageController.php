@@ -14,7 +14,7 @@ class GalleryImageController extends Controller
 
     public function index()
     {
-        $galleryData = Gallery::all();
+        $galleryData = GalleryCategory::all();
         return view('backend.pages.gallery', compact('galleryData'));
     }
 
@@ -65,15 +65,19 @@ class GalleryImageController extends Controller
 
     public function destroy($id)
     {
-
-        $deleteGalleryItem = Gallery::find($id);
-        if(){
-            
+        $deleteImage = GalleryCategory::find($id);
+        if ($deleteImage) {
+            if (File::exists('backend/images/Gallery/' . $deleteImage->galleryImage)) {
+                File::delete('backend/images/Gallery/' . $deleteImage->galleryImage);
+            }
+            $deleteImage->delete();
         }
-        // if (File::exists('backend/images/Gallery/' . $deleteGalleryItem)) {
-        //     File::delete('backend/images/Gallery/' . $deleteGalleryItem);
-        // }
-        $deleteGalleryItem->delete();
+
+        $deleteGallery = Gallery::all();
+        if ($deleteGallery) {
+            $findGalleryId = GalleryCategory::where('category_id', $deleteGallery->id)->get();
+            return response()->json($findGalleryId);
+        }
         $notification = array(
             'message' => 'Successfully Delete This Item!',
             'alert-type' => 'info'

@@ -27,8 +27,8 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                        Gallery Image
-                ===================================------------->
+                                                                                                                            Gallery Image
+                                                                                                    ===================================------------->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
@@ -56,7 +56,7 @@
                                 @foreach ($galleryData as $galleryData)
                                     <tr>
                                         <td>{{ $sl }}</td>
-                                        <td>{{ $galleryData->sub_category ?? 'none' }}</td>
+                                        <td>{{ $galleryData->galleryCat->sub_category ?? 'none' }}</td>
                                         <td><img style="width: 100px;"
                                                 src="{{ asset('backend/images/Gallery/' . $galleryData->galleryImage) }}"
                                                 alt="Gallery"></td>
@@ -112,8 +112,8 @@
                                     {{-- Gallery Item Delete Modal End --}}
 
                                     <!-------==========================
-                                                    Gallery Image Update Modal Start
-                                                    ============================----------->
+                                                                                                                                        Gallery Image Update Modal Start
+                                                                                                                                        ============================----------->
                                     <div class="modal fade" id="galleryUpdate-{{ $galleryData->id }}">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
@@ -170,8 +170,7 @@
                                                                 <div class="form-group">
                                                                     <label for="galleryCategory">Category Name</label>
                                                                     <select name="sub_category" class="form-control">
-                                                                        <option
-                                                                            value="{{ $galleryData->sub_category }}">
+                                                                        <option value="{{ $galleryData->sub_category }}">
                                                                             {{ $galleryData->sub_category }}
                                                                         </option>
                                                                         <option value="Web Design">Web Design</option>
@@ -185,8 +184,7 @@
                                                                 <div class="form-group">
                                                                     <label for="status">Status</label>
                                                                     <select name="status" class="form-control">
-                                                                        <option
-                                                                            value="{{ $galleryData->status }}">
+                                                                        <option value="{{ $galleryData->status }}">
                                                                             @if ($galleryData->status == 1)
                                                                                 Active
                                                                             @else
@@ -212,8 +210,8 @@
                                         <!-- /.modal-dialog -->
                                     </div>
                                     <!-------==========================
-                                                    Gallery Image Update Modal End
-                                                    ============================----------->
+                                                                                                                                        Gallery Image Update Modal End
+                                                                                                                                        ============================----------->
                                 @endforeach
                             </tbody>
                         </table>
