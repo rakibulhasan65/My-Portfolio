@@ -27,8 +27,8 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                                                                                                            Gallery Image
-                                                                                                    ===================================------------->
+                                                                                                                                                        Gallery Image
+                                                                                                                                ===================================------------->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
@@ -112,8 +112,8 @@
                                     {{-- Gallery Item Delete Modal End --}}
 
                                     <!-------==========================
-                                                                                                                                        Gallery Image Update Modal Start
-                                                                                                                                        ============================----------->
+                                                                Gallery Image Update Modal Start
+                                                                ============================----------->
                                     <div class="modal fade" id="galleryUpdate-{{ $galleryData->id }}">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
@@ -170,8 +170,9 @@
                                                                 <div class="form-group">
                                                                     <label for="galleryCategory">Category Name</label>
                                                                     <select name="sub_category" class="form-control">
-                                                                        <option value="{{ $galleryData->sub_category }}">
-                                                                            {{ $galleryData->sub_category }}
+                                                                        <option
+                                                                            value="{{ $galleryData->galleryCat->sub_category }}">
+                                                                            {{ $galleryData->galleryCat->sub_category }}
                                                                         </option>
                                                                         <option value="Web Design">Web Design</option>
                                                                         <option value="Web Development">Web Development
@@ -210,8 +211,8 @@
                                         <!-- /.modal-dialog -->
                                     </div>
                                     <!-------==========================
-                                                                                                                                        Gallery Image Update Modal End
-                                                                                                                                        ============================----------->
+                                                                                                                                                                    Gallery Image Update Modal End
+                                                                                                                                                                    ============================----------->
                                 @endforeach
                             </tbody>
                         </table>
