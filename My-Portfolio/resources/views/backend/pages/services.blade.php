@@ -50,7 +50,7 @@
                             <tbody>
                                 @foreach ($servicesShow as $servicesShow)
                                     <tr>
-                                        <td>{{ $servicesShow->serviceIcon }}</td>
+                                        <td><i class="fas fa-{{ $servicesShow->serviceIcon }} bg-gray p-2"></i></td>
                                         <td>{{ $servicesShow->serviceTitle }}</td>
                                         <td>{{ $servicesShow->serviceDescription }}</td>
                                         <td>
