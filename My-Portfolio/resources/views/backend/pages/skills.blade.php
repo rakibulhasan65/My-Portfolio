@@ -14,7 +14,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
                             <li class="breadcrumb-item active">Skills</li>
                         </ol>
                     </div><!-- /.col -->
@@ -32,8 +32,8 @@
                         <div class="card-title">
                             <h5>Skills Manage</h5>
                         </div>
-                        <button class="btn btn-info float-right" data-toggle="modal" data-target="#skillsAdd"><i
-                                class="fa fa-plus px-1"></i> Add
+                        <button class="btn btn-info float-right font-weight-bold" data-toggle="modal"
+                            data-target="#skillsAdd"><i class="fa fa-plus px-1"></i> Add
                             Skills</button>
                     </div>
                     <div class="card-body">
@@ -85,8 +85,8 @@
                                         $sl++;
                                     @endphp
                                     <!--===========================================
-                                                                                                        Delete Skills Modal
-                                                                                                        =========================================-->
+                                                                                                            Delete Skills Modal
+                                                                                                            =========================================-->
                                     <div class="modal fade" id="skillsDeleteModal-{{ $skillsData->id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -119,8 +119,8 @@
                                     <!- //--------Skills Delete Modal----------->
 
                                         <!--===========================================
-                                                                                                        Update Skills Modal
-                                                                                                        =========================================-->
+                                                                                                            Update Skills Modal
+                                                                                                            =========================================-->
                                         <div class="modal fade" id="skillsUpdate-{{ $skillsData->id }}">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -218,8 +218,8 @@
                         </table>
 
                         <!--===========================================
-                                                                                                        Add Skills Modal
-                                                                                                        =========================================-->
+                                                                                                            Add Skills Modal
+                                                                                                            =========================================-->
                         <div class="modal fade" id="skillsAdd">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">

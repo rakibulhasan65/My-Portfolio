@@ -44,8 +44,8 @@
                                             <div class="form-group">
                                                 <div class="row">
                                                     <!--=====================
-                                                                                    About Image Section
-                                                                                    ===========================-->
+                                                                                            About Image Section
+                                                                                            ===========================-->
                                                     <div class="col-md-6 col-6">
                                                         {{-- Image Show Of About Section  --}}
                                                         <div class="col-12">
@@ -95,8 +95,8 @@
                                                     </div>
 
                                                     <!--=====================
-                                                                                    About All Input Field Section
-                                                                                    ===========================-->
+                                                                                            About All Input Field Section
+                                                                                            ===========================-->
                                                     <div class="col-md-6 col-6">
 
                                                         {{-- name  --}}

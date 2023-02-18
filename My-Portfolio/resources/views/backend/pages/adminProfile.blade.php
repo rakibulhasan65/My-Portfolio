@@ -7,7 +7,19 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
-            <h3>Profile Setting</h3>
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Dashboard</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
+                            <li class="breadcrumb-item active">Profile</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
 
@@ -29,14 +41,14 @@
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="uploadImage">
-                                                @if (Auth::user()->userImage == NULL)
+                                                @if (Auth::user()->userImage == null)
                                                     <img class=""
-                                                    src="{{ asset('backend/assets/dist/img/avatar.png')}}"
-                                                    alt="profile">
+                                                        src="{{ asset('backend/assets/dist/img/avatar.png') }}"
+                                                        alt="profile">
                                                 @else
                                                     <img class=""
-                                                    src="{{ asset('backend/images/Profile/' . $userShow->userImage) }}"
-                                                    alt="profile">
+                                                        src="{{ asset('backend/images/Profile/' . $userShow->userImage) }}"
+                                                        alt="profile">
                                                 @endif
                                                 <input class="" type="file" name="userImage" id="">
                                                 <p>Choice</p>

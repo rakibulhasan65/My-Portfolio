@@ -14,7 +14,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
                             <li class="breadcrumb-item active">Gallery</li>
                         </ol>
                     </div><!-- /.col -->
@@ -27,14 +27,14 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                                                                                                                                                Gallery Image
-                                                                                                                                        ===================================------------->
+                                                                                                                                                                    Gallery Image
+                                                                                                                                            ===================================------------->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
                             <h5>Gallery</h5>
                         </div>
-                        <button class="btn btn-info float-right" data-toggle="modal" data-target="#galleryAdd"><i
+                        <button class="btn btn-info float-right font-weight-bold" data-toggle="modal" data-target="#galleryAdd"><i
                                 class="fa fa-plus mx-1"></i> Add
                             Gallery</button>
                     </div>
@@ -112,8 +112,8 @@
                                     {{-- Gallery Item Delete Modal End --}}
 
                                     <!-------==========================
-                                                                        Gallery Image Update Modal Start
-                                                                        ============================----------->
+                                                                            Gallery Image Update Modal Start
+                                                                            ============================----------->
                                     <div class="modal fade" id="galleryUpdate-{{ $galleryData->id }}">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
@@ -211,8 +211,8 @@
                                         <!-- /.modal-dialog -->
                                     </div>
                                     <!-------==========================
-                                                                                                                                                                            Gallery Image Update Modal End
-                                                                                                                                                                            ============================----------->
+                                                                                                                                                                                Gallery Image Update Modal End
+                                                                                                                                                                                ============================----------->
                                 @endforeach
                             </tbody>
                         </table>

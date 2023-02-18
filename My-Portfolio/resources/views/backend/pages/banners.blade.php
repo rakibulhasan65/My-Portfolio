@@ -15,7 +15,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Banner v1</li>
+                            <li class="breadcrumb-item active">Banner</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -45,8 +45,8 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <!--=====================
-                                                                    Banner Image Section
-                                                                    ===========================-->
+                                                                        Banner Image Section
+                                                                        ===========================-->
                                                 <div class="col-6 col-md-6">
                                                     <img src="{{ asset('backend/images/Banners/' . $bannerUpdate->image) }}"
                                                         class="w-100" alt="Banner">
@@ -70,8 +70,8 @@
                                                     <!--// Image Field end-->
 
                                                     <!--=====================
-                                                                    Banner All Input Field Section
-                                                                    ===========================-->
+                                                                        Banner All Input Field Section
+                                                                        ===========================-->
                                                 </div>
                                                 <div class="col-6 col-md-6">
                                                     {{-- Banner Developer Name  --}}

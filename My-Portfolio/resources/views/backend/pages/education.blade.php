@@ -14,8 +14,8 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
+                            <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
+                            <li class="breadcrumb-item active">Education</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -32,7 +32,9 @@
                         <div class="card-title">
                             <h5>Education Information</h5>
                         </div>
-                        <button class="btn btn-info float-right" data-toggle="modal" data-target="#educationAdd">Add
+                        <button class="btn btn-info float-right font-weight-bold" data-toggle="modal"
+                            data-target="#educationAdd">
+                            <i class="fas fa-plus"></i> Add
                             Education</button>
                     </div>
                     <div class="card-body">

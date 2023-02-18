@@ -14,8 +14,8 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
+                            <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
+                            <li class="breadcrumb-item active">Services</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -32,7 +32,8 @@
                         <div class="card-title">
                             <h5>Services</h5>
                         </div>
-                        <button class="btn btn-info float-right" data-toggle="modal" data-target="#sevicesAdd">Add
+                        <button class="btn btn-info float-right font-weight-bold" data-toggle="modal"
+                            data-target="#sevicesAdd"><i class="fas fa-plus"></i> Add
                             Services</button>
                     </div>
                     <div class="card-body">
@@ -171,10 +172,10 @@
                                                             </div>
                                                             <div class="d-flex justify-content-end">
                                                                 <button type="submit"
-                                                            class="btn btn-info">Update</button>
+                                                                    class="btn btn-info">Update</button>
                                                             </div>
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </form>
 
@@ -253,7 +254,7 @@
                                                     <button type="submit" class="btn btn-info">Save</button>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                     </form>
 
