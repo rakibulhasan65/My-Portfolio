@@ -24,6 +24,7 @@ class SkillsController extends Controller
     {
         $skillsData = new Skills;
         $skillsData->title = $request->title;
+        $skillsData->skillsType = $request->skillsType;
         $skillsData->percentage = $request->percentage;
         $skillsData->status = $request->status;
         $skillsData->save();
@@ -67,6 +68,5 @@ class SkillsController extends Controller
             'alert-type' => 'info'
         );
         return redirect()->back()->with($notification);
-
     }
 }

@@ -12,6 +12,7 @@ use App\Models\Backend\Profession;
 use App\Models\Backend\Services;
 use App\Models\Backend\TechnicalSupport;
 use App\Models\Backend\Gallery\GalleryCategory;
+use App\Models\Backend\Skills;
 
 class WebSiteController extends Controller
 {
@@ -22,9 +23,10 @@ class WebSiteController extends Controller
         $aboutDataShow = About::first();
         $educationDataShow = Education::all();
         $experienceDataShow = Experience::all();
+        $WebSkills = Skills::all();
         $serviceDataShow = Services::all();
         $galleryDataShow = GalleryCategory::all();
         $supportDataShow = TechnicalSupport::all();
-        return view('frontend.pages.index', compact('bannerDataShow', 'skillsDataShow', 'aboutDataShow', 'educationDataShow', 'experienceDataShow', 'serviceDataShow', 'galleryDataShow', 'supportDataShow'));
+        return view('frontend.pages.index', compact('bannerDataShow', 'skillsDataShow', 'aboutDataShow', 'educationDataShow', 'experienceDataShow', 'serviceDataShow', 'galleryDataShow', 'supportDataShow', 'WebSkills'));
     }
 }

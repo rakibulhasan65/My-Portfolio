@@ -91,20 +91,6 @@ class GalleryImageController extends Controller
                 File::delete('backend/images/Gallery/' . $deleteImage->galleryImage);
             }
             $deleteImage->delete();
-
-            // if ($deleteImage) {
-            //     $findSubCategoryId = GalleryCategory::find($id);
-            //     $findSubCategoryId = $findSubCategoryId->category_id;
-
-            //     $findGalleryIdDelete = Gallery::find($findSubCategoryId);
-            //     $findGalleryItem = $findGalleryIdDelete->id;
-
-            //     if (!($findSubCategoryId == $findGalleryItem)) {
-            //         $findGalleryIdDelete->delete();
-            //     }
-            // }
-
-            // return response()->json(!($findSubCategoryId == $findGalleryItem));
         }
         $notification = array(
             'message' => 'Successfully Delete This Item!',

@@ -43,6 +43,7 @@
                                 <tr>
                                     <th>#Sl</th>
                                     <th>Title</th>
+                                    <th>Skills Type</th>
                                     <th>Percentage</th>
                                     <th>Status</th>
                                     <th colspan="2">Action</th>
@@ -56,6 +57,13 @@
                                     <tr>
                                         <td>{{ $sl }}</td>
                                         <td>{{ $skillsData->title }}</td>
+                                        <td>
+                                            @if ($skillsData->skillsType == 1)
+                                                Design
+                                            @else
+                                                Development
+                                            @endif
+                                        </td>
                                         <td>{{ $skillsData->percentage }} %</td>
                                         <td>
                                             @if ($skillsData->status == 1)
@@ -77,8 +85,8 @@
                                         $sl++;
                                     @endphp
                                     <!--===========================================
-                                                    Delete Skills Modal
-                                                    =========================================-->
+                                                                                                        Delete Skills Modal
+                                                                                                        =========================================-->
                                     <div class="modal fade" id="skillsDeleteModal-{{ $skillsData->id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -111,8 +119,8 @@
                                     <!- //--------Skills Delete Modal----------->
 
                                         <!--===========================================
-                                                    Update Skills Modal
-                                                    =========================================-->
+                                                                                                        Update Skills Modal
+                                                                                                        =========================================-->
                                         <div class="modal fade" id="skillsUpdate-{{ $skillsData->id }}">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -138,6 +146,22 @@
                                                                         <input type="text" class="form-control"
                                                                             name="title" placeholder="Title"
                                                                             value="{{ $skillsData->title }}">
+                                                                    </div>
+                                                                </div>
+
+                                                                {{-- Skills Type  --}}
+                                                                <div class="row form-group">
+                                                                    <div class="col-2">
+                                                                        <label for="skillsType">Skills Type</label>
+                                                                    </div>
+                                                                    <div class="col-10">
+                                                                        <select name="skillsType" class="form-control"
+                                                                            id="">
+                                                                            <option value="{{ $skillsData->skillsType }}">
+                                                                            </option>
+                                                                            <option value="1">Design</option>
+                                                                            <option value="2">Devlopment</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                                 {{-- Percentage --}}
@@ -194,8 +218,8 @@
                         </table>
 
                         <!--===========================================
-                                                    Add Skills Modal
-                                                    =========================================-->
+                                                                                                        Add Skills Modal
+                                                                                                        =========================================-->
                         <div class="modal fade" id="skillsAdd">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
@@ -219,6 +243,19 @@
                                                     <div class="col-10">
                                                         <input type="text" class="form-control" name="title"
                                                             placeholder="Title">
+                                                    </div>
+                                                </div>
+                                                {{-- Skills Type  --}}
+                                                <div class="row form-group">
+                                                    <div class="col-2">
+                                                        <label for="skillsType">Skills Type</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <select name="skillsType" class="form-control" id="">
+                                                            <option value="">Selected</option>
+                                                            <option value="1">Design</option>
+                                                            <option value="2">Devlopment</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 {{-- Percentage --}}
