@@ -55,8 +55,8 @@ class BannerController extends Controller
             File::Delete('backend/images/Banners/' . $bannerData->resume);
             $resume = $request->file('resume');
             $customResumeName = time() . '-' . rand() . '.' . $resume->getClientOriginalExtension();
-            $location = public_path('backend/images/Banners/' . $customResumeName);
-            Image::make($resume)->save($location);
+            $location = public_path('backend/images/Banners/');
+            $resume->move($location, $customResumeName);
             $bannerData->resume = $customResumeName;
         }
         $bannerData->resumeVideo = $request->resumeVideo;

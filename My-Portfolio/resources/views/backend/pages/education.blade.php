@@ -39,7 +39,7 @@
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered table-striped dataTable dtr-inline">
-                            <thead>
+                            <thead class="border-bottom-0">
                                 <tr>
                                     <th>Education Title</th>
                                     <th>Education Institute</th>
