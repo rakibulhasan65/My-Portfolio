@@ -58,13 +58,18 @@
                                         </div>
                                         <!--profileImage end--->
                                         <!----- Social Link Start ----->
-                                        <div class="d-flex justify-content-center pt-3">
-                                            <div class="socialLink bg-gray w-25">
-                                                <a href="{{ $userShow->facebook }}"><i class="fas fa-facebook-"></i></a>
-                                                <a href="{{ $userShow->twitter }}""><i class="fas fa-twitter"></i></a>
-                                                <a href="{{ $userShow->instagram }}""><i class="fas fa-instagram"></i></a>
-                                                <a href="{{ $userShow->linkedin }}""><i class="fas fa-linkedin"></i></a>
-                                                <a href="{{ $userShow->github }}""><i class="fas fa-github"></i></a>
+                                        <div class="d-flex justify-content-center pt-2">
+                                            <div class="socialLink w-50 d-flex justify-content-center">
+                                                <a class="border px-3 py-2" href="{{ $userShow->twitter }}"><i
+                                                        class="fas fa-twitter">T</i></a>
+                                                <a class="border px-3 py-2" href="{{ $userShow->facebook }}"><i
+                                                        class="fas fa-facebook">F</i></a>
+                                                <a class="border px-3 py-2" href="{{ $userShow->instagram }}""><i
+                                                        class="fas fa-instagram">I</i></a>
+                                                <a class="border px-3 py-2" href="{{ $userShow->linkedin }}""><i
+                                                        class="fas fa-linkedin">L</i></a>
+                                                <a class="border px-3 py-2" href="{{ $userShow->github }}""><i
+                                                        class="fas fa-github">G</i></a>
                                             </div>
                                         </div>
                                         <!----- Social Link End ----->

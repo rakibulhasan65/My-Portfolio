@@ -11,7 +11,7 @@
 .uploadImage img {
     height: 150px;
     width: 150px;
-    padding: 5px;
+    padding: 3px;
     border-radius: 50%;
 }
 
