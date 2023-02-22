@@ -32,38 +32,43 @@
                         @csrf
                         <div class="row">
                             {{-- Profile Images  --}}
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5>Profile Pucture</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="profileImage">
-                                        <div class="uploadImage">
-                                            @if (Auth::user()->userImage == null)
-                                                <img class="" src="{{ asset('backend/assets/dist/img/avatar.png') }}"
-                                                    alt="profile">
-                                            @else
-                                                <img class=""
-                                                    src="{{ asset('backend/images/Profile/' . $userShow->userImage) }}"
-                                                    alt="profile">
-                                            @endif
-                                            <input class="" type="file" name="userImage" id="">
-                                            <p>Choice</p>
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Profile Pucture</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="profileImage">
+                                            <div class="uploadImage">
+                                                @if (Auth::user()->userImage == null)
+                                                    <img class=""
+                                                        src="{{ asset('backend/assets/dist/img/avatar.png') }}"
+                                                        alt="profile">
+                                                @else
+                                                    <img class=""
+                                                        src="{{ asset('backend/images/Profile/' . $userShow->userImage) }}"
+                                                        alt="profile">
+                                                @endif
+                                                <input class="" type="file" name="userImage" id="">
+                                                <p>Choice</p>
+                                            </div>
+                                            <!--uploadImage end--->
+                                            <h4 class="">{{ $userShow->name }}</h4>
+                                            <a class="text-sm" href="#">{{ $userShow->email }}</a>
                                         </div>
-                                        <!--uploadImage end--->
-                                        <h4 class="">{{ $userShow->name }}</h4>
-                                        <a class="text-sm" href="#">{{ $userShow->email }}</a>
+                                        <!--profileImage end--->
+                                        <!----- Social Link Start ----->
+                                        <div class="d-flex justify-content-center pt-3">
+                                            <div class="socialLink bg-gray w-25">
+                                                <a href="{{ $userShow->facebook }}"><i class="fas fa-facebook-"></i></a>
+                                                <a href="{{ $userShow->twitter }}""><i class="fas fa-twitter"></i></a>
+                                                <a href="{{ $userShow->instagram }}""><i class="fas fa-instagram"></i></a>
+                                                <a href="{{ $userShow->linkedin }}""><i class="fas fa-linkedin"></i></a>
+                                                <a href="{{ $userShow->github }}""><i class="fas fa-github"></i></a>
+                                            </div>
+                                        </div>
+                                        <!----- Social Link End ----->
                                     </div>
-                                    <!--profileImage end--->
-                                    <!----- Social Link Start ----->
-                                    <div class="socialLink border px-2">
-                                        <a href="{{ $userShow->facebook }}"><i class="fa fa-facebook"></i>dd</a>
-                                        <a href="{{ $userShow->twitter }}""><i class="fa fa-twitter"></i></a>
-                                        <a href="{{ $userShow->instagram }}""><i class="fa fa-instagram"></i></a>
-                                        <a href="{{ $userShow->linkedin }}""><i class="fa fa-linkedin"></i></a>
-                                        <a href="{{ $userShow->github }}""><i class="fa fa-github"></i></a>
-                                    </div>
-                                    <!----- Social Link End ----->
                                 </div>
                             </div>
                         </div>
@@ -113,6 +118,26 @@
                                                 <div class="col-md-9">
                                                     <input type="password" class="form-control" name="newPassword"
                                                         placeholder="New Password">
+                                                </div>
+                                            </div> <!-- row end -->
+
+                                            {{--  Permission   --}}
+                                            <div class="row form-group">
+                                                <div class="col-md-3">
+                                                    <label for="status">Permission</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <select name="status" class="form-control">
+                                                        <option value="{{ $userShow->status }}">
+                                                            @if ($userShow->status == 1)
+                                                                Active
+                                                            @else
+                                                                Deactive
+                                                            @endif
+                                                        </option>
+                                                        <option value="1">Active</option>
+                                                        <option value="0">Deactived</option>
+                                                    </select>
                                                 </div>
                                             </div> <!-- row end -->
                                         </div> <!-- Card Body end -->
@@ -179,46 +204,23 @@
                                                         value="{{ $userShow->github }}" placeholder="Github">
                                                 </div>
                                             </div> <!-- row end -->
-                                            {{--  Permission   --}}
-                                            <div class="row form-group">
-                                                <div class="col-md-3">
-                                                    <label for="status">Permission</label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <select name="status" class="form-control">
-                                                        <option value="{{ $userShow->status }}">
-                                                            @if ($userShow->status == 1)
-                                                                Active
-                                                            @else
-                                                                Deactive
-                                                            @endif
-                                                        </option>
-                                                        <option value="1">Active</option>
-                                                        <option value="0">Deactived</option>
-                                                    </select>
-                                                </div>
-                                            </div> <!-- row end -->
+
                                         </div>
                                     </div>
                                     <div>
                                     </div>
+                                    <div class="SubmitButton d-flex justify-content-end">
+                                        <button class="btn btn-info">Save Change</button>
+                                    </div>
                                 </div>
                                 <!--- Social Link End --->
                             </div>
-                            <div class="SubmitButton d-flex justify-content-end">
-                                <button class="btn btn-info">Save Change</button>
-                            </div>
                         </div>
-
                     </form>
-
                     {{-- Profile Details Section End --}}
-
                 </div>
                 <!--profilMainBody end-->
-
                 {{-- Main Body Container Section End Dashboard  --}}
-
             </div>
         </section>
 
