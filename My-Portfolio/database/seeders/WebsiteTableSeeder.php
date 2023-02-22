@@ -18,11 +18,6 @@ class WebsiteTableSeeder extends Seeder
         WebsiteSetting::create([
             'websiteTitle' => 'Rakibul Hasan',
             'siteLogo' => '',
-            'facebook' => 'www.facebook.com',
-            'twitter' => 'twitter.com',
-            'instagram' => 'instagram.com',
-            'linkedin' => 'linkedin.com',
-            'github' => 'github.com',
             'status' => '1',
         ]);
     }

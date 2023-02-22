@@ -39,6 +39,11 @@ class AdminProfileController extends Controller
                 $userUpdate->password = $request->password;
             }
         }
+        $userUpdate->facebook = $request->facebook;
+        $userUpdate->twitter = $request->twitter;
+        $userUpdate->instagram = $request->instagram;
+        $userUpdate->linkedin = $request->linkedin;
+        $userUpdate->github = $request->github;
         $userUpdate->status = $request->status;
         $userUpdate->update();
         $notification = array(

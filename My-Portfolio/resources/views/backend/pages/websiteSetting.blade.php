@@ -65,67 +65,6 @@
                             </div>
                             <!--webSiteSetting end--->
 
-                            {{-- socialLink  --}}
-                            <div class="socialLink">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Social Link</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        {{-- Facebook Link  --}}
-                                        <div class="row form-group">
-                                            <div class="col-md-2">
-                                                <label for="facebook">Facebook Link</label>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" name="facebook"
-                                                    placeholder="Facebook Link" value="{{ $websiteDataShow->facebook }}">
-                                            </div>
-                                        </div> <!-- row end -->
-                                        {{-- Twitter Link  --}}
-                                        <div class="row form-group">
-                                            <div class="col-md-2">
-                                                <label for="twitter">Twitter Link</label>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" name="twitter"
-                                                    placeholder="Twitter Link" value="{{ $websiteDataShow->twitter }}">
-                                            </div>
-                                        </div> <!-- row end -->
-                                        {{-- instagram Link  --}}
-                                        <div class="row form-group">
-                                            <div class="col-md-2">
-                                                <label for="instagram">instagram Link</label>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" name="instagram"
-                                                    placeholder="instagram Link" value="{{ $websiteDataShow->instagram }}">
-                                            </div>
-                                        </div> <!-- row end -->
-                                        {{-- linkedin Link  --}}
-                                        <div class="row form-group">
-                                            <div class="col-md-2">
-                                                <label for="linkedin">Linkedin Link</label>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" name="linkedin"
-                                                    placeholder="Linkedin Link" value="{{ $websiteDataShow->linkedin }}">
-                                            </div>
-                                        </div> <!-- row end -->
-                                        {{-- GitHub Link  --}}
-                                        <div class="row form-group">
-                                            <div class="col-md-2">
-                                                <label for="github">GitHub Link</label>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" name="github"
-                                                    placeholder="GitHub Link" value="{{ $websiteDataShow->github }}">
-                                            </div>
-                                        </div> <!-- row end -->
-                                    </div><!-- Card Body end -->
-                                </div><!-- Card end -->
-                            </div><!-- socialLink end -->
-                            <!--profileImage end--->
                     </div>
                     <div class="card-footer">
                         <div class="saveChange">

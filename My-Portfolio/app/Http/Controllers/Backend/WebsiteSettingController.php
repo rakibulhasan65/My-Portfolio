@@ -29,11 +29,6 @@ class WebsiteSettingController extends Controller
             $settingDataUpdate->siteLogo = $customResumeName;
         }
         $settingDataUpdate->websiteTitle = $request->websiteTitle;
-        $settingDataUpdate->facebook = $request->facebook;
-        $settingDataUpdate->twitter = $request->twitter;
-        $settingDataUpdate->instagram = $request->instagram;
-        $settingDataUpdate->linkedin = $request->linkedin;
-        $settingDataUpdate->github = $request->github;
         $settingDataUpdate->update();
         $notification = array(
             'message' => 'Successfully Update Setting Data',

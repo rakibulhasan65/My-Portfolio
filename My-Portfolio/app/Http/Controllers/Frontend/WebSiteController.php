@@ -19,7 +19,7 @@ class WebSiteController extends Controller
     public function index()
     {
         $bannerDataShow = Banner::first();
-        $skillsDataShow = Profession::first()::where('banner_id', $bannerDataShow->id && 'None')->get();
+        $skillsDataShow = Profession::first()::where('banner_id', $bannerDataShow->id)->get();
         $aboutDataShow = About::first();
         $educationDataShow = Education::all();
         $experienceDataShow = Experience::all();

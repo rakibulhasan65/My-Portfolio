@@ -11,11 +11,5 @@ class WebsiteSetting extends Model
     protected $fillable = [
         'websiteTitle',
         'siteLogo',
-        'facebook',
-        'twitter',
-        'instagram',
-        'linkedin',
-        'github',
-        'status',
     ];
 }

@@ -18,6 +18,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('github')->nullable();
             $table->integer('status')->default('1');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
