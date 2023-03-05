@@ -9,18 +9,18 @@
 }
 
 .uploadImage img {
-    height: 150px;
-    width: 150px;
-    padding: 3px;
+    height: 120px;
+    width: 120px;
+    padding: 5px;
     border-radius: 50%;
 }
 
 .uploadImage input {
     position: absolute;
-    height: 130px;
+    height: 100px;
     width: 100px;
     top: 10%;
-    left: 45%;
+    left: 40%;
     opacity: 0;
 }
 

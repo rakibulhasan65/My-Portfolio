@@ -13,6 +13,7 @@ use App\Models\Backend\Services;
 use App\Models\Backend\TechnicalSupport;
 use App\Models\Backend\Gallery\GalleryCategory;
 use App\Models\Backend\Skills;
+use App\Models\Backend\WebsiteSetting;
 
 class WebSiteController extends Controller
 {

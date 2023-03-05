@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('sub_category');
+            $table->integer('sub_category');
             $table->integer('status')->default('1');
             $table->timestamps();
         });

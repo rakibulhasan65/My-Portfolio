@@ -60,16 +60,16 @@
                                         <!----- Social Link Start ----->
                                         <div class="d-flex justify-content-center pt-2">
                                             <div class="socialLink w-50 d-flex justify-content-center">
-                                                <a class="border px-3 py-2" href="{{ $userShow->twitter }}"><i
-                                                        class="fas fa-twitter">T</i></a>
-                                                <a class="border px-3 py-2" href="{{ $userShow->facebook }}"><i
-                                                        class="fas fa-facebook">F</i></a>
-                                                <a class="border px-3 py-2" href="{{ $userShow->instagram }}""><i
-                                                        class="fas fa-instagram">I</i></a>
-                                                <a class="border px-3 py-2" href="{{ $userShow->linkedin }}""><i
-                                                        class="fas fa-linkedin">L</i></a>
-                                                <a class="border px-3 py-2" href="{{ $userShow->github }}""><i
-                                                        class="fas fa-github">G</i></a>
+                                                <a class="border px-3 py-2  text-dark" href="{{ $userShow->twitter }}"><i
+                                                        class="fab fa-twitter"></i></a>
+                                                <a class="border px-3 py-2  text-dark" href="{{ $userShow->facebook }}"><i
+                                                        class="fab fa-facebook"></i></a>
+                                                <a class="border px-3 py-2  text-dark" href="{{ $userShow->instagram }}"><i
+                                                        class="fab fa-instagram"></i></a>
+                                                <a class="border px-3 py-2  text-dark" href="{{ $userShow->linkedin }}"><i
+                                                        class="fab fa-linkedin"></i></a>
+                                                <a class="border px-3 py-2  text-dark" href="{{ $userShow->github }}"><i
+                                                        class="fab fa-github"></i></a>
                                             </div>
                                         </div>
                                         <!----- Social Link End ----->
