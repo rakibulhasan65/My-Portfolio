@@ -27,15 +27,15 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                                                                                                                                                    Gallery Image
-                                                                                                                                            ===================================------------->
+                                                                                                                                                                                    Gallery Image
+                                                                                                                                                            ===================================------------->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
                             <h5>Gallery</h5>
                         </div>
-                        <button class="btn btn-info float-right font-weight-bold" data-toggle="modal" data-target="#galleryAdd"><i
-                                class="fa fa-plus mx-1"></i> Add
+                        <button class="btn btn-info float-right font-weight-bold" data-toggle="modal"
+                            data-target="#galleryAdd"><i class="fa fa-plus mx-1"></i> Add
                             Gallery</button>
                     </div>
                     <div class="card-body">
@@ -56,7 +56,17 @@
                                 @foreach ($galleryData as $galleryData)
                                     <tr>
                                         <td>{{ $sl }}</td>
-                                        <td>{{ $galleryData->galleryCat->sub_category ?? 'none' }}</td>
+                                        <td>
+                                            @if ($galleryData->galleryCat->sub_category == 1)
+                                                Web Design
+                                            @elseif ($galleryData->galleryCat->sub_category == 2)
+                                                Web Development
+                                            @elseif ($galleryData->galleryCat->sub_category == 3)
+                                                Graphics Design
+                                            @else
+                                                Others
+                                            @endif
+                                        </td>
                                         <td><img style="width: 100px;"
                                                 src="{{ asset('backend/images/Gallery/' . $galleryData->galleryImage) }}"
                                                 alt="Gallery"></td>
@@ -112,8 +122,8 @@
                                     {{-- Gallery Item Delete Modal End --}}
 
                                     <!-------==========================
-                                                                            Gallery Image Update Modal Start
-                                                                            ============================----------->
+                                                                                            Gallery Image Update Modal Start
+                                                                                            ============================----------->
                                     <div class="modal fade" id="galleryUpdate-{{ $galleryData->id }}">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
@@ -172,7 +182,15 @@
                                                                     <select name="sub_category" class="form-control">
                                                                         <option
                                                                             value="{{ $galleryData->galleryCat->sub_category }}">
-                                                                            {{ $galleryData->galleryCat->sub_category }}
+                                                                            @if ($galleryData->galleryCat->sub_category == 1)
+                                                                                Web Design
+                                                                            @elseif ($galleryData->galleryCat->sub_category == 2)
+                                                                                Web Development
+                                                                            @elseif ($galleryData->galleryCat->sub_category == 3)
+                                                                                Graphics Design
+                                                                            @else
+                                                                                Others
+                                                                            @endif
                                                                         </option>
                                                                         <option value="Web Design">Web Design</option>
                                                                         <option value="Web Development">Web Development
@@ -211,8 +229,8 @@
                                         <!-- /.modal-dialog -->
                                     </div>
                                     <!-------==========================
-                                                                                                                                                                                Gallery Image Update Modal End
-                                                                                                                                                                                ============================----------->
+                                                                                                                                                                                                Gallery Image Update Modal End
+                                                                                                                                                                                                ============================----------->
                                 @endforeach
                             </tbody>
                         </table>
