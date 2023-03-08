@@ -159,7 +159,6 @@
     </div>
     <!-- Qualification End -->
 
-
     <!-- Skill Start -->
     <div class="container-fluid py-5" id="skill">
         <div class="container">
@@ -246,42 +245,61 @@
                         <li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">All</li>
                         <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Web Design</li>
                         <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Web Development</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Graphics Design</li>
                     </ul>
                 </div>
             </div>
             <div class="row portfolio-container">
                 @foreach ($galleryDataShow as $galleryDataShow)
-                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                        <div class="position-relative overflow-hidden mb-2">
-                            <img class="img-fluid rounded w-100"
-                                src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
-                                alt="gallery">
-                            <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                                <a href="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
-                                    data-lightbox="portfolio">
-                                    <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                                </a>
+                    @if ($galleryDataShow->category == 1)
+                        <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                            <div class="position-relative overflow-hidden mb-2">
+                                <img class="img-fluid rounded w-100"
+                                    src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
+                                    alt="gallery">
+                                <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                                    <a href="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
+                                        data-lightbox="portfolio">
+                                        <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-                <!--//Web Design--->
-                <!---//Web Design end---->
-                {{-- @foreach ($galleryDataShow as $galleryShow) --}}
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ asset('backend/images/Gallery/') }}"
-                            alt="gallery">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('backend/images/Gallery/') }}" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
+                    @elseif ($galleryDataShow->category == 2)
+                        <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+                            <div class="position-relative overflow-hidden mb-2">
+                                <img class="img-fluid rounded w-100"
+                                    src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
+                                    alt="gallery">
+                                <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                                    <a href="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
+                                        data-lightbox="portfolio">
+                                        <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!--//Web Development--->
-                {{-- @endforeach --}}
-                <!---//Web Development end---->
+                    @elseif ($galleryDataShow->category == 3)
+                        <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
+                            <div class="position-relative overflow-hidden mb-2">
+                                <img class="img-fluid rounded w-100"
+                                    src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
+                                    alt="gallery">
+                                <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                                    <a href="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
+                                        data-lightbox="portfolio">
+                                        <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                    <!--//Web Design--->
+                    <!---//Web Design end---->
+
+                    <!--//Web Development--->
+                    <!---//Web Development end---->
+                @endforeach
             </div>
         </div>
     </div>

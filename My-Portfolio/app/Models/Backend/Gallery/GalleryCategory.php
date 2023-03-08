@@ -10,6 +10,7 @@ class GalleryCategory extends Model
     use HasFactory;
     protected $fillable = [
         'category_id',
+        'category',
         'galleryImage',
         'status'
     ];

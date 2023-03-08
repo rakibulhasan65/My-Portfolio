@@ -27,8 +27,8 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                                                                                                                                                                    Gallery Image
-                                                                                                                                                            ===================================------------->
+                                                                             Main Body Container Section Satrt Dashboar
+                                                                             ===================================------------->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
@@ -57,11 +57,11 @@
                                     <tr>
                                         <td>{{ $sl }}</td>
                                         <td>
-                                            @if ($galleryData->galleryCat->sub_category == 1)
+                                            @if ($galleryData->category == 1)
                                                 Web Design
-                                            @elseif ($galleryData->galleryCat->sub_category == 2)
+                                            @elseif ($galleryData->category == 2)
                                                 Web Development
-                                            @elseif ($galleryData->galleryCat->sub_category == 3)
+                                            @elseif ($galleryData->category == 3)
                                                 Graphics Design
                                             @else
                                                 Others
@@ -122,8 +122,8 @@
                                     {{-- Gallery Item Delete Modal End --}}
 
                                     <!-------==========================
-                                                                                            Gallery Image Update Modal Start
-                                                                                            ============================----------->
+                                                                                                Gallery Image Update Modal Start
+                                                                                                  ============================----------->
                                     <div class="modal fade" id="galleryUpdate-{{ $galleryData->id }}">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
@@ -180,22 +180,19 @@
                                                                 <div class="form-group">
                                                                     <label for="galleryCategory">Category Name</label>
                                                                     <select name="sub_category" class="form-control">
-                                                                        <option
-                                                                            value="{{ $galleryData->galleryCat->sub_category }}">
-                                                                            @if ($galleryData->galleryCat->sub_category == 1)
+                                                                        <option value="{{ $galleryData->category }}">
+                                                                            @if ($galleryData->category == 1)
                                                                                 Web Design
-                                                                            @elseif ($galleryData->galleryCat->sub_category == 2)
+                                                                            @elseif ($galleryData->category == 2)
                                                                                 Web Development
-                                                                            @elseif ($galleryData->galleryCat->sub_category == 3)
+                                                                            @elseif ($galleryData->category == 3)
                                                                                 Graphics Design
-                                                                            @else
-                                                                                Others
                                                                             @endif
                                                                         </option>
-                                                                        <option value="Web Design">Web Design</option>
-                                                                        <option value="Web Development">Web Development
+                                                                        <option value="1">Web Design</option>
+                                                                        <option value="2">Web Development
                                                                         </option>
-                                                                        <option value="Graphices Design">Graphices Design
+                                                                        <option value="3">Graphices Design
                                                                         </option>
                                                                     </select>
                                                                 </div>
@@ -228,9 +225,7 @@
                                         </div>
                                         <!-- /.modal-dialog -->
                                     </div>
-                                    <!-------==========================
-                                                                                                                                                                                                Gallery Image Update Modal End
-                                                                                                                                                                                                ============================----------->
+                                    <!-------==========================                                                                                                                                                                               ============================----------->
                                 @endforeach
                             </tbody>
                         </table>
@@ -285,9 +280,9 @@
                                                     <label for="galleryCategory">Category Name</label>
                                                     <select name="sub_category" class="form-control">
                                                         <option value="">Choice Category</option>
-                                                        <option value="Web Design">Web Design</option>
-                                                        <option value="Web Development">Web Development</option>
-                                                        <option value="Graphices Design">Graphices Design</option>
+                                                        <option value="1">Web Design</option>
+                                                        <option value="2">Web Development</option>
+                                                        <option value="3">Graphices Design</option>
                                                     </select>
                                                 </div>
                                                 {{-- Gallery Status Aria  --}}

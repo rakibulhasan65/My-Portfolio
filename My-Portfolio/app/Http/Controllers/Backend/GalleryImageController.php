@@ -36,6 +36,7 @@ class GalleryImageController extends Controller
                 Image::make($galleryImg)->resize(400, 300)->save($location);
                 $subCategory = new GalleryCategory;
                 $subCategory->category_id = $findGalleryId->id;
+                $subCategory->category = $request->sub_category;
                 $subCategory->galleryImage = $customImageName;
                 $subCategory->save();
             }
@@ -62,6 +63,7 @@ class GalleryImageController extends Controller
     public function update(Request $request, $id)
     {
         $galleryData = GalleryCategory::find($id);
+        $galleryData->category = $request->sub_category;
         $galleryImg = $request->file('galleryImage');
         if ($galleryImg) {
             foreach ($galleryImg as $galleryImg) {
