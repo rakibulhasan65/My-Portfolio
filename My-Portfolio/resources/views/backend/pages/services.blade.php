@@ -52,7 +52,7 @@
                                     <tr>
                                         <td><i class="fas fa-{{ $servicesShow->serviceIcon }} bg-gray p-2"></i></td>
                                         <td>{{ $servicesShow->serviceTitle }}</td>
-                                        <td>{{ $servicesShow->serviceDescription }}</td>
+                                        <td>{{ str_limit($servicesShow->serviceDescription, $limit = 50) }}</td>
                                         <td>
                                             {{-- switch  --}}
                                             <label class="switch mt-2">

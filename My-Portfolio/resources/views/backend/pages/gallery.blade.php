@@ -27,8 +27,8 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                                                             Main Body Container Section Satrt Dashboar
-                                                                             ===================================------------->
+                                                                                 Main Body Container Section Satrt Dashboar
+                                                                                 ===================================------------->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
@@ -122,8 +122,8 @@
                                     {{-- Gallery Item Delete Modal End --}}
 
                                     <!-------==========================
-                                                                                                Gallery Image Update Modal Start
-                                                                                                  ============================----------->
+                                                                                                    Gallery Image Update Modal Start
+                                                                                                      ============================----------->
                                     <div class="modal fade" id="galleryUpdate-{{ $galleryData->id }}">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">

@@ -30,13 +30,8 @@ class ContactController extends Controller
         $contactMailStore->time = now();
         $contactMailStore->save();
 
-        Mail::to($request->email)->send();
-        if (Mail::failures()) {
-            return response()->Fail('Sorry! Please try again latter');
-        } else {
-            return response()->success('Successfully Send Your Mail!');
-        }
-
+        $name = "Rakibul Hasan";
+        Mail::to('rakibulhasan5665@gmail.com')->send(new PortfolioContactMail($name));
 
         $notification = array(
             'message' => 'Successfully Send Your Messages!',

@@ -2,25 +2,27 @@
 
 namespace App\Mail;
 
+
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Address;
 
 class PortfolioContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $contactMailSend;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(private $name)
     {
-        //
     }
 
     /**
@@ -31,6 +33,7 @@ class PortfolioContactMail extends Mailable
     public function envelope()
     {
         return new Envelope(
+            from: new Address('rakibulhasan392364@gmail.com', 'Test Mail'),
             subject: 'Portfolio Contact Mail',
         );
     }
@@ -43,7 +46,8 @@ class PortfolioContactMail extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'frontend.pages.contactMail',
+            with: ['name' => $this->name],
         );
     }
 

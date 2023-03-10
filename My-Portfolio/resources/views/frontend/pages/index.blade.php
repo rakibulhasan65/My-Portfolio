@@ -20,13 +20,12 @@
     </div>
     <!-- Video Modal End -->
 
-
     <!-- Header Start -->
     <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm"
+                    <img class="img-fluid w-100 rounded shadow"
                         src="{{ asset('backend/images/Banners/' . $bannerDataShow->image) }}" alt="Banner">
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
@@ -36,7 +35,7 @@
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
                     <div class="typed-text d-none">
                         @foreach ($skillsDataShow as $skillsData)
-                            <text>{{ $skillsData->devSkillsCategory ?? 'None' }},</text>
+                            <span>{{ $skillsData->devSkillsCategory ?? 'None' }},</span>
                         @endforeach
                     </div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
@@ -53,7 +52,6 @@
         </div>
     </div>
     <!-- Header End -->
-
 
     <!-- About Start -->
     <div class="container-fluid py-5" id="about">
@@ -109,7 +107,6 @@
         </div>
     </div>
     <!-- About End -->
-
 
     <!-- Qualification Start -->
     <div class="container-fluid py-5" id="qualification">
@@ -204,7 +201,6 @@
     </div>
     <!-- Skill End -->
 
-
     <!-- Services Start -->
     <div class="container-fluid pt-5" id="service">
         <div class="container">
@@ -215,22 +211,22 @@
             <div class="row pb-3">
                 @foreach ($serviceDataShow as $serviceData)
                     <div class="col-lg-4 col-md-6 text-center mb-5">
-                        <div class="d-flex align-items-center justify-content-center mb-4">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
                             <i
                                 class="fas fa-2x fa-{{ $serviceData->serviceIcon }} service-icon bg-primary text-white mr-3"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-4">
                             <h4 class="font-weight-bold m-0">{{ $serviceData->serviceTitle }}</h4>
                         </div>
-                        <p>{{ $serviceData->serviceDescription }}</p>
+                        <p>{{ str_limit($serviceData->serviceDescription, $limit = 70) }}</p>
                         <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
                     </div>
                     <!--End Services-->
                 @endforeach
-
             </div>
         </div>
     </div>
     <!-- Services End -->
-
 
     <!-- Portfolio Start -->
     <div class="container-fluid pt-5 pb-3" id="portfolio">
@@ -305,7 +301,6 @@
     </div>
     <!-- Portfolio End -->
 
-
     <!-- Testimonial Start -->
     <div class="container-fluid py-5" id="testimonial">
         <div class="container">
@@ -319,7 +314,9 @@
                         @foreach ($supportDataShow as $supportData)
                             <div class="text-center">
                                 <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                <h4 class="font-weight-light mb-4">{{ $supportData->description }}</h4>
+                                <h4 class="font-weight-light mb-4 text-sm">
+                                    {{ str_limit($supportData->description, $limit = 100) }}
+                                </h4>
                                 <img class="img-fluid rounded-circle mx-auto mb-3"
                                     src="{{ asset('backend/images/Support/' . $supportData->image) }}"
                                     style="width: 80px; height: 80px;">
@@ -333,9 +330,6 @@
         </div>
     </div>
     <!-- Testimonial End -->
-
-
-
 
     <!-- Contact Start -->
     <div class="container-fluid py-5" id="contact">

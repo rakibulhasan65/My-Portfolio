@@ -30,4 +30,8 @@ class WebSiteController extends Controller
         $supportDataShow = TechnicalSupport::all();
         return view('frontend.pages.index', compact('bannerDataShow', 'skillsDataShow', 'aboutDataShow', 'educationDataShow', 'experienceDataShow', 'serviceDataShow', 'galleryDataShow', 'supportDataShow', 'WebSkills'));
     }
+    public function hireMe()
+    {
+        return view('frontend.pages.hireMe');
+    }
 }

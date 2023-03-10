@@ -55,7 +55,7 @@
                                         <td>{{ $showEdu->educationTitle }}</td>
                                         <td>{{ $showEdu->instituteName }}</td>
                                         <td>{{ $showEdu->passingYears }}</td>
-                                        <td>{{ $showEdu->description }}</td>
+                                        <td>{{ str_limit($showEdu->description, $limit = 50) }}</td>
                                         <td>
                                             {{-- switch  --}}
                                             <label class="switch mt-2">

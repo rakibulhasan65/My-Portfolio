@@ -54,7 +54,7 @@
                                         <td>{{ $showExp->experienceTitle }}</td>
                                         <td>{{ $showExp->companyName }}</td>
                                         <td>{{ $showExp->years }}</td>
-                                        <td>{{ $showExp->description }}</td>
+                                        <td>{{ str_limit($showExp->description,$limit=50) }}</td>
                                         <td>
                                             {{-- switch  --}}
                                             <label class="switch mt-2">

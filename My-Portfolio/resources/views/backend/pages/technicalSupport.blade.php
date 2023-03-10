@@ -55,7 +55,7 @@
                                                 alt=""></td>
                                         <td>{{ $supportDataShow->name }}</td>
                                         <td>{{ $supportDataShow->profession }}</td>
-                                        <td>{{ $supportDataShow->description }}</td>
+                                        <td>{{ str_limit($supportDataShow->description, $limit = 50) }}</td>
                                         <td>
                                             {{-- switch  --}}
                                             <label class="switch mt-2">
