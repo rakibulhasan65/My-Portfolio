@@ -26,7 +26,6 @@
         <section class="content">
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
-
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
@@ -72,7 +71,6 @@
                                                     class="fas fa-edit"></i></button>
                                         </td>
                                     </tr>
-
                                     {{-- Education Item Delete Modal  --}}
                                     <div class="modal fade" id="eduDeleteModal-{{ $showEdu->id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -104,7 +102,6 @@
                                         </div>
                                     </div>
                                     {{-- / Education Item Delete Modal  --}}
-
                                     {{-- Education Update Form  --}}
                                     <div class="modal fade" id="educationUpdate-{{ $showEdu->id }}">
                                         <div class="modal-dialog modal-xl">
@@ -116,7 +113,6 @@
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-
                                                 <form action="{{ Route('educations.update', $showEdu->id) }}"
                                                     method="POST" enctype="multipart/form-data">
                                                     @csrf
@@ -166,7 +162,6 @@
                                                                         placeholder="Description">{{ $showEdu->description }}</textarea>
                                                                 </div>
                                                             </div>
-
                                                             {{-- Status  --}}
                                                             <div class="row form-group">
                                                                 <div class="col-2">
@@ -191,10 +186,8 @@
                                                                     class="btn btn-info">Update</button>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </form>
-
                                             </div>
                                             <!-- /.modal-content -->
                                         </div>
@@ -203,9 +196,7 @@
                                     {{-- Education Update Form  --}}
                                 @endforeach
                             </tbody>
-
                         </table>
-
                         {{-- Education Add Form  --}}
                         <div class="modal fade" id="educationAdd">
                             <div class="modal-dialog modal-xl">
@@ -262,7 +253,6 @@
                                                             placeholder="Description"></textarea>
                                                     </div>
                                                 </div>
-
                                                 {{-- Status  --}}
                                                 <div class="row form-group">
                                                     <div class="col-2">
@@ -280,10 +270,8 @@
                                                     <button type="submit" class=" btn btn-info">Save</button>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </form>
-
                                 </div>
                                 <!-- /.modal-content -->
                             </div>
@@ -293,7 +281,6 @@
                     </div>
                 </div>
                 {{-- Main Body Container Section End Dashboard  --}}
-
             </div>
         </section>
 

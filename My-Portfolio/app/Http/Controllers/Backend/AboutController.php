@@ -41,6 +41,16 @@ class AboutController extends Controller
 
     public function update(Request $request, $id)
     {
+        // $validationData = $request->validate(
+        //     [
+        //         'aboutTitle' => 'required|between:12,30',
+        //         'aboutDescription' => 'required|between:12,50',
+        //     ],
+        //     [
+        //         'aboutTitle.required' => 'Please Enter About Title',
+        //         'aboutDescription.required' => 'Please Maximum 12 Character',
+        //     ]
+        // );
         $aboutData = About::find($id);
         if ($request->aboutImage) {
             $aboutImage = $request->file('aboutImage');

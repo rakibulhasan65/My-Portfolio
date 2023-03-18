@@ -14,6 +14,7 @@ use App\Models\Backend\TechnicalSupport;
 use App\Models\Backend\Gallery\GalleryCategory;
 use App\Models\Backend\Skills;
 use App\Models\Backend\WebsiteSetting;
+use App\Models\User;
 
 class WebSiteController extends Controller
 {
@@ -28,7 +29,8 @@ class WebSiteController extends Controller
         $serviceDataShow = Services::all();
         $galleryDataShow = GalleryCategory::all();
         $supportDataShow = TechnicalSupport::all();
-        return view('frontend.pages.index', compact('bannerDataShow', 'skillsDataShow', 'aboutDataShow', 'educationDataShow', 'experienceDataShow', 'serviceDataShow', 'galleryDataShow', 'supportDataShow', 'WebSkills'));
+        $adminProfileDataShow = User::first();
+        return view('frontend.pages.index', compact('bannerDataShow', 'skillsDataShow', 'aboutDataShow', 'educationDataShow', 'experienceDataShow', 'serviceDataShow', 'galleryDataShow', 'supportDataShow', 'WebSkills', 'adminProfileDataShow'));
     }
     public function hireMe()
     {
