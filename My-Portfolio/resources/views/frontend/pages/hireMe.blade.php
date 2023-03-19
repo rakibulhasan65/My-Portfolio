@@ -9,6 +9,9 @@
     {{-- Header Section Included Start --}}
     @include('frontend.layouts.includes.head_css')
     {{-- Header Section Included End --}}
+    {{-- Hire Me Design Css File Links Start  --}}
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/hireMe.css') }}">
+    {{-- Hire Me Design Css File Links End --}}
 </head>
 
 <body>
@@ -109,6 +112,8 @@
                                         <p class="h6"><i class="fas fa-check-double mx-2"></i>Routing API Connect
                                         </p>
                                         <p class="h6"><i class="fas fa-check-double mx-2"></i>API Development</p>
+                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Web API Developmnet
+                                        </p>
 
                                     </div>
                                 </div>
@@ -125,7 +130,7 @@
             </div>
 
             <div class="card-footer">
-                <h4 class="text-center">Good Support And Sale</h4>
+                <h4 class="text-center">Good Support 24/7</h4>
             </div>
         </div>
     </div>

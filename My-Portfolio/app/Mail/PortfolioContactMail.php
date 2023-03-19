@@ -21,8 +21,10 @@ class PortfolioContactMail extends Mailable
      *
      * @return void
      */
-    public function __construct(private $name)
+    public $mailData;
+    public function __construct($mailData)
     {
+        $this->mailData = $mailData;
     }
 
     /**
@@ -33,7 +35,6 @@ class PortfolioContactMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address('rakibulhasan392364@gmail.com', 'Test Mail'),
             subject: 'Portfolio Contact Mail',
         );
     }
@@ -47,7 +48,6 @@ class PortfolioContactMail extends Mailable
     {
         return new Content(
             view: 'frontend.pages.contactMail',
-            with: ['name' => $this->name],
         );
     }
 
