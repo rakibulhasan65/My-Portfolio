@@ -33,6 +33,7 @@ Route::middleware([
     Route::resource('about', AboutController::class);
     // Education Route
     Route::resource('educations', EducationController::class);
+    Route::post('/eduSwitchButton/{id}', [EducationController::class, 'eduSwitchButton']);
     // Experience Route
     Route::resource('experiences', ExperienceController::class);
     // Skills Route

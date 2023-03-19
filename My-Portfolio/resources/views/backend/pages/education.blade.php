@@ -58,7 +58,7 @@
                                         <td>
                                             {{-- switch  --}}
                                             <label class="switch mt-2">
-                                                <input type="checkbox" id="eduSwitch">
+                                                <input type="checkbox" id="eduSwitch-{{ $showEdu->id }}">
                                                 <span class="slider round"></span>
                                             </label>
                                         </td>

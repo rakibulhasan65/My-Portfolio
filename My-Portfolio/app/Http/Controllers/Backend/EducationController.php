@@ -81,4 +81,17 @@ class EducationController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+    public function eduSwitchButton($id)
+    {
+        $switchButton = Education::find($id);
+        $checked = request('checked');
+        if ($checked) {
+            $switchButton->status = 1;
+            $switchButton->update();
+        } else {
+            $switchButton->status = 0;
+            $switchButton->update();
+        }
+        return response()->json(['message' => '200']);
+    }
 }
