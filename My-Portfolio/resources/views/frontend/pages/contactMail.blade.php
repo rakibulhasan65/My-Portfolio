@@ -9,8 +9,7 @@
 </head>
 
 <body>
-    <h2>Test Mail Check {{ $mailData['title'] }}</h2>
-    <p>{{ $mailData['body'] }}</p>
+
 </body>
 
 </html>

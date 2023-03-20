@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Frontend\ContactMail;
 use App\Mail\PortfolioContactMail;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -22,20 +22,21 @@ class ContactController extends Controller
             'subject' => ['required'],
             'message' => ['required'],
         ]);
+        $name = $request->name;
+        $email = $request->email;
+        $subject = $request->subject;
+        $message = $request->message;
+
         $contactMailStore  = new ContactMail;
-        $contactMailStore->name = $request->name;
-        $contactMailStore->email = $request->email;
-        $contactMailStore->subject = $request->subject;
-        $contactMailStore->message = $request->message;
+        $contactMailStore->name = $name;
+        $contactMailStore->email = $email;
+        $contactMailStore->subject = $subject;
+        $contactMailStore->message = $message;
         $contactMailStore->time = now();
         $contactMailStore->save();
 
-        $mailData = [
-            'title' => 'Mail From Rakibul Hasan',
-            'body' => 'This Laravel Protfolio Testing Perpas Mail'
-        ];
-        Mail::to($contactMailStore->email)->send(new PortfolioContactMail($mailData));
-        dd('email Test Mail Send Successfully.');
+        $mailReceive = 'rakibulhasan392364@gmail.com';
+        Mail::to($mailReceive)->send(new PortfolioContactMail($name, $email, $subject, $message));
 
         $notification = array(
             'message' => 'Successfully Send Your Messages!',
