@@ -34,8 +34,8 @@
                                         Web Design
                                     </h4>
                                 </div>
-                                <div class="card-body">
-                                    <div class="webDesignContent">
+                                <div class="card-body webDesignContent">
+                                    <div class="">
                                         <p class="h6"><i class="fas fa-check-double mx-2"></i>Sample web Design</p>
                                         <p class="h6"><i class="fas fa-check-double mx-2"></i>Multiple Page Design
                                         </p>
@@ -51,7 +51,6 @@
                                         <p class="h6"><i class="fas fa-check-double mx-2"></i>Revision Error Support
                                         </p>
                                         <p class="h6"><i class="fas fa-check-double mx-2"></i>User Freindly</p>
-
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -70,8 +69,8 @@
                                         Web Development
                                     </h4>
                                 </div>
-                                <div class="card-body">
-                                    <div class="webDevelopment">
+                                <div class="card-body webDevelopment">
+                                    <div class="">
                                         <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel
                                             Development</p>
                                         <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel With Ajax
@@ -101,8 +100,8 @@
                                         API Development
                                     </h4>
                                 </div>
-                                <div class="card-body">
-                                    <div class="apiDevelopment">
+                                <div class="card-body apiDevelopment">
+                                    <div class="">
                                         <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel
                                             API Intregete</p>
                                         <p class="h6"><i class="fas fa-check-double mx-2"></i>Rest Full API</p>

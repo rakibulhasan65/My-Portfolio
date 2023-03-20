@@ -1,0 +1,58 @@
+/*Web Design Section Start*/
+.webDesignContent {
+    box-sizing: border-box;
+    background-color: slategrey;
+}
+.webDesignContent p {
+    font-family: italic;
+    transition-duration: 0.5s;
+    color: #f5ecec;
+}
+.webDesignContent p:hover {
+    font-size: 20px;
+    font-weight: 600;
+    transition-duration: 0.5s;
+    color: #ffffff;
+}
+/*Web Design Section End*/
+
+/*webDevelopment Design Section Start*/
+
+.webDevelopment {
+    box-sizing: border-box;
+    background-color: slategrey;
+}
+.webDevelopment p {
+    font-family: italic;
+    transition-duration: 0.5s;
+    color: #f5ecec;
+}
+.webDevelopment p:hover {
+    font-size: 20px;
+    font-weight: 600;
+    transition-duration: 0.5s;
+    color: #ffffff;
+}
+/*webDevelopment Design Section End*/
+
+/*apiDevelopment Design Section Start*/
+.apiDevelopment {
+    box-sizing: border-box;
+    background-color: slategrey;
+}
+.apiDevelopment p {
+    font-family: italic;
+    transition-duration: 0.5s;
+    color: #f5ecec;
+}
+.apiDevelopment p:hover {
+    font-size: 20px;
+    font-weight: 600;
+    transition-duration: 0.5s;
+    color: #ffffff;
+}
+.btn-info {
+    background-color: slategrey;
+}
+
+/*apiDevelopment Design Section End*/
