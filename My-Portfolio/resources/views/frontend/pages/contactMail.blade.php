@@ -9,7 +9,10 @@
 </head>
 
 <body>
-
+    <h4>{{ $name }}</h4>
+    <p>{{ $email }}</p>
+    <p>{{ $subject }}</p>
+    <p>{{ $message }}</p>
 </body>
 
 </html>

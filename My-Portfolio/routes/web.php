@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Backend\ContactDetailsController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\SkillsController;
@@ -42,6 +43,8 @@ Route::middleware([
     Route::resource('services', ServicesController::class);
     // Technical Support
     Route::resource('support', TechnicalSupportController::class);
+    // Contact Show Backend Route
+    Route::get('/contact', [ContactDetailsController::class, 'contact'])->name('contact');
     // Gallery Images
     Route::resource('gallery', GalleryImageController::class);
     Route::group([

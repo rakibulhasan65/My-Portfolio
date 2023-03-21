@@ -26,6 +26,8 @@ class ContactController extends Controller
         $email = $request->email;
         $subject = $request->subject;
         $message = $request->message;
+        $mailReceive = 'rakibulhasan392364@gmail.com';
+        Mail::to($mailReceive)->send(new PortfolioContactMail($name, $email, $subject, $message));
 
         $contactMailStore  = new ContactMail;
         $contactMailStore->name = $name;
@@ -34,10 +36,6 @@ class ContactController extends Controller
         $contactMailStore->message = $message;
         $contactMailStore->time = now();
         $contactMailStore->save();
-
-        $mailReceive = 'rakibulhasan392364@gmail.com';
-        Mail::to($mailReceive)->send(new PortfolioContactMail($name, $email, $subject, $message));
-
         $notification = array(
             'message' => 'Successfully Send Your Messages!',
             'alert-type' => 'info'
