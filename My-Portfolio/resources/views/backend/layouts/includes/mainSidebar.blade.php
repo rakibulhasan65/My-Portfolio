@@ -6,27 +6,26 @@
       <!-- Sidebar -->
       <div class="sidebar">
           <!-- Sidebar user panel (optional) -->
-          @if (Auth::user()->userImage == NULL)
+          @if (Auth::user()->userImage == null)
               <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-              <div class="image">
-                  <img src="{{ asset('backend/assets/dist/img/avatar.png') }}" class="img-circle elevation-2"
-                      alt="User Image">
+                  <div class="image">
+                      <img src="{{ asset('backend/assets/dist/img/avatar.png') }}" class="img-circle elevation-2"
+                          alt="User Image">
+                  </div>
+                  <div class="info">
+                      <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                  </div>
               </div>
-              <div class="info">
-                  <a href="#" class="d-block">{{ Auth::user()->name }}</a>
-              </div>
-          </div>
           @else
               <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-              <div class="image">
-                  <img src="{{ asset('backend/images/Profile/'.Auth::user()->userImage) }}" class="img-circle elevation-2"
-                      alt="User Image">
+                  <div class="image">
+                      <img src="{{ asset('backend/images/Profile/' . Auth::user()->userImage) }}"
+                          class="img-circle elevation-2" alt="User Image">
+                  </div>
+                  <div class="info">
+                      <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                  </div>
               </div>
-              <div class="info">
-                  <a href="#" class="d-block">{{ Auth::user()->name }}</a>
-              </div>
-          </div>
-
           @endif
           <!-- Sidebar Menu -->
           <nav class="mt-2">
@@ -113,12 +112,21 @@
                           </p>
                       </a>
                   </li>
+                  {{-- Contact  --}}
+                  <li class="nav-item menu-open">
+                      <a href="{{ Route('contact') }}" class="nav-link">
+                          <i class="nav-icon fas fa-envelope"></i>
+                          <p>
+                              MailBox
+                          </p>
+                      </a>
+                  </li>
                   {{-- Admin Profile Setting --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('profile.profileIndex') }}" class="nav-link">
                           <i class="nav-icon fas fa-user"></i>
                           <p>
-                            Profile
+                              Profile
                           </p>
                       </a>
                   </li>
@@ -127,7 +135,7 @@
                       <a href="{{ Route('websiteSetting.settingIndex') }}" class="nav-link">
                           <i class="nav-icon fas fa-cog"></i>
                           <p>
-                            Setting
+                              Setting
                           </p>
                       </a>
                   </li>

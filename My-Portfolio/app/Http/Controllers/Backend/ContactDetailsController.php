@@ -10,7 +10,12 @@ class ContactDetailsController extends Controller
 {
     public function contact()
     {
-        $contactAllData = ContactMail::latest()->paginate(6);
+        $contactAllData = ContactMail::latest()->paginate(5);
         return view('backend.pages.contact', compact('contactAllData'));
+    }
+    public function contactMail($id)
+    {
+        $contactMailData = contactMail::find($id);
+        return view('backend.pages.contactMail', compact('contactMailData'));
     }
 }

@@ -27,8 +27,8 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                                                                                                                                 Main Body Container Section Satrt Dashboar
-                                                                                                                                                 ===================================------------->
+                                                                                                                                                                     Main Body Container Section Satrt Dashboar
+                                                                                                                                                                     ===================================------------->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
@@ -53,7 +53,7 @@
                                 @php
                                     $sl = 1;
                                 @endphp
-                                @foreach ($galleryData as $galleryData)
+                                @foreach ($galleryAllData as $galleryData)
                                     <tr>
                                         <td>{{ $sl }}</td>
                                         <td>
@@ -122,8 +122,8 @@
                                     {{-- Gallery Item Delete Modal End --}}
 
                                     <!-------==========================
-                                                                                                                                                                    Gallery Image Update Modal Start
-                                                                                                                                                                      ============================----------->
+                                                                                                                                                                                        Gallery Image Update Modal Start
+                                                                                                                                                                                          ============================----------->
                                     <div class="modal fade" id="galleryUpdate-{{ $galleryData->id }}">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
@@ -229,7 +229,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{-- <span class="page-numbers current">{{ $galleryData->links('pagination::bootstrap-4') }}</span> --}}
+                        <span class="page-numbers current">{{ $galleryAllData->links('pagination::bootstrap-5') }}</span>
                     </div>
                     {{-- --------------------------- 
                         Gallery Add Form  

@@ -45,6 +45,7 @@ Route::middleware([
     Route::resource('support', TechnicalSupportController::class);
     // Contact Show Backend Route
     Route::get('/contact', [ContactDetailsController::class, 'contact'])->name('contact');
+    Route::get('/contactMail/{id}', [ContactDetailsController::class, 'contactMail'])->name('contactMail');
     // Gallery Images
     Route::resource('gallery', GalleryImageController::class);
     Route::group([

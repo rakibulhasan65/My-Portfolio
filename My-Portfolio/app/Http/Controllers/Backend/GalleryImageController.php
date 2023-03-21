@@ -14,8 +14,8 @@ class GalleryImageController extends Controller
 
     public function index()
     {
-        $galleryData = GalleryCategory::all();
-        return view('backend.pages.gallery', compact('galleryData'));
+        $galleryAllData = GalleryCategory::latest()->paginate(3);
+        return view('backend.pages.gallery', compact('galleryAllData'));
     }
 
     public function create()

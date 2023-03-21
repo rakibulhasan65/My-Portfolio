@@ -9,10 +9,11 @@
 </head>
 
 <body>
-    <h4>{{ $name }}</h4>
+    <h3>Hello Mail Check</h3>
+    {{-- <h4>{{ $name }}</h4>
     <p>{{ $email }}</p>
     <p>{{ $subject }}</p>
-    <p>{{ $message }}</p>
+    <p>{{ $message }}</p> --}}
 </body>
 
 </html>

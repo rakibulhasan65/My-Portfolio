@@ -41,14 +41,28 @@
                             </thead>
                             <tbody>
                                 @foreach ($contactAllData as $contactData)
-                                    <tr>
-                                        <td>{{ $contactAllData->firstItem() + $loop->index }}</td>
-                                        <td>{{ $contactData->name }}</td>
-                                        <td>{{ $contactData->email }}</td>
-                                        <td>{{ $contactData->subject }}</td>
-                                        <td>{{ $contactData->message }}</td>
-                                        <td>{{ $contactData->created_at->diffForHumans() }}</td>
-                                    </tr>
+                                    <a href="www.facebook.com" class="row-link">
+                                        <tr>
+                                            <td>{{ $contactAllData->firstItem() + $loop->index }}</td>
+                                            <td>
+                                                <a href="{{ Route('contactMail', $contactData->id) }}"
+                                                    class="nav-link text-dark">{{ $contactData->name }}</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ Route('contactMail', $contactData->id) }}"
+                                                    class="nav-link text-dark">{{ $contactData->email }}</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ Route('contactMail', $contactData->id) }}"
+                                                    class="nav-link text-dark">{{ str_limit($contactData->subject, $limit = 20) }}</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ Route('contactMail', $contactData->id) }}"
+                                                    class="nav-link text-dark">{{ str_limit($contactData->message, $limit = 40) }}</a>
+                                            </td>
+                                            <td>{{ $contactData->created_at->diffForHumans() }}</td>
+                                        </tr>
+                                    </a>
                                 @endforeach
                             </tbody>
 
