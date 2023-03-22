@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -35,24 +35,27 @@
                                     </h4>
                                 </div>
                                 <div class="card-body webDesignContent">
-                                    <div class="">
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Sample web Design</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Multiple Page Design
-                                        </p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Landing Page Design
-                                        </p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Email Template Design
-                                        </p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>SEO Freindly Code
-                                            Writting
-                                        </p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Email Template Design
-                                        </p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Revision Error Support
-                                        </p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>User Freindly</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Sample web Design</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Multiple Page Design
+                                    </p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Landing Page Design
+                                    </p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Email Template Design
+                                    </p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>SEO Freindly Code
+                                        Writting
+                                    </p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Email Template Design
+                                    </p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Revision Error Support
+                                    </p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>User Freindly</p>
+
+                                    <div class="webDesignPricing">
+                                        <h4 class="text-light">Order Price : <span>300$</span></h4>
                                     </div>
                                 </div>
+
                                 <div class="card-footer">
                                     <a class="btn btn-info btn-sm">
                                         Buy Now
@@ -70,25 +73,23 @@
                                     </h4>
                                 </div>
                                 <div class="card-body webDevelopment">
-                                    <div class="">
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel
-                                            Development</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel With Ajax
-                                        </p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Blog Site Web Page</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Personal Portfolio
-                                            website</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Ecommerce Website</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Enventory Software</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Schole Management</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Shop Management</p>
-                                    </div>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel
+                                        Development</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel With Ajax
+                                    </p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Blog Site Web Page</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Personal Portfolio
+                                        website</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Ecommerce Website</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Enventory Software</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Schole Management</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Shop Management</p>
                                 </div>
-                                <div class="card-footer">
-                                    <a class="btn btn-info btn-sm">
-                                        Buy Now
-                                    </a>
-                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a class="btn btn-info btn-sm">
+                                    Buy Now
+                                </a>
                             </div>
                         </div>
                         <!---Web Development Pricing Section End --->
@@ -101,20 +102,17 @@
                                     </h4>
                                 </div>
                                 <div class="card-body apiDevelopment">
-                                    <div class="">
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel
-                                            API Intregete</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Rest Full API</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Social Link SignUp</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Payment Getway</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Banking API</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Routing API Connect
-                                        </p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>API Development</p>
-                                        <p class="h6"><i class="fas fa-check-double mx-2"></i>Web API Developmnet
-                                        </p>
-
-                                    </div>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel
+                                        API Intregete</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Rest Full API</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Social Link SignUp</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Payment Getway</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Banking API</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Routing API Connect
+                                    </p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>API Development</p>
+                                    <p class="h6"><i class="fas fa-check-double mx-2"></i>Web API Developmnet
+                                    </p>
                                 </div>
                                 <div class="card-footer">
                                     <a class="btn btn-info btn-sm">
