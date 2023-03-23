@@ -12,7 +12,6 @@
               <a href="{{ Route('contact') }}" class="nav-link">Contact</a>
           </li>
       </ul>
-
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
           <!-- Navbar Search -->
@@ -63,6 +62,12 @@
                   <div class="dropdown-divider"></div>
                   <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
               </div>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ Route('contact') }}" role="button">
+                  <i class="fas fa-envelope"></i><sup
+                      class="badge badge-warning navbar-badge">{{ count($totalContactData) }}</sup>
+              </a>
           </li>
           <li class="nav-item">
               <a class="nav-link" data-widget="fullscreen" href="#" role="button">

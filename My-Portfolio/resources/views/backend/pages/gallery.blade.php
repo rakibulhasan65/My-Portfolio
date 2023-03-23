@@ -27,8 +27,8 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                                                                                                                                                     Main Body Container Section Satrt Dashboar
-                                                                                                                                                                     ===================================------------->
+                                                                                                                                                                                     Main Body Container Section Satrt Dashboar
+                                                                                                                                                                                     ===================================------------->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
@@ -50,12 +50,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @php
-                                    $sl = 1;
-                                @endphp
                                 @foreach ($galleryAllData as $galleryData)
                                     <tr>
-                                        <td>{{ $sl }}</td>
+                                        <td>{{ $galleryAllData->firstItem() + $loop->index }}</td>
                                         <td>
                                             @if ($galleryData->category == 1)
                                                 Web Design
@@ -86,9 +83,6 @@
                                                     class="fa fa-trash"></i></button>
                                         </td>
                                     </tr>
-                                    @php
-                                        $sl++;
-                                    @endphp
                                     {{-- Gallery Item Delete Modal Start --}}
                                     <div class="modal fade" id="galleryItemDelete-{{ $galleryData->id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -122,8 +116,8 @@
                                     {{-- Gallery Item Delete Modal End --}}
 
                                     <!-------==========================
-                                                                                                                                                                                        Gallery Image Update Modal Start
-                                                                                                                                                                                          ============================----------->
+                                                                                                                                                                                                        Gallery Image Update Modal Start
+                                                                                                                                                                                                          ============================----------->
                                     <div class="modal fade" id="galleryUpdate-{{ $galleryData->id }}">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
@@ -229,7 +223,12 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <span class="page-numbers current">{{ $galleryAllData->links('pagination::bootstrap-5') }}</span>
+                        {{-- Gallery Pagination Add  --}}
+                        <div class="galleryPaginate mt-3">
+                            <span
+                                class="page-numbers current">{{ $galleryAllData->links('pagination::bootstrap-5') }}</span>
+                        </div>
+                        {{-- Gallery Pagination End  --}}
                     </div>
                     {{-- --------------------------- 
                         Gallery Add Form  

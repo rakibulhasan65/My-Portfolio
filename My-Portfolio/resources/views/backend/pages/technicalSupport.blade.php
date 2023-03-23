@@ -40,6 +40,7 @@
                         <table class="table table-bordered table-striped dataTable dtr-inline">
                             <thead>
                                 <tr>
+                                    <th>#Sl</th>
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Profession</th>
@@ -49,8 +50,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($supportDataShow as $supportDataShow)
+                                @foreach ($supportAllDataShow as $supportDataShow)
                                     <tr>
+                                        <td>{{ $supportAllDataShow->firstItem() + $loop->index }}</td>
                                         <td><img src="{{ asset('backend/images/Support/' . $supportDataShow->image) }}"
                                                 alt=""></td>
                                         <td>{{ $supportDataShow->name }}</td>
@@ -98,13 +100,11 @@
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger">Yes</button>
                                                     </form>
-
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     {{-- / Support Item Delete Modal  --}}
-
                                     {{-- Education Update Form  --}}
                                     <div class="modal fade" id="SupportUpdate-{{ $supportDataShow->id }}">
                                         <div class="modal-dialog modal-xl">
@@ -116,7 +116,7 @@
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-
+                                                {{-- Technical Support Form Start  --}}
                                                 <form action="{{ Route('support.update', $supportDataShow->id) }}"
                                                     method="POST" enctype="multipart/form-data">
                                                     @csrf
@@ -206,9 +206,13 @@
                                     {{-- Education Update Form  --}}
                                 @endforeach
                             </tbody>
-
                         </table>
-
+                        {{-- TechnicalSupport Section Add to Pagination Start --}}
+                        <div class="technicalSupportPaginate mt-3">
+                            <span
+                                class="page-numbers current">{{ $supportAllDataShow->links('pagination::bootstrap-5') }}</span>
+                        </div>
+                        {{-- TechnicalSupport Section Add to Pagination End --}}
                         {{-- Support Add Form  --}}
                         <div class="modal fade" id="addSupportTeam">
                             <div class="modal-dialog modal-xl">

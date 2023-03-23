@@ -13,8 +13,8 @@ class TechnicalSupportController extends Controller
 
     public function index()
     {
-        $supportDataShow = TechnicalSupport::all();
-        return view('backend.pages.technicalSupport', compact('supportDataShow'));
+        $supportAllDataShow = TechnicalSupport::latest()->paginate(3);
+        return view('backend.pages.technicalSupport', compact('supportAllDataShow'));
     }
 
     public function create()

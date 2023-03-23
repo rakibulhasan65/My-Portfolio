@@ -40,6 +40,7 @@
                         <table class="table table-bordered table-striped dataTable dtr-inline">
                             <thead class="border-bottom-0">
                                 <tr>
+                                    <th>#Sl</th>
                                     <th>Education Title</th>
                                     <th>Education Institute</th>
                                     <th>Passing Years</th>
@@ -51,6 +52,7 @@
                             <tbody>
                                 @foreach ($educationDataShow as $showEdu)
                                     <tr>
+                                        <td>{{ $educationDataShow->firstItem() + $loop->index }}</td>
                                         <td>{{ $showEdu->educationTitle }}</td>
                                         <td>{{ $showEdu->instituteName }}</td>
                                         <td>{{ $showEdu->passingYears }}</td>
@@ -71,6 +73,7 @@
                                                     class="fas fa-edit"></i></button>
                                         </td>
                                     </tr>
+
                                     {{-- Education Item Delete Modal  --}}
                                     <div class="modal fade" id="eduDeleteModal-{{ $showEdu->id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -196,7 +199,12 @@
                                     {{-- Education Update Form  --}}
                                 @endforeach
                             </tbody>
+
                         </table>
+                        <div class="educationsPaginate mt-3">
+                            <span
+                                class="page-numbers current">{{ $educationDataShow->links('pagination::bootstrap-5') }}</span>
+                        </div>
                         {{-- Education Add Form  --}}
                         <div class="modal fade" id="educationAdd">
                             <div class="modal-dialog modal-xl">

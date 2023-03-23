@@ -112,15 +112,6 @@
                           </p>
                       </a>
                   </li>
-                  {{-- Contact  --}}
-                  <li class="nav-item menu-open">
-                      <a href="{{ Route('contact') }}" class="nav-link">
-                          <i class="nav-icon fas fa-envelope"></i>
-                          <p>
-                              MailBox
-                          </p>
-                      </a>
-                  </li>
                   {{-- Admin Profile Setting --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('profile.profileIndex') }}" class="nav-link">

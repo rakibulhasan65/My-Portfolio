@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Backend\WebsiteSetting;
+use App\Models\Frontend\ContactMail;
 use Illuminate\Support\Facades\View;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -16,5 +17,8 @@ class Controller extends BaseController
     {
         $websiteSettingData = WebsiteSetting::first();
         View::share('websiteSettingData', $websiteSettingData);
+
+        $totalContactData = ContactMail::all();
+        view::share('totalContactData', $totalContactData);
     }
 }

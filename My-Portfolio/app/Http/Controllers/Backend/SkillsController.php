@@ -11,7 +11,7 @@ class SkillsController extends Controller
 
     public function index()
     {
-        $skillsDataShow = Skills::all();
+        $skillsDataShow = Skills::latest()->paginate(3);
         return view('backend.pages.skills', compact('skillsDataShow'));
     }
 

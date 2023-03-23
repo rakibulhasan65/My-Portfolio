@@ -11,7 +11,7 @@ class EducationController extends Controller
 
     public function index()
     {
-        $educationDataShow = Education::all();
+        $educationDataShow = Education::latest()->paginate(3);
         return view('backend.pages.education', compact('educationDataShow'));
     }
 

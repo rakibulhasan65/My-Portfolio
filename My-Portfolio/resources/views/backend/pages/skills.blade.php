@@ -50,12 +50,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @php
-                                    $sl = 1;
-                                @endphp
                                 @foreach ($skillsDataShow as $skillsData)
                                     <tr>
-                                        <td>{{ $sl }}</td>
+                                        <td>{{ $skillsDataShow->firstItem() + $loop->index }}</td>
                                         <td>{{ $skillsData->title }}</td>
                                         <td>
                                             @if ($skillsData->skillsType == 1)
@@ -81,12 +78,9 @@
                                                     class="fa fa-trash"></i></button>
                                         </td>
                                     </tr>
-                                    @php
-                                        $sl++;
-                                    @endphp
                                     <!--===========================================
-                                                                                                            Delete Skills Modal
-                                                                                                            =========================================-->
+                                                                                                                                                                    Delete Skills Modal
+                                                                                                                                                                    =========================================-->
                                     <div class="modal fade" id="skillsDeleteModal-{{ $skillsData->id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -119,8 +113,8 @@
                                     <!- //--------Skills Delete Modal----------->
 
                                         <!--===========================================
-                                                                                                            Update Skills Modal
-                                                                                                            =========================================-->
+                                                                                                                                                                    Update Skills Modal
+                                                                                                                                                                    =========================================-->
                                         <div class="modal fade" id="skillsUpdate-{{ $skillsData->id }}">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -217,9 +211,15 @@
 
                         </table>
 
+                        {{-- Add To Pagination Start  --}}
+                        <div class="skillsPaginate mt-3">
+                            <span
+                                class="page-numbers current">{{ $skillsDataShow->links('pagination::bootstrap-5') }}</span>
+
+                        </div>
                         <!--===========================================
-                                                                                                            Add Skills Modal
-                                                                                                            =========================================-->
+                                                                                                                                                                    Add Skills Modal
+                                                                                                                                                                    =========================================-->
                         <div class="modal fade" id="skillsAdd">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">

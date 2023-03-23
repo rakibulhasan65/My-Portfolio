@@ -40,6 +40,7 @@
                         <table class="table table-bordered table-striped dataTable dtr-inline">
                             <thead>
                                 <tr>
+                                    <th>#Sl</th>
                                     <th>Experience Title</th>
                                     <th>Organization Name</th>
                                     <th>Years</th>
@@ -51,10 +52,11 @@
                             <tbody>
                                 @foreach ($experienceShowData as $showExp)
                                     <tr>
+                                        <td>{{ $experienceShowData->firstItem() + $loop->index }}</td>
                                         <td>{{ $showExp->experienceTitle }}</td>
                                         <td>{{ $showExp->companyName }}</td>
                                         <td>{{ $showExp->years }}</td>
-                                        <td>{{ str_limit($showExp->description,$limit=50) }}</td>
+                                        <td>{{ str_limit($showExp->description, $limit = 50) }}</td>
                                         <td>
                                             {{-- switch  --}}
                                             <label class="switch mt-2">
@@ -71,6 +73,7 @@
                                                     class="fas fa-edit"></i></button>
                                         </td>
                                     </tr>
+
                                     {{-- Experience Item Delete Modal  --}}
                                     <div class="modal fade" id="expDeleteModal-{{ $showExp->id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -202,6 +205,12 @@
 
                         </table>
 
+                        {{-- Pagination Start  --}}
+                        <div class="experiancePaginate mt-3">
+                            <span
+                                class="page-numbers current">{{ $experienceShowData->links('pagination::bootstrap-5') }}</span>
+                        </div>
+                        {{-- pagination End  --}}
                         {{-- Education Add Form  --}}
                         <div class="modal fade" id="experienceAdd">
                             <div class="modal-dialog modal-xl">

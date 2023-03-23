@@ -40,6 +40,7 @@
                         <table class="table table-bordered table-striped dataTable dtr-inline">
                             <thead>
                                 <tr>
+                                    <th>#Sl</th>
                                     <th>Services Icon</th>
                                     <th>Services Title</th>
                                     <th>Description</th>
@@ -48,8 +49,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($servicesShow as $servicesShow)
+                                @foreach ($servicesDataShow as $servicesShow)
                                     <tr>
+                                        <td>{{ $servicesDataShow->firstItem() + $loop->index }}</td>
                                         <td><i class="fas fa-{{ $servicesShow->serviceIcon }} bg-gray p-2"></i></td>
                                         <td>{{ $servicesShow->serviceTitle }}</td>
                                         <td>{{ str_limit($servicesShow->serviceDescription, $limit = 50) }}</td>
@@ -189,6 +191,13 @@
                             </tbody>
 
                         </table>
+
+                        {{-- Services Pagination Start  --}}
+                        <div class="servicesPaginate mt-2">
+                            <span
+                                class="page-numbers current">{{ $servicesDataShow->links('pagination::bootstrap-5') }}</span>
+                        </div>
+                        {{-- Services Pagination End  --}}
 
                         {{-- Services Add Form  --}}
                         <div class="modal fade" id="sevicesAdd">

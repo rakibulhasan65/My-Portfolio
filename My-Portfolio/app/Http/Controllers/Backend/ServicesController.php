@@ -11,8 +11,8 @@ class ServicesController extends Controller
 
     public function index()
     {
-        $servicesShow = Services::all();
-        return view('backend.pages.services', compact('servicesShow'));
+        $servicesDataShow = Services::latest()->paginate(3);
+        return view('backend.pages.services', compact('servicesDataShow'));
     }
 
     public function create()
