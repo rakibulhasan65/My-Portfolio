@@ -31,7 +31,7 @@
                             <div class="card shadow">
                                 <div class="card-header">
                                     <h4>
-                                        Web Design
+                                        Web Development
                                     </h4>
                                 </div>
                                 <div class="card-body webDesignContent">
@@ -51,13 +51,10 @@
                                     </p>
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>User Freindly</p>
 
-                                    <div class="webDesignPricing">
-                                        <h4 class="text-light">Order Price : <span>300$</span></h4>
-                                    </div>
                                 </div>
 
                                 <div class="card-footer">
-                                    <a class="btn btn-info btn-sm">
+                                    <a class="btn btn-info form-control">
                                         Buy Now
                                     </a>
                                 </div>
@@ -69,7 +66,7 @@
                             <div class="card shadow">
                                 <div class="card-header">
                                     <h4>
-                                        Web Development
+                                        Standerd
                                     </h4>
                                 </div>
                                 <div class="card-body webDevelopment">
@@ -85,11 +82,11 @@
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>Schole Management</p>
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>Shop Management</p>
                                 </div>
-                            </div>
-                            <div class="card-footer">
-                                <a class="btn btn-info btn-sm">
-                                    Buy Now
-                                </a>
+                                <div class="card-footer">
+                                    <a class="btn btn-info">
+                                        Buy Now
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <!---Web Development Pricing Section End --->
@@ -98,7 +95,7 @@
                             <div class="card shadow">
                                 <div class="card-header">
                                     <h4>
-                                        API Development
+                                        Premium
                                     </h4>
                                 </div>
                                 <div class="card-body apiDevelopment">
@@ -115,7 +112,7 @@
                                     </p>
                                 </div>
                                 <div class="card-footer">
-                                    <a class="btn btn-info btn-sm">
+                                    <a class="btn btn-info">
                                         Buy Now
                                     </a>
                                 </div>
