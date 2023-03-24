@@ -6,7 +6,7 @@
 }
 .webDesignContent p {
     font-family: italic;
-    transition-duration: 0.5s;
+    transition: 0.5s;
     color: #f5ecec;
 }
 .webDesignContent p:hover {
@@ -15,23 +15,31 @@
     transition-duration: 0.5s;
     color: #ffffff;
 }
-.webDesignContent::after {
-    content: "$300";
+
+.pricingCard {
+    position: relative;
+    width: 130px;
+    height: 130px;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #420042;
+    background-color: darkslategray;
+    border: 6px solid slategray;
+    border-radius: 50%;
     z-index: 1;
-    color: #ffffff;
+    margin-left: 60%;
+    display: inline-block;
     text-align: center;
-    font-size: 40px;
-    opacity: 0.9;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    z-index: 1;
 }
-.webDesignContent:hover::after {
-    transition: 0.1s;
-    display: none;
+.pricingCard h4 {
+    margin-top: 32%;
+    font-size: 28px;
+    color: bisque;
+}
+.pricingCard span {
+    color: bisque;
+    font-family: italic;
+    font-size: 14px;
 }
 /*Web Design Section End*/
 
@@ -76,9 +84,23 @@
     border-radius: 8%;
     transition: 0.5s;
     width: 125px;
+    position: relative;
+    z-index: 1;
 }
-.btn-info:hover {
-    background-color: #420042;
+.btn-info::after {
+    content: "";
+    position: absolute;
+    border-radius: 8%;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: darkslategrey;
+    transition: 0.5s;
+    z-index: -1;
+}
+.btn-info:hover::after {
+    width: 100%;
     transition: 0.5s;
 }
 

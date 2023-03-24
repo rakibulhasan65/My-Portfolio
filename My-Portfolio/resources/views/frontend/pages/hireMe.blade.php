@@ -31,8 +31,12 @@
                             <div class="card shadow">
                                 <div class="card-header">
                                     <h4>
-                                        Web Development
+                                        Basic
                                     </h4>
+                                </div>
+                                <div class="pricingCard">
+                                    <h4>$300/<span>Month</span></h4>
+
                                 </div>
                                 <div class="card-body webDesignContent">
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>Sample web Design</p>
@@ -69,6 +73,10 @@
                                         Standerd
                                     </h4>
                                 </div>
+                                <div class="pricingCard">
+                                    <h4>$300/<span>Month</span></h4>
+
+                                </div>
                                 <div class="card-body webDevelopment">
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel
                                         Development</p>
@@ -97,6 +105,10 @@
                                     <h4>
                                         Premium
                                     </h4>
+                                </div>
+                                <div class="pricingCard">
+                                    <h4>$300/<span>Month</span></h4>
+
                                 </div>
                                 <div class="card-body apiDevelopment">
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel
