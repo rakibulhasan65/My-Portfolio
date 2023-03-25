@@ -36,7 +36,6 @@
                                 </div>
                                 <div class="pricingCard">
                                     <h4>$300/<span>Month</span></h4>
-
                                 </div>
                                 <div class="card-body webDesignContent">
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>Sample web Design</p>
@@ -54,11 +53,9 @@
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>Revision Error Support
                                     </p>
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>User Freindly</p>
-
                                 </div>
-
                                 <div class="card-footer">
-                                    <a class="btn btn-info form-control">
+                                    <a class="btn btn-info form-control" href="{{ Route('orderPlaceForm') }}">
                                         Buy Now
                                     </a>
                                 </div>
@@ -74,8 +71,7 @@
                                     </h4>
                                 </div>
                                 <div class="pricingCard">
-                                    <h4>$300/<span>Month</span></h4>
-
+                                    <h4>$400/<span>Month</span></h4>
                                 </div>
                                 <div class="card-body webDevelopment">
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel
@@ -91,7 +87,7 @@
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>Shop Management</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a class="btn btn-info">
+                                    <a class="btn btn-info" href="{{ Route('orderPlaceForm') }}">
                                         Buy Now
                                     </a>
                                 </div>
@@ -107,8 +103,7 @@
                                     </h4>
                                 </div>
                                 <div class="pricingCard">
-                                    <h4>$300/<span>Month</span></h4>
-
+                                    <h4>$500/<span>Month</span></h4>
                                 </div>
                                 <div class="card-body apiDevelopment">
                                     <p class="h6"><i class="fas fa-check-double mx-2"></i>PHP Larevel
@@ -124,7 +119,7 @@
                                     </p>
                                 </div>
                                 <div class="card-footer">
-                                    <a class="btn btn-info">
+                                    <a class="btn btn-info" href="{{ Route('orderPlaceForm') }}">
                                         Buy Now
                                     </a>
                                 </div>
@@ -134,7 +129,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="card-footer">
                 <h4 class="text-center">Good Support 24/7</h4>
             </div>

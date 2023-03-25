@@ -32,8 +32,4 @@ class WebSiteController extends Controller
         $adminProfileDataShow = User::first();
         return view('frontend.pages.index', compact('bannerDataShow', 'skillsDataShow', 'aboutDataShow', 'educationDataShow', 'experienceDataShow', 'serviceDataShow', 'galleryDataShow', 'supportDataShow', 'WebSkills', 'adminProfileDataShow'));
     }
-    public function hireMe()
-    {
-        return view('frontend.pages.hireMe');
-    }
 }
