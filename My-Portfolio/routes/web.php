@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\GalleryImageController;
 use App\Http\Controllers\Backend\TechnicalSupportController;
 use App\Http\Controllers\Backend\WebsiteSettingController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,6 +62,8 @@ Route::middleware([
         Route::post('/settingUpdate/{id}', [WebsiteSettingController::class, 'settingUpdate'])->name('settingUpdate');
     }); // websiteSetting
 
+    // // Website Page visitor count route 
+    // Route::get('/admin', [DashboardController::class, 'visitorCount'])->name('visitorCount');
 });
 
 // Frontend Route External File

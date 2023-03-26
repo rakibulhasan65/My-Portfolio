@@ -15,11 +15,20 @@ use App\Models\Backend\Gallery\GalleryCategory;
 use App\Models\Backend\Skills;
 use App\Models\Backend\WebsiteSetting;
 use App\Models\User;
+use Cache;
+use Illuminate\Support\Facades\View;
+
 
 class WebSiteController extends Controller
 {
     public function index()
     {
+        // Cache::add('frontend.pages.index', 0, now()->addDay());
+        // Cache::increment('frontend.pages.index');
+        // $pageVisitCount = Cache::get('frontend.pages.index');
+        // // return response()->json($pageVisitCount);
+        // View::share('pageVisitCount', $pageVisitCount);
+
         $bannerDataShow = Banner::first();
         $skillsDataShow = Profession::first()::where('banner_id', $bannerDataShow->id)->get();
         $aboutDataShow = About::first();

@@ -35,7 +35,7 @@
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
                     <div class="typed-text d-none">
                         @foreach ($skillsDataShow as $skillsData)
-                            <span>{{ $skillsData->devSkillsCategory ?? 'None' }},</span>
+                            <span>{{ $skillsData->devSkillsCategory ?? 'null' }}</span>
                         @endforeach
                     </div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
@@ -330,7 +330,6 @@
         </div>
     </div>
     <!-- Testimonial End -->
-
     <!-- Contact Start -->
     <div class="container-fluid py-5" id="contact">
         <div class="container">
