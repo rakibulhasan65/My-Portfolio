@@ -26,19 +26,52 @@ class WebSiteController extends Controller
         // Cache::add('frontend.pages.index', 0, now()->addDay());
         // Cache::increment('frontend.pages.index');
         // $pageVisitCount = Cache::get('frontend.pages.index');
-        // // return response()->json($pageVisitCount);
         // View::share('pageVisitCount', $pageVisitCount);
 
+
+        // Banner Data Show Of Frontend 
         $bannerDataShow = Banner::first();
         $skillsDataShow = Profession::first()::where('banner_id', $bannerDataShow->id)->get();
+        // About Data Show Of Fronted
         $aboutDataShow = About::first();
-        $educationDataShow = Education::all();
-        $experienceDataShow = Experience::all();
-        $WebSkills = Skills::all();
-        $serviceDataShow = Services::all();
-        $galleryDataShow = GalleryCategory::all();
-        $supportDataShow = TechnicalSupport::all();
+        // Education Data Show Of Frontend 
+        $educationDataShow = Education::select('*')
+            ->where('status', '=', 1)
+            ->get();
+        // return response()->json($educationDataShow);
+        // Experience Data Show Of Frontend 
+        $experienceDataShow = Experience::select('*')
+            ->where('status', '=', 1)
+            ->get();
+        // Skills Data Show Of Frontend 
+        $WebSkills = Skills::select('*')
+            ->where('status', '=', 1)
+            ->get();
+        // Services Data Show Of Frontend 
+        $serviceDataShow = Services::select('*')
+            ->where('status', '=', 1)
+            ->get();
+        // Gallery Data Show Of Frontend 
+        $galleryDataShow = GalleryCategory::select('*')
+            ->where('status', '=', 1)
+            ->get();
+        // Support Data Show Of Frontend 
+        $supportDataShow = TechnicalSupport::select('*')
+            ->where('status', '=', 1)
+            ->get();
+        // Admin Profile Data Show Of Frontend 
         $adminProfileDataShow = User::first();
-        return view('frontend.pages.index', compact('bannerDataShow', 'skillsDataShow', 'aboutDataShow', 'educationDataShow', 'experienceDataShow', 'serviceDataShow', 'galleryDataShow', 'supportDataShow', 'WebSkills', 'adminProfileDataShow'));
+        return view('frontend.pages.index', compact(
+            'bannerDataShow',
+            'skillsDataShow',
+            'aboutDataShow',
+            'educationDataShow',
+            'experienceDataShow',
+            'serviceDataShow',
+            'galleryDataShow',
+            'supportDataShow',
+            'WebSkills',
+            'adminProfileDataShow'
+        ));
     }
 }

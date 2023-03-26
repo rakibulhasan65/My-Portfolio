@@ -1,7 +1,7 @@
 /*Web Design Section Start*/
 .webDesignContent {
     box-sizing: border-box;
-    background-color: slategrey;
+    background-color: #f76383;
     position: relative;
 }
 .webDesignContent p {
@@ -21,8 +21,8 @@
     width: 130px;
     height: 130px;
     position: absolute;
-    background-color: darkslategray;
-    border: 6px solid slategray;
+    background-color: #f76383;
+    border: 6px solid #8d515e;
     border-radius: 50%;
     z-index: 1;
     margin-left: 60%;
@@ -47,7 +47,7 @@
 
 .webDevelopment {
     box-sizing: border-box;
-    background-color: slategrey;
+    background-color: #f76383;
 }
 .webDevelopment p {
     font-family: italic;
@@ -65,7 +65,7 @@
 /*apiDevelopment Design Section Start*/
 .apiDevelopment {
     box-sizing: border-box;
-    background-color: slategrey;
+    background-color: #f76383;
 }
 .apiDevelopment p {
     font-family: italic;
@@ -79,7 +79,7 @@
     color: #ffffff;
 }
 .btn-info {
-    background-color: slategrey;
+    background-color: #f76383;
     padding: 5px;
     border-radius: 8%;
     transition: 0.5s;
@@ -95,7 +95,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: darkslategrey;
+    background-color: #813d4d;
     transition: 0.5s;
     z-index: -1;
 }

@@ -59,10 +59,16 @@
                                         <td>{{ str_limit($showEdu->description, $limit = 50) }}</td>
                                         <td>
                                             {{-- switch  --}}
-                                            <label class="switch mt-2">
+                                            {{-- <label class="switch mt-2">
                                                 <input type="checkbox" id="eduSwitch-{{ $showEdu->id }}">
                                                 <span class="slider round"></span>
-                                            </label>
+                                            </label> --}}
+
+                                            @if ($showEdu->status == 1)
+                                                <span class="badge badge-info">Active</span>
+                                            @else
+                                                <span class="badge badge-danger">Inactive</span>
+                                            @endif
                                         </td>
                                         <td>
                                             <button class="text-danger btn px-1 btn-lg" data-toggle="modal"

@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle border border-gray shadow"
+                    <img class="img-fluid w-100 rounded border border-light shadow"
                         src="{{ asset('backend/images/Banners/' . $bannerDataShow->image) }}" alt="Banner">
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
