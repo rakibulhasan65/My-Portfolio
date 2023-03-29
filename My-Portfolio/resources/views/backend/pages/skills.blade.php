@@ -10,7 +10,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        <h2 class="m-0">Skills</h2>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -29,9 +29,6 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">
-                            <h5>Skills Manage</h5>
-                        </div>
                         <button class="btn btn-info float-right font-weight-bold" data-toggle="modal"
                             data-target="#skillsAdd"><i class="fa fa-plus px-1"></i> Add
                             Skills</button>
@@ -79,8 +76,8 @@
                                         </td>
                                     </tr>
                                     <!--===========================================
-                                                                                                                                                                    Delete Skills Modal
-                                                                                                                                                                    =========================================-->
+                                                                                                                                                                            Delete Skills Modal
+                                                                                                                                                                            =========================================-->
                                     <div class="modal fade" id="skillsDeleteModal-{{ $skillsData->id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -113,8 +110,8 @@
                                     <!- //--------Skills Delete Modal----------->
 
                                         <!--===========================================
-                                                                                                                                                                    Update Skills Modal
-                                                                                                                                                                    =========================================-->
+                                                                                                                                                                            Update Skills Modal
+                                                                                                                                                                            =========================================-->
                                         <div class="modal fade" id="skillsUpdate-{{ $skillsData->id }}">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -218,8 +215,8 @@
 
                         </div>
                         <!--===========================================
-                                                                                                                                                                    Add Skills Modal
-                                                                                                                                                                    =========================================-->
+                                                                                                                                                                            Add Skills Modal
+                                                                                                                                                                            =========================================-->
                         <div class="modal fade" id="skillsAdd">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">

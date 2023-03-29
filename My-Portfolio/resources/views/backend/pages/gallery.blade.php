@@ -10,7 +10,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard Gallery</h1>
+                        <h2 class="m-0">Gallery</h2>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,13 +27,10 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <!-----------============================
-                                                                                                                                                                                     Main Body Container Section Satrt Dashboar
-                                                                                                                                                                                     ===================================------------->
+                                                                                                                                                                                         Main Body Container Section Satrt Dashboar
+                                                                                                                                                                                         ===================================------------->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">
-                            <h5>Gallery</h5>
-                        </div>
                         <button class="btn btn-info float-right font-weight-bold" data-toggle="modal"
                             data-target="#galleryAdd"><i class="fa fa-plus mx-1"></i> Add
                             Gallery</button>
@@ -116,8 +113,8 @@
                                     {{-- Gallery Item Delete Modal End --}}
 
                                     <!-------==========================
-                                                                                                                                                                                                        Gallery Image Update Modal Start
-                                                                                                                                                                                                          ============================----------->
+                                                                                                                                                                                                            Gallery Image Update Modal Start
+                                                                                                                                                                                                              ============================----------->
                                     <div class="modal fade" id="galleryUpdate-{{ $galleryData->id }}">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">

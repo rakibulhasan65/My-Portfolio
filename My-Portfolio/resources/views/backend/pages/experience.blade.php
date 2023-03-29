@@ -10,7 +10,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        <h2 class="m-0">Experience</h2>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -26,12 +26,8 @@
         <section class="content">
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
-
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">
-                            <h5>Experience Information</h5>
-                        </div>
                         <button class="btn btn-info float-right font-weight-bold" data-toggle="modal"
                             data-target="#experienceAdd"><i class="fas fa-plus"></i> Add
                             Experience</button>
@@ -58,11 +54,17 @@
                                         <td>{{ $showExp->years }}</td>
                                         <td>{{ str_limit($showExp->description, $limit = 50) }}</td>
                                         <td>
-                                            {{-- switch  --}}
+                                            {{-- switch 
                                             <label class="switch mt-2">
                                                 <input type="checkbox" id="expSwitch">
                                                 <span class="slider round"></span>
-                                            </label>
+                                            </label> --}}
+
+                                            @if ($showExp->status == 1)
+                                                <span class="badge badge-info">Active</span>
+                                            @else
+                                                <span class="badge badge-danger">Inactive</span>
+                                            @endif
                                         </td>
                                         <td>
                                             <button class="text-danger btn px-1 btn-lg" data-toggle="modal"

@@ -24,16 +24,11 @@ class EducationController extends Controller
 
     public function store(Request $request)
     {
-        $validationData = $request->validate(
-            [
-                'educationTitle' => 'required|max:20',
-            ],
-            [
-                'educationTitle.required' => 'Please Enter Education Title',
-                // 'educationTitle.unique' => 'Please Enter Education Title Unique',
-                'educationTitle.max' => 'Please Less then 20 Character',
-            ]
-        );
+        // $validationData = $request->validate(
+        //     [
+        //         'description' => 'required|Max:100',
+        //     ]
+        // );
         $educationAdd = new Education;
         $educationAdd->educationTitle = $request->educationTitle;
         $educationAdd->instituteName = $request->instituteName;

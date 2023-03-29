@@ -10,7 +10,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        <h2 class="m-0">Banners</h2>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -33,9 +33,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Portfolio Banners</h3>
-                                    </div>
+
                                     {{-- Banner Data Save Start Form --}}
                                     <form action="{{ Route('banners.update', $bannerUpdate->id) }}" method="POST"
                                         enctype="multipart/form-data">
@@ -45,8 +43,8 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <!--=====================
-                                                                                                                                                                                                                    Banner Image Section
-                                                                                                                                                                                                                    ===========================-->
+                                                                                                                                                                                                                            Banner Image Section
+                                                                                                                                                                                                                            ===========================-->
                                                 <div class="col-6 col-md-6">
                                                     <img src="{{ asset('backend/images/Banners/' . $bannerUpdate->image) }}"
                                                         class="w-100" alt="Banner">
@@ -70,8 +68,8 @@
                                                     <!--// Image Field end-->
 
                                                     <!--=====================
-                                                                                                                                                                                                                    Banner All Input Field Section
-                                                                                                                                                                                                                    ===========================-->
+                                                                                                                                                                                                                            Banner All Input Field Section
+                                                                                                                                                                                                                            ===========================-->
                                                 </div>
                                                 <div class="col-6 col-md-6">
                                                     {{-- Banner Developer Name  --}}

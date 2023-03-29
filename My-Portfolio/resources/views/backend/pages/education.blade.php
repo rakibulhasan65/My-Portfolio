@@ -10,7 +10,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        <h2 class="m-0">Education</h2>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -28,9 +28,6 @@
                 {{-- Main Body Container Section Satrt Dashboard  --}}
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">
-                            <h5>Education Information</h5>
-                        </div>
                         <button class="btn btn-info float-right font-weight-bold" data-toggle="modal"
                             data-target="#educationAdd">
                             <i class="fas fa-plus"></i> Add
@@ -170,6 +167,7 @@
                                                                     <textarea class="form-control" name="description" id="" cols="10" rows="5"
                                                                         placeholder="Description">{{ $showEdu->description }}</textarea>
                                                                 </div>
+
                                                             </div>
                                                             {{-- Status  --}}
                                                             <div class="row form-group">

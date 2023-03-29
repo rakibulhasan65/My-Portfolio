@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        <h2 class="m-0">About Us</h2>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -32,9 +32,6 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">About Us</h3>
-                                    </div>
                                     <form action="{{ Route('about.update', $aboutDataShow->id) }}" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
@@ -44,8 +41,8 @@
                                             <div class="form-group">
                                                 <div class="row">
                                                     <!--=====================
-                                                                                                                                                                About Image Section
-                                                                                                                                                                ===========================-->
+                                                                                                                                                                                            About Image Section
+                                                                                                                                                                                            ===========================-->
                                                     <div class="col-md-6 col-6">
                                                         {{-- Image Show Of About Section  --}}
                                                         <div class="col-12">
@@ -89,15 +86,15 @@
                                                                 <label for="aboutDescription">About Description</label>
                                                             </div>
                                                             <div class="col-12 col-md-12">
-                                                                <textarea class="form-control" name="aboutDescription" cols="10" rows="3" placeholder="Description">{{ $aboutDataShow->aboutDescription }}
+                                                                <textarea class="form-control" name="aboutDescription" cols="10" rows="6" placeholder="Description">{{ $aboutDataShow->aboutDescription }}
                                                                 </textarea>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <!--=====================
-                                                                                                                                                                About All Input Field Section
-                                                                                                                                                                ===========================-->
+                                                                                                                                                                                            About All Input Field Section
+                                                                                                                                                                                            ===========================-->
                                                     <div class="col-md-6 col-6">
 
                                                         {{-- name  --}}

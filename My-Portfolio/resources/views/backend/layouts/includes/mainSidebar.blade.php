@@ -33,7 +33,7 @@
                   data-accordion="false">
                   {{-- Dashboard  --}}
                   <li class="nav-item menu-open">
-                      <a href="{{ Route('admin') }}" class="nav-link active">
+                      <a href="{{ Route('admin') }}" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
                               Dashboard

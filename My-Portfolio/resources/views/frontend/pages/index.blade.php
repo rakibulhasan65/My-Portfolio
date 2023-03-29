@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-lg-7">
                     <h3 class="mb-4">{{ $aboutDataShow->aboutTitle }}</h3>
-                    <p>{{ $aboutDataShow->aboutDescription }}</p>
+                    <p>{{ str_limit($aboutDataShow->aboutDescription, $limit = 300) }}</p>
                     <div class="row mb-3">
                         <div class="col-sm-6 py-2">
                             <h6>Name: <span class="text-secondary">{{ $aboutDataShow->name }}</span></h6>
@@ -127,7 +127,7 @@
                                 <p class="mb-2"><strong>{{ $educationData->instituteName }}</strong> |
                                     <small>{{ $educationData->passingYears }}</small>
                                 </p>
-                                <p>{{ $educationData->description }}</p>
+                                <p>{{ str_limit($educationData->description, $limit = 100) }}</p>
                             </div>
                             <!--End Education -->
                         @endforeach
@@ -145,7 +145,7 @@
                                 <p class="mb-2"><strong>{{ $experienceData->companyName }}</strong> |
                                     <small>{{ $experienceData->years }}</small>
                                 </p>
-                                <p>{{ $experienceData->description }}</p>
+                                <p>{{ str_limit($experienceData->description, $limit = 100) }}</p>
                             </div> <!-- Job Experiance End -->
                         @endforeach
                         <!-- foreach End -->
@@ -218,7 +218,7 @@
                         <div class="d-flex align-items-center justify-content-center mb-4">
                             <h4 class="font-weight-bold m-0">{{ $serviceData->serviceTitle }}</h4>
                         </div>
-                        <p>{{ str_limit($serviceData->serviceDescription, $limit = 70) }}</p>
+                        <p>{{ str_limit($serviceData->serviceDescription, $limit = 100) }}</p>
                         <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
                     </div>
                     <!--End Services-->
