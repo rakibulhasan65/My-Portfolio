@@ -13,3 +13,7 @@ Route::post('/sendMessage', [ContactController::class, 'sendMessage'])->name('se
 // Hire Me Route Send
 Route::get('/hireMe', [HireMeController::class, 'hireMe'])->name('hireMe');
 Route::get('/orderPlaceForm', [HireMeController::class, 'orderPlaceForm'])->name('orderPlaceForm');
+// About More Route
+Route::get('/aboutMore{id}', [WebSiteController::class, 'aboutMore'])->name('aboutMore');
+// Services More Route
+Route::get('/ServicesMore{id}', [WebSiteController::class, 'ServicesMore'])->name('ServicesMore');

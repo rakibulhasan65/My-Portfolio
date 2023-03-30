@@ -74,4 +74,15 @@ class WebSiteController extends Controller
             'adminProfileDataShow'
         ));
     }
+    public function aboutMore($id)
+    {
+        $aboutMoreDetails = About::find($id);
+        return View('frontend.pages.aboutMore', compact('aboutMoreDetails'));
+    }
+
+    public function ServicesMore($id)
+    {
+        $ServicesMoreDetails = Services::find($id);
+        return View('frontend.pages.servicesReadMore', compact('ServicesMoreDetails'));
+    }
 }

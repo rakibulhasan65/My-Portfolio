@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <a href="{{ Route('hireMe') }}" class="btn btn-outline-primary mr-4">Hire Me</a>
-                    <a href="" class="btn btn-outline-primary">Learn More</a>
+                    <a href="{{ Route('aboutMore', $aboutDataShow->id) }}" class="btn btn-outline-primary">More</a>
                 </div>
             </div>
         </div>
@@ -219,7 +219,8 @@
                             <h4 class="font-weight-bold m-0">{{ $serviceData->serviceTitle }}</h4>
                         </div>
                         <p>{{ str_limit($serviceData->serviceDescription, $limit = 100) }}</p>
-                        <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
+                        <a class="border-bottom border-primary text-decoration-none"
+                            href="{{ Route('ServicesMore', $serviceData->id) }}">Read More</a>
                     </div>
                     <!--End Services-->
                 @endforeach
