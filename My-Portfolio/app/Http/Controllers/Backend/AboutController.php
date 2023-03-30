@@ -43,6 +43,8 @@ class AboutController extends Controller
     {
         $aboutData = About::find($id);
         if ($request->aboutImage) {
+            File::exists('backend/images/About/' . $aboutData->aboutImage);
+            File::delete('backend/images/About/' . $aboutData->aboutImage);
             $aboutImage = $request->file('aboutImage');
             $customImageName = time() . '-' . rand() . '.' . $aboutImage->getClientOriginalExtension();
             $location = public_path('backend/images/About/' . $customImageName);

@@ -27,8 +27,8 @@
                     <div class="col-md-5">
                         <div class="ServicesMoreImage d-flex justify-content-center">
 
-                            <i
-                                class="fas fa-10x fa-{{ $ServicesMoreDetails->serviceIcon }} rounded-sm p-3 bg-primary text-white mr-3"></i>
+                            <img src="{{ asset('backend/images/Services/' . $ServicesMoreDetails->ServicesImage) }}"
+                                alt="{{ $ServicesMoreDetails->ServicesImage }}">
 
                         </div>
                     </div>
