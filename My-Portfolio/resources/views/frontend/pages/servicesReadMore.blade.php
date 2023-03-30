@@ -24,20 +24,20 @@
             <div class="mainContainer m-4">
                 {{-- Services Image Start  --}}
                 <div class="row">
-                    <div class="col-md-5">
-                        <div class="ServicesMoreImage d-flex justify-content-center">
-
+                    <div class="col-md-5 col-ms-12">
+                        <div class="ServicesMoreImage image-fluid">
                             <img src="{{ asset('backend/images/Services/' . $ServicesMoreDetails->ServicesImage) }}"
                                 alt="{{ $ServicesMoreDetails->ServicesImage }}">
-
                         </div>
                     </div>
                     {{-- Services Image End  --}}
 
                     {{-- Services Text Details Start --}}
-                    <div class="col-md-7">
+                    <div class="col-md-7 col-ms-12">
                         <div class="ServicesMoreDetails">
                             <h3>{{ $ServicesMoreDetails->serviceTitle }}</h3>
+                            <br>
+                            <br>
                             <p>{{ $ServicesMoreDetails->serviceDescription }}</p>
                         </div>
                     </div>

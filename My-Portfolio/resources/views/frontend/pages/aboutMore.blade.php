@@ -28,17 +28,17 @@
                         <div class="aboutMoreImage">
                             <img class="img-fluid rounded"
                                 src="{{ asset('backend/images/About/' . $aboutMoreDetails->aboutImage) }}"
-                                alt="">
+                                alt="aboutImage">
                         </div>
                     </div>
                     {{-- About Image End  --}}
-
                     {{-- About Text Details Start --}}
                     <div class="col-md-7">
                         <div class="aboutMoreText">
                             <h3>{{ $aboutMoreDetails->name }}</h3>
                             <h4>{{ $aboutMoreDetails->aboutTitle }}</h4>
-                            <p class="mount">{{ $aboutMoreDetails->aboutDescription }}</p>
+                            <br>
+                            <p>{{ $aboutMoreDetails->aboutDescription }}</p>
                         </div>
                     </div>
                 </div>
