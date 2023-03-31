@@ -6759,27 +6759,29 @@ a.close.disabled {
 .bg-primary::after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 0%;
     height: 100%;
+    width: 0%;
     top: 0;
     left: 0;
     background-image: url("../img/animationEffect.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    animation: backgroundEffect 4s ease-in-out 4s infinite;
+    animation: backgroundEffect 5s ease-in-out 5s infinite;
+    opacity: 0.6;
     z-index: -2;
 }
 @keyframes backgroundEffect {
     0% {
+        opacity: 0.4;
+        width: 0%;
+    }
+    50% {
         opacity: 0.9;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 0.1;
+        width: 100%;
     }
 }
+
 a.bg-primary:hover,
 a.bg-primary:focus,
 button.bg-primary:hover,
