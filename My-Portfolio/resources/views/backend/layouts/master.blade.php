@@ -29,9 +29,10 @@
     <link rel="stylesheet" href="{{ asset('backend/assets') }}/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('backend/assets') }}/plugins/summernote/summernote-bs4.min.css">
-        <link rel="stylesheet" type="text/css"
+    <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     {{-- css Link Others Pages  --}}
+    <link rel="stylesheet" href="{{ asset('backend/assets/dist/css/backendCustomWebsite.css') }}">
     @stack('css')
 </head>
 
