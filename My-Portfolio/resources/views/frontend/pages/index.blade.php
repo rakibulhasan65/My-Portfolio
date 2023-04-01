@@ -212,8 +212,7 @@
                 @foreach ($serviceDataShow as $serviceData)
                     <div class="col-lg-4 col-md-6 text-center mb-5">
                         <div class="d-flex align-items-center justify-content-center mb-3">
-                            <i
-                                class="fas fa-2x fa-{{ $serviceData->serviceIcon }} service-icon bg-primary text-white mr-3"></i>
+                            <i class="fas fa-2x fa-{{ $serviceData->serviceIcon }} service-icon text-white mr-3"></i>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-4">
                             <h4 class="font-weight-bold m-0">{{ $serviceData->serviceTitle }}</h4>
