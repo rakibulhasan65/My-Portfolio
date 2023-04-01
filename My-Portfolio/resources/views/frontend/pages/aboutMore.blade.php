@@ -1,57 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('frontend.layouts.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>aboutMore</title>
-    {{-- Header Section Included Start --}}
-    @include('frontend.layouts.includes.head_css')
-    {{-- Header Section Included End --}}
-</head>
+@section('content')
+    {{-- About Banner Start  --}}
 
-<body>
-    {{-- body Container Section Start  --}}
-    <div class="col-md-10 offset-1">
-        <div class="card mt-3">
-            <div class="card-header">
-                <div class="backArror d-flex">
-                    <a class="btn btn-md" href="{{ Route('home') }}"><i class="fas fa-arrow-left"></i></a>
+    <!-- Header Start -->
+    <div class="container-fluid about_bannerImage d-flex align-items-center mb-5 py-5" id="home"
+        style="min-height: 90vh;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center text-lg-center">
+                    <h2>About Us</h2>
+                    <h3>Home <i class="fas fa-arrow-right"></i> About Us</h3>
                 </div>
             </div>
-            {{-- About More Content Start  --}}
-            <div class="mainContainer m-4">
-                {{-- About Image Start  --}}
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="aboutMoreImage">
-                            <img class="img-fluid rounded"
-                                src="{{ asset('backend/images/About/' . $aboutMoreDetails->aboutImage) }}"
-                                alt="aboutImage">
-                        </div>
-                    </div>
-                    {{-- About Image End  --}}
-                    {{-- About Text Details Start --}}
-                    <div class="col-md-7">
-                        <div class="aboutMoreText">
-                            <h3>{{ $aboutMoreDetails->name }}</h3>
-                            <h4>{{ $aboutMoreDetails->aboutTitle }}</h4>
-                            <br>
-                            <p>{{ $aboutMoreDetails->aboutDescription }}</p>
-                        </div>
-                    </div>
-                </div>
-                {{-- About Text Details End --}}
-
-            </div>
-            {{-- About More Content End  --}}
         </div>
     </div>
-    {{-- body Container Section End  --}}
-</body>
-<footer>
-    @include('frontend.layouts.includes.footer_js')
-</footer>
+    <!-- Header End -->
 
-</html>
+    {{-- About body Container Section Start  --}}
+    {{-- About Image Start  --}}
+    <div class="row m-4">
+        <div class="col-md-4">
+            <div class="aboutMoreImage">
+                <img class="img-fluid rounded" src="{{ asset('backend/images/About/' . $aboutMoreDetails->aboutImage) }}"
+                    alt="aboutImage">
+            </div>
+        </div>
+        {{-- About Image End  --}}
+        {{-- About Text Details Start --}}
+        <div class="col-md-8">
+            <div class="aboutMoreText">
+                <h3>{{ $aboutMoreDetails->name }}</h3>
+                <h4>{{ $aboutMoreDetails->aboutTitle }}</h4>
+                <br>
+                <p>{{ $aboutMoreDetails->aboutDescription }}</p>
+            </div>
+        </div>
+    </div>
+    {{-- About Text Details End --}}
+    {{-- About body Container Section End  --}}
+@endsection

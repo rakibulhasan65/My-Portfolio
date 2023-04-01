@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
         <div class="navbar-nav m-auto py-0">
-            <a href="#home" class="nav-item nav-link active">Home</a>
+            <a href="{{ Route('home') }}" class="nav-item nav-link active">Home</a>
             <a href="#about" class="nav-item nav-link">About</a>
             <a href="#qualification" class="nav-item nav-link">Quality</a>
             <a href="#skill" class="nav-item nav-link">Skill</a>
