@@ -20,15 +20,15 @@
     {{-- About body Container Section Start  --}}
     {{-- About Image Start  --}}
     <div class="row m-4">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <div class="aboutMoreImage">
-                <img class="img-fluid rounded" src="{{ asset('backend/images/About/' . $aboutMoreDetails->aboutImage) }}"
+                <img class="rounded shadow-md" src="{{ asset('backend/images/About/' . $aboutMoreDetails->aboutImage) }}"
                     alt="aboutImage">
             </div>
         </div>
         {{-- About Image End  --}}
         {{-- About Text Details Start --}}
-        <div class="col-md-8">
+        <div class="col-md-7">
             <div class="aboutMoreText">
                 <h3>{{ $aboutMoreDetails->name }}</h3>
                 <h4>{{ $aboutMoreDetails->aboutTitle }}</h4>

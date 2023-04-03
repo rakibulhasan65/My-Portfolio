@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('websiteTitle')->nullable();
             $table->string('siteLogo')->nullable();
+            $table->string('favicon')->nullable();
             $table->integer('status')->default('1');
             $table->timestamps();
         });

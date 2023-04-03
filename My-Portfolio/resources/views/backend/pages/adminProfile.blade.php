@@ -107,7 +107,7 @@
                                             {{--  Password   --}}
                                             <div class="row form-group">
                                                 <div class="col-md-3">
-                                                    <label for="password">Password</label>
+                                                    <label for="password">Old Password</label>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <input type="password" class="form-control" name="password">

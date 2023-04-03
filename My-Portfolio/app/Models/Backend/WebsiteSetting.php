@@ -11,5 +11,6 @@ class WebsiteSetting extends Model
     protected $fillable = [
         'websiteTitle',
         'siteLogo',
+        'favicon',
     ];
 }

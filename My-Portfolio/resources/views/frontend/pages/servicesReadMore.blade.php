@@ -2,13 +2,13 @@
 
 @section('content')
     <!-- Header Start -->
-    <div class="container-fluid about_bannerImage d-flex align-items-center mb-5 py-5" id="home"
+    <div class="container-fluid ServicesMoreBannerImage d-flex align-items-center mb-5 py-5" id="home"
         style="min-height: 90vh;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12 text-center text-lg-center">
                     <h2>Services</h2>
-                    <h3>Home <i class="fas fa-arrow-right"></i> Service</h3>
+                    <h3>Home <i class="fas fa-arrow-right"></i> Services</h3>
                 </div>
             </div>
         </div>
@@ -21,7 +21,8 @@
         <div class="row">
             <div class="col-md-5 col-ms-12">
                 <div class="ServicesMoreImage d-flex justify-content-center">
-                    <img src="{{ asset('backend/images/Services/' . $ServicesMoreDetails->ServicesImage) }}"
+                    <img class="rounded shadow-md"
+                        src="{{ asset('backend/images/Services/' . $ServicesMoreDetails->ServicesImage) }}"
                         alt="{{ $ServicesMoreDetails->ServicesImage }}">
                 </div>
             </div>
