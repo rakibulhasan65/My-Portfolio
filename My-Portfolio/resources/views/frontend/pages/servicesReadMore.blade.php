@@ -1,57 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('frontend.layouts.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ServicesMore</title>
-    {{-- Header Section Included Start --}}
-    @include('frontend.layouts.includes.head_css')
-    {{-- Header Section Included End --}}
-</head>
-
-<body>
-    {{-- body Container Section Start  --}}
-    <div class="col-md-10 offset-1">
-        <div class="card mt-3">
-            <div class="card-header">
-                <div class="backArror d-flex">
-                    <a class="btn btn-md" href="{{ Route('home') }}"><i class="fas fa-arrow-left"></i></a>
+@section('content')
+    <!-- Header Start -->
+    <div class="container-fluid about_bannerImage d-flex align-items-center mb-5 py-5" id="home"
+        style="min-height: 90vh;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center text-lg-center">
+                    <h2>Services</h2>
+                    <h3>Home <i class="fas fa-arrow-right"></i> Service</h3>
                 </div>
             </div>
-            {{-- Services More Content Start  --}}
-            <div class="mainContainer m-4">
-                {{-- Services Image Start  --}}
-                <div class="row">
-                    <div class="col-md-5 col-ms-12">
-                        <div class="ServicesMoreImage image-fluid">
-                            <img src="{{ asset('backend/images/Services/' . $ServicesMoreDetails->ServicesImage) }}"
-                                alt="{{ $ServicesMoreDetails->ServicesImage }}">
-                        </div>
-                    </div>
-                    {{-- Services Image End  --}}
-
-                    {{-- Services Text Details Start --}}
-                    <div class="col-md-7 col-ms-12">
-                        <div class="ServicesMoreDetails">
-                            <h3>{{ $ServicesMoreDetails->serviceTitle }}</h3>
-                            <br>
-                            <br>
-                            <p>{{ $ServicesMoreDetails->serviceDescription }}</p>
-                        </div>
-                    </div>
-                </div>
-                {{-- Services Text Details End --}}
-
-            </div>
-            {{-- Services More Content End  --}}
         </div>
     </div>
-    {{-- body Container Section End  --}}
-</body>
-<footer>
-    @include('frontend.layouts.includes.footer_js')
-</footer>
+    <!-- Header End -->
 
-</html>
+    {{-- Services More Content Start  --}}
+    <div class="mainContainer m-5">
+        {{-- Services Image Start  --}}
+        <div class="row">
+            <div class="col-md-5 col-ms-12">
+                <div class="ServicesMoreImage d-flex justify-content-center">
+                    <img src="{{ asset('backend/images/Services/' . $ServicesMoreDetails->ServicesImage) }}"
+                        alt="{{ $ServicesMoreDetails->ServicesImage }}">
+                </div>
+            </div>
+            {{-- Services Image End  --}}
+
+            {{-- Services Text Details Start --}}
+            <div class="col-md-7 col-ms-12">
+                <div class="ServicesMoreDetails text-left">
+                    <h3>{{ $ServicesMoreDetails->serviceTitle }}</h3>
+                    <br>
+                    <br>
+                    <p>{{ $ServicesMoreDetails->serviceDescription }}</p>
+                </div>
+            </div>
+        </div>
+        {{-- Services Text Details End --}}
+
+    </div>
+    {{-- Services More Content End  --}}
+@endsection

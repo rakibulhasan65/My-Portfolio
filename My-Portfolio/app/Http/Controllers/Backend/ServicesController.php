@@ -31,7 +31,7 @@ class ServicesController extends Controller
             $servicesImage = $request->file('ServicesImage');
             $newFileName = time() . '-' . rand() . '.' . $servicesImage->getClientOriginalExtension();
             $fileLocation = public_path('backend/images/Services/' . $newFileName);
-            Image::make($servicesImage)->resize(400, 400)->save($fileLocation);
+            Image::make($servicesImage)->resize(500, 500)->save($fileLocation);
             $serviceAdd->ServicesImage = $newFileName;
         }
         $serviceAdd->serviceTitle = $request->serviceTitle;
@@ -66,7 +66,7 @@ class ServicesController extends Controller
             $servicesImage = $request->file('ServicesImage');
             $newFileName = time() . '-' . rand() . '.' . $servicesImage->getClientOriginalExtension();
             $fileLocation = public_path('backend/images/Services/' . $newFileName);
-            Image::make($servicesImage)->resize(400, 400)->save($fileLocation);
+            Image::make($servicesImage)->resize(500, 500)->save($fileLocation);
             $serviceUpdate->ServicesImage = $newFileName;
         }
         $serviceUpdate->serviceTitle = $request->serviceTitle;
