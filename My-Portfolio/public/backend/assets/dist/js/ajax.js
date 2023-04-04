@@ -78,25 +78,29 @@ jQuery(document).ready(function () {
     // Delete Skills Item end
 
     // Education active inactive button switch start
-    jQuery("#eduSwitch").on("click", function () {
-        var id = jQuery(this).data("id");
-        var checked = jQuery(this).prop("checked");
-        $.ajax({
-            url: "/eduSwitchButton/" + id,
-            type: "POST",
-            dataType: "JSON",
-            data: {
-                id: id,
-                checked: checked,
-            },
-            success: function (response) {
-                if (response.message == "200") {
-                    console.log("Active!");
-                } else {
-                    console.log("Inactive!");
-                }
-            },
-        });
-    });
+    // jQuery("#eduSwitch").on("click", function () {
+    //     var id = jQuery(this).data("id");
+    //     var checked = jQuery(this).prop("checked");
+    //     $.ajax({
+    //         url: "/eduSwitchButton/" + id,
+    //         type: "POST",
+    //         dataType: "JSON",
+    //         data: {
+    //             id: id,
+    //             checked: checked,
+    //         },
+    //         success: function (response) {
+    //             if (response.message == "200") {
+    //                 console.log("Active!");
+    //             } else {
+    //                 console.log("Inactive!");
+    //             }
+    //         },
+    //     });
+    // });
     // Education active inactive button switch End
+
+    // Contact Mail Data Delete For Ajax Start
+    // jQuery("#contact_delete").on("click", function () {});
+    // Contact Mail Data Delete For Ajax End
 });

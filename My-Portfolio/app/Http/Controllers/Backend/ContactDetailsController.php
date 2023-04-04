@@ -18,4 +18,8 @@ class ContactDetailsController extends Controller
         $contactMailData = contactMail::find($id);
         return view('backend.pages.contactMail', compact('contactMailData'));
     }
+    public function contact_delete($id)
+    {
+        return response()->json($id);
+    }
 }

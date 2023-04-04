@@ -60,6 +60,7 @@ Route::middleware([
         Route::get('/settingIndex', [WebsiteSettingController::class, 'settingIndex'])->name('settingIndex');
         Route::post('/settingUpdate/{id}', [WebsiteSettingController::class, 'settingUpdate'])->name('settingUpdate');
     }); // websiteSetting
+    Route::post('/contact_delete/{id}', [ContactDetailsController::class], 'contact_delete')->name('contact_delete');
 
 });
 

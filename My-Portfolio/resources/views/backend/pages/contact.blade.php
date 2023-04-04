@@ -31,6 +31,9 @@
                         <table class="table table-hover">
                             <thead class="bg-light">
                                 <tr>
+                                    <th>
+                                        <button id="contact_delete" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                    </th>
                                     <th>#Sl</th>
                                     <th>Name</th>
                                     <th>Email</th>
@@ -41,8 +44,11 @@
                             </thead>
                             <tbody>
                                 @foreach ($contactAllData as $contactData)
-                                    <a href="www.facebook.com" class="row-link">
+                        
                                         <tr>
+                                            <td>
+                                                <input type="checkbox" name="contact_delete[]" value="{{ $contactData->id }}">
+                                            </td>
                                             <td>{{ $contactAllData->firstItem() + $loop->index }}</td>
                                             <td>
                                                 <a href="{{ Route('contactMail', $contactData->id) }}"
@@ -61,8 +67,7 @@
                                                     class="nav-link text-dark">{{ str_limit($contactData->message, $limit = 40) }}</a>
                                             </td>
                                             <td>{{ $contactData->created_at->diffForHumans() }}</td>
-                                        </tr>
-                                    </a>
+                                
                                 @endforeach
                             </tbody>
 
