@@ -131,81 +131,106 @@
                                                     @method('PUT')
                                                     <div class="modal-body">
                                                         <div class="m-4">
-                                                            {{-- Services Icon  --}}
-                                                            <div class="row form-group">
-                                                                <div class="col-2">
-                                                                    <label for="serviceIcon">Services Icon</label>
-                                                                </div>
-                                                                <div class="col-10">
-                                                                    <input type="text" class="form-control"
-                                                                        name="serviceIcon" placeholder="Experience Title"
-                                                                        value="{{ $servicesShow->serviceIcon }}">
-                                                                </div>
-                                                            </div>
-                                                            {{-- Services Image Input Feild  --}}
-                                                            <div class="row form-group">
-                                                                <div class="col-md-2">
-                                                                    <label for="">Services Image</label>
-                                                                </div>
-                                                                <div class="col-md-10">
-                                                                    <div class="input-group my-1">
-                                                                        <div class="input-group-prepend">
-                                                                            <span class="input-group-text">Upload</span>
+                                                            <div class="row">
+                                                                <div class="col-md-6 col-sm-12">
+                                                                    <!---Main Update Modal Row Start----->
+                                                                    {{-- Services Icon  --}}
+                                                                    <div class="row form-group">
+                                                                        <div class="col-2">
+                                                                            <label for="serviceIcon">Services Icon</label>
                                                                         </div>
-                                                                        <div class="custom-file">
-                                                                            <input type="file" name="ServicesImage"
-                                                                                class="custom-file-input"
-                                                                                id="inputGroupFile01">
-                                                                            <label class="custom-file-label"
-                                                                                for="inputGroupFile01">Choose
-                                                                                file</label>
+                                                                        <div class="col-10">
+                                                                            <input type="text" class="form-control"
+                                                                                name="serviceIcon"
+                                                                                placeholder="Experience Title"
+                                                                                value="{{ $servicesShow->serviceIcon }}">
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                            {{-- Services Title --}}
-                                                            <div class="row form-group">
-                                                                <div class="col-2">
-                                                                    <label for="servicesTitle">Services Title</label>
-                                                                </div>
-                                                                <div class="col-10">
-                                                                    <input type="text" class="form-control"
-                                                                        name="serviceTitle" placeholder="Services Title"
-                                                                        value="{{ $servicesShow->serviceTitle }}">
-                                                                </div>
-                                                            </div>
-                                                            {{--  Description  --}}
-                                                            <div class="row form-group">
-                                                                <div class="col-2">
-                                                                    <label for="serviceDescription">Description</label>
-                                                                </div>
-                                                                <div class="col-10">
-                                                                    <textarea class="form-control" name="serviceDescription" cols="10" rows="5" placeholder="Description">{{ $servicesShow->serviceDescription }}</textarea>
-                                                                </div>
-                                                            </div>
 
-                                                            {{-- Status  --}}
-                                                            <div class="row form-group">
-                                                                <div class="col-2">
-                                                                    <label for="status">Status</label>
+                                                                    
+                                                                    {{-- Services Title --}}
+                                                                    <div class="row form-group">
+                                                                        <div class="col-2">
+                                                                            <label for="servicesTitle">Services
+                                                                                Title</label>
+                                                                        </div>
+                                                                        <div class="col-10">
+                                                                            <input type="text" class="form-control"
+                                                                                name="serviceTitle"
+                                                                                placeholder="Services Title"
+                                                                                value="{{ $servicesShow->serviceTitle }}">
+                                                                        </div>
+                                                                    </div>
+                                                                    {{--  Description  --}}
+                                                                    <div class="row form-group">
+                                                                        <div class="col-2">
+                                                                            <label
+                                                                                for="serviceDescription">Description</label>
+                                                                        </div>
+                                                                        <div class="col-10">
+                                                                            <textarea class="form-control" name="serviceDescription" cols="10" rows="5" placeholder="Description">{{ $servicesShow->serviceDescription }}</textarea>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    {{-- Status  --}}
+                                                                    <div class="row form-group">
+                                                                        <div class="col-2">
+                                                                            <label for="status">Status</label>
+                                                                        </div>
+                                                                        <div class="col-10">
+                                                                            <select name="status" class="form-control">
+                                                                                <option
+                                                                                    value="{{ $servicesShow->status }}">
+                                                                                    @if ($servicesShow->status == 1)
+                                                                                        Active
+                                                                                    @else
+                                                                                        Inactive
+                                                                                    @endif
+                                                                                </option>
+                                                                                <option value="1">Active</option>
+                                                                                <option value="0">Inactive</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    
                                                                 </div>
-                                                                <div class="col-10">
-                                                                    <select name="status" class="form-control">
-                                                                        <option value="{{ $servicesShow->status }}">
-                                                                            @if ($servicesShow->status == 1)
-                                                                                Active
-                                                                            @else
-                                                                                Inactive
-                                                                            @endif
-                                                                        </option>
-                                                                        <option value="1">Active</option>
-                                                                        <option value="0">Inactive</option>
-                                                                    </select>
+                                                                <!---Main Update Modal Row End----->
+                                                                <!---Left Side Input Feild End--->
+                                                                <div class="col-md-6 col-sm-12">
+                                                                    {{-- Services Image Input Feild  --}}
+                                                                    <div class="row form-group">
+                                                                        <div class="col-md-2">
+                                                                            <label for="">Services Image</label>
+                                                                        </div>
+                                                                        <div class="col-md-10">
+                                                                            <div class="input-group my-1">
+                                                                                <div class="input-group-prepend">
+                                                                                    <span
+                                                                                        class="input-group-text">Upload</span>
+                                                                                </div>
+                                                                                <div class="custom-file">
+                                                                                    <input type="file"
+                                                                                        name="ServicesImage"
+                                                                                        class="custom-file-input"
+                                                                                        id="inputGroupFile01">
+                                                                                    <label class="custom-file-label"
+                                                                                        for="inputGroupFile01">Choose
+                                                                                        file</label>
+                                                                                </div>
+                                                                            </div>
+                                                                             <div class="servicesImage">
+                                                                            <img class="w-100 h-75 mt-2 "
+                                                                                src="{{ asset('backend/images/Services/' . $servicesShow->ServicesImage) }}"
+                                                                                alt="">
+                                                                        </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-end">
+                                                                        <button type="submit"
+                                                                            class="btn btn-info">Update</button>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="d-flex justify-content-end">
-                                                                <button type="submit"
-                                                                    class="btn btn-info">Update</button>
+
                                                             </div>
                                                         </div>
 

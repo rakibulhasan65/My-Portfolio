@@ -67,6 +67,8 @@
                                                         <img src="{{ asset('backend/images/Website/' . $websiteDataShow->siteLogo) }}"
                                                             alt="logo">
                                                     </div>
+                                                    <span class="font-italic">Requirment:Logo Image Size 168x48px
+                                                        png,jpg,jpeg </span>
                                                 </div>
                                             </div> <!-- row end -->
                                         </div>
@@ -96,6 +98,8 @@
                                                         <img src="{{ asset('backend/images/Website/' . $websiteDataShow->favicon) }}"
                                                             alt="">
                                                     </div>
+                                                    <span class="font-italic">Requirment:Favicon Image Size 45x45px
+                                                        png,jpg,jpeg </span>
                                                 </div>
                                             </div>
                                         </div>

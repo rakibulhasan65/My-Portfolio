@@ -66,6 +66,9 @@
                                                                         file</label>
                                                                 </div>
                                                             </div>
+                                                            <small class="font-italic">Requirements: jpg, jpeg or png | max:
+                                                            10mb
+                                                            Size recommended: 600x600px</small>
                                                         </div>
 
                                                         {{-- About Title --}}

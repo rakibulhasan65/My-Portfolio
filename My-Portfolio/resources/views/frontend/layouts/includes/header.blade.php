@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
     <a href="index.html" class="navbar-brand ml-lg-3">
-        <h1 class="m-0 display-5"><span class="text-primary">Web</span>Coder</h1>
+        <img class="m-0 display-5" src="{{ asset('backend/images/Website/'.$websiteSettingData->siteLogo) }}" alt="logo">
     </a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
