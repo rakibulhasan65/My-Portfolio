@@ -26,7 +26,6 @@
         <section class="content">
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt Dashboard  --}}
-
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-info float-right font-weight-bold" data-toggle="modal"
@@ -70,7 +69,6 @@
                                             @else
                                                 <span class="badge badge-danger">Inactive</span>
                                             @endif
-
                                         </td>
                                         <td>
                                             <button class="text-danger btn px-1 btn-lg" data-toggle="modal"
@@ -112,7 +110,6 @@
                                         </div>
                                     </div>
                                     {{-- / services Item Delete Modal  --}}
-
                                     {{-- Experience Update Form  --}}
                                     <div class="modal fade" id="servicesUpdate-{{ $servicesShow->id }}">
                                         <div class="modal-dialog modal-xl">
@@ -124,7 +121,6 @@
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-
                                                 <form action="{{ Route('services.update', $servicesShow->id) }}"
                                                     method="POST" enctype="multipart/form-data">
                                                     @csrf
@@ -136,25 +132,23 @@
                                                                     <!---Main Update Modal Row Start----->
                                                                     {{-- Services Icon  --}}
                                                                     <div class="row form-group">
-                                                                        <div class="col-2">
+                                                                        <div class="col-md-2">
                                                                             <label for="serviceIcon">Services Icon</label>
                                                                         </div>
-                                                                        <div class="col-10">
+                                                                        <div class="col-md-10">
                                                                             <input type="text" class="form-control"
                                                                                 name="serviceIcon"
                                                                                 placeholder="Experience Title"
                                                                                 value="{{ $servicesShow->serviceIcon }}">
                                                                         </div>
                                                                     </div>
-
-                                                                    
                                                                     {{-- Services Title --}}
                                                                     <div class="row form-group">
-                                                                        <div class="col-2">
+                                                                        <div class="col-md-2">
                                                                             <label for="servicesTitle">Services
                                                                                 Title</label>
                                                                         </div>
-                                                                        <div class="col-10">
+                                                                        <div class="col-md-10">
                                                                             <input type="text" class="form-control"
                                                                                 name="serviceTitle"
                                                                                 placeholder="Services Title"
@@ -163,21 +157,21 @@
                                                                     </div>
                                                                     {{--  Description  --}}
                                                                     <div class="row form-group">
-                                                                        <div class="col-2">
+                                                                        <div class="col-md-2">
                                                                             <label
                                                                                 for="serviceDescription">Description</label>
                                                                         </div>
-                                                                        <div class="col-10">
+                                                                        <div class="col-md-10">
                                                                             <textarea class="form-control" name="serviceDescription" cols="10" rows="5" placeholder="Description">{{ $servicesShow->serviceDescription }}</textarea>
                                                                         </div>
                                                                     </div>
 
                                                                     {{-- Status  --}}
                                                                     <div class="row form-group">
-                                                                        <div class="col-2">
+                                                                        <div class="col-md-2">
                                                                             <label for="status">Status</label>
                                                                         </div>
-                                                                        <div class="col-10">
+                                                                        <div class="col-md-10">
                                                                             <select name="status" class="form-control">
                                                                                 <option
                                                                                     value="{{ $servicesShow->status }}">
@@ -192,7 +186,6 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
-                                                                    
                                                                 </div>
                                                                 <!---Main Update Modal Row End----->
                                                                 <!---Left Side Input Feild End--->
@@ -230,13 +223,10 @@
                                                                             class="btn btn-info">Update</button>
                                                                     </div>
                                                                 </div>
-
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </form>
-
                                             </div>
                                             <!-- /.modal-content -->
                                         </div>
@@ -245,16 +235,13 @@
                                     {{-- Education Update Form  --}}
                                 @endforeach
                             </tbody>
-
                         </table>
-
                         {{-- Services Pagination Start  --}}
                         <div class="servicesPaginate mt-2">
                             <span
                                 class="page-numbers current">{{ $servicesDataShow->links('pagination::bootstrap-5') }}</span>
                         </div>
                         {{-- Services Pagination End  --}}
-
                         {{-- Services Add Form  --}}
                         <div class="modal fade" id="sevicesAdd">
                             <div class="modal-dialog modal-xl">
@@ -281,7 +268,6 @@
                                                             placeholder="Services Icon">
                                                     </div>
                                                 </div>
-
                                                 {{-- Service Image Upload Add Feild  --}}
                                                 <div class="row form-group">
                                                     <div class="col-md-2">
@@ -299,7 +285,6 @@
                                                                     for="inputGroupFile01">Choose Service Image</label>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                                 {{-- Services Title --}}
@@ -312,7 +297,6 @@
                                                             placeholder="Services Title">
                                                     </div>
                                                 </div>
-
                                                 {{-- Description  --}}
                                                 <div class="row form-group">
                                                     <div class="col-2">
@@ -322,7 +306,6 @@
                                                         <textarea class="form-control" name="serviceDescription" cols="10" rows="5" placeholder="Description"></textarea>
                                                     </div>
                                                 </div>
-
                                                 {{-- Status  --}}
                                                 <div class="row form-group">
                                                     <div class="col-2">
@@ -340,10 +323,8 @@
                                                     <button type="submit" class="btn btn-info">Save</button>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </form>
-
                                 </div>
                                 <!-- /.modal-content -->
                             </div>
@@ -353,9 +334,7 @@
                     </div>
                 </div>
                 {{-- Main Body Container Section End Dashboard  --}}
-
             </div>
         </section>
-
     </div>
 @endsection

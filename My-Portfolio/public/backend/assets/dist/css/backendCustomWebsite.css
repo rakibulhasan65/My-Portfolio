@@ -22,3 +22,20 @@
     width: 150px;
     height: 80px;
 }
+
+.webSiteSetting .permissionCode {
+    width: 100%;
+    height: 150px;
+    background-color: aliceblue;
+    font-size: 26px;
+    font-weight: 600;
+    padding: 10%;
+}
+.webSiteSetting .permissionCode h4{
+    text-align: center;
+    font-style: italic;
+}
+.webSiteSetting .permissionCode p{
+    text-align: center;
+    font-style: italic;
+}

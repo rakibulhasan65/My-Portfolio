@@ -10,7 +10,6 @@ use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\SkillsController;
 use App\Http\Controllers\Backend\ServicesController;
-use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\GalleryImageController;
 use App\Http\Controllers\Backend\TechnicalSupportController;
 use App\Http\Controllers\Backend\WebsiteSettingController;
@@ -25,7 +24,7 @@ use App\Http\Controllers\Backend\WebsiteSettingController;
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
 ])->group(function () {
     // Backend view Show All Route 
     Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
@@ -60,8 +59,7 @@ Route::middleware([
         Route::get('/settingIndex', [WebsiteSettingController::class, 'settingIndex'])->name('settingIndex');
         Route::post('/settingUpdate/{id}', [WebsiteSettingController::class, 'settingUpdate'])->name('settingUpdate');
     }); // websiteSetting
-    Route::post('/contact_delete/{id}', [ContactDetailsController::class], 'contact_delete')->name('contact_delete');
-
+    Route::delete('/contact_itemDelete', [ContactDetailsController::class, 'contactDelete'])->name('contact_itemDelete');
 });
 
 // Frontend Route External File

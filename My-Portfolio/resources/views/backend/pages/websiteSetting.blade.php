@@ -102,6 +102,18 @@
                                                         png,jpg,jpeg </span>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <label for="permissionCode">Permission Code</label>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="permissionCode">
+                                                        <h4>Permission Code Generate</h4>
+                                                        <input type="hidden" name="permissionCode" value="{{ $permissionCode }}">
+                                                        <p>Code:{{ $permissionCode }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
                                     </div>

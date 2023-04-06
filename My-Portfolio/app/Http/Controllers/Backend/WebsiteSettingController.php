@@ -12,8 +12,9 @@ class WebsiteSettingController extends Controller
 {
     function settingIndex()
     {
+        $permissionCode = 'Rakib' . rand(1, 10000);
         $websiteDataShow = WebsiteSetting::first();
-        return view('backend.pages.websiteSetting', compact('websiteDataShow'));
+        return view('backend.pages.websiteSetting', compact('websiteDataShow', 'permissionCode'));
     }
 
     function settingUpdate(Request $request, $id)
@@ -45,4 +46,5 @@ class WebsiteSettingController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+
 }

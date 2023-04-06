@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Frontend\ContactMail;
+use Illuminate\Auth\Access\Response;
 use Illuminate\Http\Request;
 
 class ContactDetailsController extends Controller
@@ -18,8 +19,12 @@ class ContactDetailsController extends Controller
         $contactMailData = contactMail::find($id);
         return view('backend.pages.contactMail', compact('contactMailData'));
     }
-    public function contact_delete($id)
+    public function contactDelete(Request $request)
     {
-        return response()->json($id);
+        $ids_select = $request->contact_deleteIds;
+        contactMail::whereIn('id', $ids_select)->delete();
+        return response()->json([
+            "success" => "Selected Item Successfully Deleted!"
+        ]);
     }
 }
