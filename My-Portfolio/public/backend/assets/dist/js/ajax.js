@@ -129,5 +129,25 @@ jQuery(document).ready(function () {
             });
         });
     });
+    var i = 0;
+    jQuery("#addMoreBtn").on("click", function () {
+        ++i;
+        jQuery("#dynamicAddRemove").append(
+            '<tr>\
+            <td><select name="" id="" class="form-control">\
+                                        <option value="1">Basic</option>\
+                                        <option value="2">Standard</option>\
+                                        <option value="3">Premium</option>\
+                                    </select></td></td>\
+            <td> <input type="text" name="addMoreServicesType[' +
+                i +
+                '][category_type]" class="form-control" placeholder="Enter Service type" /></td>\
+                <td><button type="button" class="btn btn-outline-danger remove_input_field">Delete</button></td>\
+                </tr>'
+        );
+        jQuery(".remove_input_field").on("click", function () {
+            jQuery(this).parents("tr").remove();
+        });
+    });
     // Contact Mail Data Delete For Ajax End
 });

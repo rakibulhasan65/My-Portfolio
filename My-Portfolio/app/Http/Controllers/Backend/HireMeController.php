@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class HireMeController extends Controller
 {
-    //
+    public function hireMeIndex()
+    {
+        return view('backend.pages.hireMe');
+    }
 }

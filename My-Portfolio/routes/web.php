@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\SkillsController;
 use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\GalleryImageController;
+use App\Http\Controllers\Backend\HireMeController;
 use App\Http\Controllers\Backend\TechnicalSupportController;
 use App\Http\Controllers\Backend\WebsiteSettingController;
 
@@ -59,7 +60,10 @@ Route::middleware([
         Route::get('/settingIndex', [WebsiteSettingController::class, 'settingIndex'])->name('settingIndex');
         Route::post('/settingUpdate/{id}', [WebsiteSettingController::class, 'settingUpdate'])->name('settingUpdate');
     }); // websiteSetting
+    // Contact Route 
     Route::delete('/contact_itemDelete', [ContactDetailsController::class, 'contactDelete'])->name('contact_itemDelete');
+    // Hire Me Backend Route
+    Route::get('/hireMeIndex', [HireMeController::class, 'hireMeIndex'])->name('hireMeIndex');
 });
 
 // Frontend Route External File
