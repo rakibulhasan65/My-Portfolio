@@ -24,36 +24,77 @@
         <section class="content">
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt   --}}
-                <form action="" method="post">
-                    <div class="orderCetegory card p-3">
-                        <h4>Order Cetegory</h4>
-                        <table class="table table-bordered" id="dynamicAddRemove">
-                            <thead>
-                                <tr>
-                                    <th>Cetegory</th>
-                                    <th>Service Type</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><select name="" id="" class="form-control">
-                                            <option value="1">Basic</option>
-                                            <option value="2">Standerd</option>
-                                            <option value="3">Premium</option>
-                                        </select></td>
-                                    <td><input type="text" name="addMoreServicesType[0][category_type]" id=""
-                                            class="form-control" placeholder="Enter Service type"></td>
-                                    <td><button type="button" id="addMoreBtn" class="btn btn-outline-info">Add
-                                            More</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="basicCategory card p-3">
+                    <form action="" method="post">
+                        <h4>Pricing Category Details</h4>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row mb-2"> <!---- start row of Pricing input feild ---->
+                                    <div class="col-md-8"><!---col-md-6----->
+                                        <div class="row ml-2">
+                                            <div class="col-md-2">
+                                                <p class="font-weight-bold">Order Type</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                               <select name="orderType" class="form-control" id="">
+                                                <option value="1">Basic</option>
+                                                <option value="2">Standard</option>
+                                                <option value="3">Premium</option>
+                                               </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <p class="text-right font-weight-bold">Package Price :</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="number" name="price" id="" class="form-control"
+                                                    placeholder="/USD">
+                                            </div>
+                                        </div>
+                                    </div><!--//-col-md-6----->
+                                    <div class="col-md-4"> <!---col-md-6----->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p class="font-weight-bold text-right">Duration:</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="number" name="duration" id="" class="form-control">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <select name="duration_type" id="" class="form-control">
+                                                    <option value="1">Day</option>
+                                                    <option value="2">Month</option>
+                                                    <option value="3">Years</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div><!--//-col-md-6----->
+                                </div> <!---- // row of pricing input feild ---->
 
-
-                    <button type="submit" class="btn btn-outline-success">Save Cetegory</button>
-                </form>
+                                <div class="row"> <!---- start row of category input feild ---->
+                                   <table class="table table-b">
+                                    <thead>
+                                        <tr>
+                                            <th>Order Details Type List</th>
+                                            <th class="text-left">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input class="form-control" type="text" name="basic_catTitle[]" id="catTitle_input" placeholder="Enter Category Type..">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-info">Add More</button>
+                                                <a type="button" class="btn btn-outline-primary">Update</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                   </table>
+                                </div> <!---- // row of category input feild ---->
+                            </div>
+                            <button type="submit" class="btn btn-outline-success m-2">Save Cetegory</button>
+                    </form>
+                </div>
 
                 {{-- Main Body Container Section End   --}}
 
