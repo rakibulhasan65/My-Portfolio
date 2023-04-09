@@ -71,7 +71,7 @@
                                 </div> <!---- // row of pricing input feild ---->
 
                                 <div class="row"> <!---- start row of category input feild ---->
-                                   <table class="table table-b">
+                                   <table class="table table-b" id="dynamicAddRemove">
                                     <thead>
                                         <tr>
                                             <th>Order Details Type List</th>
@@ -81,10 +81,10 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <input class="form-control" type="text" name="basic_catTitle[]" id="catTitle_input" placeholder="Enter Category Type..">
+                                                <input class="form-control" type="text" name="categoryAddMoreInputField[0][catTitleDetails]" id="catTitle_input" placeholder="Enter Category Type..">
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-outline-info">Add More</button>
+                                                <button type="button" id="addMore_btn" class="btn btn-outline-info ">Add More</button>
                                                 <a type="button" class="btn btn-outline-primary">Update</a>
                                             </td>
                                         </tr>
