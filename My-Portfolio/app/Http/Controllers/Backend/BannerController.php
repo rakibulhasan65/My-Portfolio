@@ -60,14 +60,14 @@ class BannerController extends Controller
             $bannerData->resume = $customResumeName;
         }
         $bannerData->resumeVideo = $request->resumeVideo;
-        $findLastId = Banner::all()->last();
+        // $findLastId = Banner::all()->last();
         $devSkillsCategory = $request->devSkillsCategory;
         if ($devSkillsCategory) {
-            $deleteId = Profession::where('banner_id', $findLastId->id);
+            $deleteId = Profession::where('banner_id', $bannerData->id);
             $deleteId->delete();
             foreach ($devSkillsCategory as $devSkillsCategory) {
                 $devSkills = new Profession;
-                $devSkills->banner_id = $findLastId->id;
+                $devSkills->banner_id = $bannerData->id;
                 $devSkills->devSkillsCategory = $devSkillsCategory;
                 $devSkills->save();
             }

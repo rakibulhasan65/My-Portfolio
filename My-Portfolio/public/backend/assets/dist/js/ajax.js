@@ -129,6 +129,8 @@ jQuery(document).ready(function () {
             });
         });
     });
+    // Contact Mail Data Delete For Ajax End
+    // Hire Me Data Control Section Start
     var i = 0;
     jQuery("#addMore_btn").on("click", function () {
         ++i;
@@ -142,6 +144,5 @@ jQuery(document).ready(function () {
             jQuery(this).parents("tr").remove();
         });
     });
-
-    // Contact Mail Data Delete For Ajax End
+    // Hire Me Data Control Section End
 });

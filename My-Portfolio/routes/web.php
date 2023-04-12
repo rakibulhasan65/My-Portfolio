@@ -64,6 +64,7 @@ Route::middleware([
     Route::delete('/contact_itemDelete', [ContactDetailsController::class, 'contactDelete'])->name('contact_itemDelete');
     // Hire Me Backend Route
     Route::get('/hireMeIndex', [HireMeController::class, 'hireMeIndex'])->name('hireMeIndex');
+    Route::post('/storeData', [HireMeController::class, 'storeData'])->name('storeData');
 });
 
 // Frontend Route External File

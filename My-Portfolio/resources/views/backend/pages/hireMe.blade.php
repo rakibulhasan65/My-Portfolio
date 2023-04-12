@@ -25,7 +25,8 @@
             <div class="container-fluid">
                 {{-- Main Body Container Section Satrt   --}}
                 <div class="basicCategory card p-3">
-                    <form action="" method="post">
+                    <form action="{{ Route('storeData') }}" method="post">
+                        @csrf
                         <h4>Pricing Category Details</h4>
                         <div class="row">
                             <div class="col-md-12">
@@ -60,7 +61,7 @@
                                                 <input type="number" name="duration" id="" class="form-control">
                                             </div>
                                             <div class="col-md-4">
-                                                <select name="duration_type" id="" class="form-control">
+                                                <select name="durationType" id="" class="form-control">
                                                     <option value="1">Day</option>
                                                     <option value="2">Month</option>
                                                     <option value="3">Years</option>
@@ -92,7 +93,7 @@
                                    </table>
                                 </div> <!---- // row of category input feild ---->
                             </div>
-                            <button type="submit" class="btn btn-outline-success m-2">Save Cetegory</button>
+                            <button type="submit" class="btn btn-info m-2">Save Cetegory</button>
                     </form>
                 </div>
 

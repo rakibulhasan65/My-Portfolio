@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hire_me_models', function (Blueprint $table) {
-            $table->id()->increment();
-            $table->integer('orderType');
-            $table->string('price')->nullable();
-            $table->string('duration')->nullable();
-            $table->string('durationType')->nullable();
+        Schema::create('category_list_types', function (Blueprint $table) {
+            $table->id();
+            $table->integer('cat_id');
+            $table->string('category_list');
             $table->integer('status')->default('1');
             $table->timestamps();
         });
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hire_me_models');
+        Schema::dropIfExists('category_list_types');
     }
 };
