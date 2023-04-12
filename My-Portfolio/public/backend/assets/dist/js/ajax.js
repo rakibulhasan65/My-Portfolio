@@ -136,11 +136,12 @@ jQuery(document).ready(function () {
             '<tr><td><input class="form-control" type="text" name="categoryAddMoreInputField[' +
                 i +
                 '][catTitleDetails]" id="catTitle_input" placeholder="Enter Category Type.."></td>\
-            <td><button type="button" id="addRemoveField_btn" class="btn btn-outline-danger ">Remove Field</button></td></tr>'
+            <td><button type="button" class="btn btn-outline-danger addRemoveField_btn">Remove Field</button></td></tr>'
         );
-        jQuery("#addRemoveField_btn").on("click", function () {
+        jQuery(".addRemoveField_btn").on("click", function () {
             jQuery(this).parents("tr").remove();
         });
     });
+
     // Contact Mail Data Delete For Ajax End
 });
