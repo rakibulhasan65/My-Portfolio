@@ -1,7 +1,7 @@
 /*Web Design Section Start*/
 .webDesignContent {
     box-sizing: border-box;
-    background-color: #f76383;
+    background-color: #3F4E4F;
     position: relative;
 }
 .webDesignContent p {
@@ -21,7 +21,7 @@
     width: 130px;
     height: 130px;
     position: absolute;
-    background-color: #f76383;
+    background-color: #3F4E4F;
     border: 6px solid #8d515e;
     border-radius: 50%;
     z-index: 1;
@@ -47,7 +47,7 @@
 
 .webDevelopment {
     box-sizing: border-box;
-    background-color: #f76383;
+    background-color: #3F4E4F;
 }
 .webDevelopment p {
     font-family: italic;
@@ -65,7 +65,7 @@
 /*apiDevelopment Design Section Start*/
 .apiDevelopment {
     box-sizing: border-box;
-    background-color: #f76383;
+    background-color: #3F4E4F;
 }
 .apiDevelopment p {
     font-family: italic;
@@ -79,7 +79,7 @@
     color: #ffffff;
 }
 .btn-info {
-    background-color: #f76383;
+    background-color: #3F4E4F;
     padding: 5px;
     border-radius: 8%;
     transition: 0.5s;

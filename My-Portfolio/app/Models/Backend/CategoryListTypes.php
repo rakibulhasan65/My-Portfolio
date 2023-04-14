@@ -11,12 +11,12 @@ class CategoryListTypes extends Model
     use HasFactory;
     protected $fillable = [
         "cat_id",
-        "category_list",
+        "catTitleDetails",
         "status"
     ];
 
     public function hireMe()
     {
-        return $this->hasOne(HireMeModel::class, 'id', 'cat_id');
+        return $this->belongsTo(HireMeModel::class, 'cat_id');
     }
 }

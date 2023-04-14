@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Backend\CategoryListTypes;
 use App\Models\Backend\HireMeModel;
+use DB;
 
 class HireMeController extends Controller
 {
@@ -21,17 +22,17 @@ class HireMeController extends Controller
         $dataStore->price = $request->price;
         $dataStore->duration = $request->duration;
         $dataStore->durationType = $request->durationType;
-        $findId = HireMeModel::all()->last();
-        $subCate = $request->categoryAddMoreInputField;
-        if ($subCate) {
-            foreach ($subCate as  $subCate) {
-                $storeCat = new CategoryListTypes();
-                $storeCat->categoryAddMoreInputField = $subCate;
-                $storeCat->cat_id = $findId->id;
-                $dataStore->save();
+        $findId = $request->orderType;
+        $multiInputArray = $request->categoryAddMoreInputField;
+        foreach ($multiInputArray as $arrData) {
+            foreach ($arrData as $arrData) {
+                $catDataStore = new CategoryListTypes;
+                $catDataStore->catTitleDetails = $arrData;
+                $catDataStore->cat_id = $findId;
+                $catDataStore->save();
             }
         }
-        // return response()->json($request->categoryAddMoreInputField);
         $dataStore->save();
+        return back();
     }
 }

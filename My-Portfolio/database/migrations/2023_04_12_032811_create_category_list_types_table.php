@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('category_list_types', function (Blueprint $table) {
             $table->id();
             $table->integer('cat_id');
-            $table->string('category_list');
+            $table->string('catTitleDetails');
             $table->integer('status')->default('1');
             $table->timestamps();
         });
