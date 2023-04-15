@@ -121,15 +121,7 @@
                           </p>
                       </a>
                   </li>
-                  {{-- Hire Me --}}
-                  <li class="nav-item menu-open">
-                      <a href="{{ Route('hireMeIndex') }}" class="nav-link">
-                          <i class="nav-icon fas fa-dollar-sign"></i>
-                          <p>
-                              Hire Me
-                          </p>
-                      </a>
-                  </li>
+                  
                   {{--  Website Setting --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('websiteSetting.settingIndex') }}" class="nav-link">

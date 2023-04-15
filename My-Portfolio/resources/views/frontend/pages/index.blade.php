@@ -100,7 +100,7 @@
                                 </span></h6>
                         </div>
                     </div>
-                    <a href="{{ Route('hireMe') }}" class="btn btn-outline-primary mr-4">Hire Me</a>
+                    <a href="#contact" class="btn btn-outline-primary mr-4">Hire Me</a>
                     <a href="{{ Route('aboutMore', $aboutDataShow->id) }}" class="btn btn-outline-primary">More</a>
                 </div>
             </div>

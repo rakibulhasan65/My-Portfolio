@@ -16,6 +16,6 @@
             <a href="#testimonial" class="nav-item nav-link">Support</a>
             <a href="#contact" class="nav-item nav-link">Contact</a>
         </div>
-        <a href="{{ Route('hireMe') }}" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
+        <a href="#contact" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
     </div>
 </nav>
