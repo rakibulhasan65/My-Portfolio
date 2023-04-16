@@ -49,6 +49,7 @@ class ClientController extends Controller
         }
         $clientStore->name = $request->name;
         $clientStore->country = $request->country;
+        $clientStore->client_source = $request->client_source;
         $clientStore->client_review = $request->client_review;
         $clientStore->status = $request->status;
         $clientStore->save();
@@ -103,6 +104,7 @@ class ClientController extends Controller
         }
         $clientUpdate->name = $request->name;
         $clientUpdate->country = $request->country;
+        $clientUpdate->client_source = $request->client_source;
         $clientUpdate->client_review = $request->client_review;
         $clientUpdate->status = $request->status;
         $clientUpdate->update();

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('name')->nullable();
             $table->string('country')->nullable();
+            $table->integer('client_source')->nullable();
             $table->string('client_review')->nullable();
             $table->integer('status')->default('1');
             $table->timestamps();

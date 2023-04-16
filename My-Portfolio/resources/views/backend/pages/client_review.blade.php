@@ -41,6 +41,7 @@
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Country</th>
+                                    <th>Client Source</th>
                                     <th>Client Review</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -54,6 +55,17 @@
                                                 alt=""></td>
                                         <td>{{ $clientDataShow->name }}</td>
                                         <td>{{ $clientDataShow->country }}</td>
+                                        <td>
+                                            @if ($clientDataShow->client_source == 1)
+                                                <p>Fiverr.com</p>
+                                            @elseif($clientDataShow->client_source == 2)
+                                                <p>Upwork.com</p>
+                                            @elseif($clientDataShow->client_source == 3)
+                                                <p>Freelancer.com</p>
+                                            @else
+                                                <p>Out Of Market Place</p>
+                                            @endif
+                                        </td>
                                         <td>{{ str_limit($clientDataShow->client_review, $limit = 50) }}</td>
                                         <td>
                                             {{-- switch 
@@ -78,9 +90,8 @@
                                         </td>
                                     </tr>
                                     {{-- Support Item Delete Modal  --}}
-                                    <div class="modal fade" id="clientDeleteModal-{{ $clientDataShow->id }}"
-                                        tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                                        aria-hidden="true">
+                                    <div class="modal fade" id="clientDeleteModal-{{ $clientDataShow->id }}" tabindex="-1"
+                                        role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -163,7 +174,34 @@
                                                                         value="{{ $clientDataShow->country }}">
                                                                 </div>
                                                             </div>
-                                                            {{-- Description  --}}
+                                                            {{-- Client Review  --}}
+                                                            <div class="row form-group">
+                                                                <div class="col-2">
+                                                                    <label for="client_source">Client Source</label>
+                                                                </div>
+                                                                <div class="col-10">
+                                                                    <select name="client_source" class="form-control">
+                                                                        <option
+                                                                            value="{{ $clientDataShow->client_source }}">
+                                                                            @if ($clientDataShow->client_source == 1)
+                                                                                <p>Fiverr.com</p>
+                                                                            @elseif($clientDataShow->client_source == 2)
+                                                                                <p>Upwork.com</p>
+                                                                            @elseif($clientDataShow->client_source == 3)
+                                                                                <p>Freelancer.com</p>
+                                                                            @else
+                                                                                <p>Out Of Market Place</p>
+                                                                            @endif
+                                                                        </option>
+                                                                        <option value="1">Fiverr.com</option>
+                                                                        <option value="2">Upwork.com</option>
+                                                                        <option value="3">Freelancer.com</option>
+                                                                        <option value="4">Out Of Market Place
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            {{-- Client Review  --}}
                                                             <div class="row form-group">
                                                                 <div class="col-2">
                                                                     <label for="client_review">Client Review</label>
@@ -262,10 +300,26 @@
                                                             placeholder="Country">
                                                     </div>
                                                 </div>
+                                                {{-- Client Review  --}}
+                                                <div class="row form-group">
+                                                    <div class="col-2">
+                                                        <label for="client_source">Client Source</label>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <select name="client_source" class="form-control">
+                                                            <option value="">Select</option>
+                                                            <option value="1">Fiverr.com</option>
+                                                            <option value="2">Upwork.com</option>
+                                                            <option value="3">Freelancer.com</option>
+                                                            <option value="4">Out Of Market Place
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                                 {{-- CLient Review  --}}
                                                 <div class="row form-group">
                                                     <div class="col-2">
-                                                        <label for="client_review">CLient Review</label>
+                                                        <label for="client_review">Client Review</label>
                                                     </div>
                                                     <div class="col-10">
                                                         <textarea class="form-control" name="client_review" cols="10" rows="5" placeholder="Client Review"></textarea>

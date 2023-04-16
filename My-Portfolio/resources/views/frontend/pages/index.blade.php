@@ -317,6 +317,17 @@
                                 <h4 class="font-weight-light mb-4 text-sm">
                                     {{ $clientDataShow->client_review }}
                                 </h4>
+                                <span>
+                                    @if ($clientDataShow->client_source == 1)
+                                        <p>Fiverr.com</p>
+                                    @elseif($clientDataShow->client_source == 2)
+                                        <p>Upwork.com</p>
+                                    @elseif($clientDataShow->client_source == 3)
+                                        <p>Freelancer.com</p>
+                                    @else
+                                        <p>Out Of Market Place</p>
+                                    @endif
+                                </span>
                                 <img class="img-fluid rounded-circle mx-auto mb-3"
                                     src="{{ asset('backend/images/Client/' . $clientDataShow->image) }}"
                                     style="width: 80px; height: 80px;">

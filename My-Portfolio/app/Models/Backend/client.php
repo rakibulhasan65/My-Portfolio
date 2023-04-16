@@ -12,6 +12,7 @@ class client extends Model
         'image',
         'name',
         'country',
+        'client_source',
         'client_review',
         'status',
     ];
