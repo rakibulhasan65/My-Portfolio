@@ -106,7 +106,7 @@
                   {{-- Technical Support  --}}
                   <li class="nav-item menu-open">
                       <a href="{{ Route('client.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-headset"></i>
+                          <i class="nav-icon fas fa-business-time"></i>
                           <p>
                               Client Review
                           </p>

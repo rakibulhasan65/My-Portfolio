@@ -23,34 +23,15 @@ jQuery(document).ready(function () {
 
     // Age Calculate start
     jQuery("#birth").on("change", function () {
-        var toDay = new Date();
-        var toDate = toDay.getDate();
-        var toMonth = toDay.getMonth();
-        var toYear = toDay.getFullYear();
-
         var birthCalculate = jQuery(this).val();
-
         var dateOfBirth = new Date(birthCalculate);
-        var birthDate = dateOfBirth.getDate();
-        var birthMonth = dateOfBirth.getMonth();
-        var birthYear = dateOfBirth.getFullYear();
+        var month = Date.now() - dateOfBirth.getTime();
+        var age = new Date(month);
+        var years = age.getUTCFullYear();
+        var totalAge = Math.abs(years - 1970);
 
-        if (toDate < birthDate) {
-            toDate = toDate + 30;
-            toDate = toDate - birthDate;
-            toMonth = toMonth - 1;
-            if (toMonth < birthMonth) {
-                toMonth = toMonth + 12;
-                toMonth = toMonth - birthMonth;
-                toYear = toYear + 1;
-                toYear = toYear - birthYear;
-            } else {
-                toMonth = toMonth - birthMonth;
-                toYear = toYear - birthYear;
-            }
-        }
         // console.log(typeof toMonth);
-        jQuery("#dateOfBirth").val(toYear);
+        jQuery("#dateOfBirth").val(totalAge);
     });
     // Age Calculate End
 
