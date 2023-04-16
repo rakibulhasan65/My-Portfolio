@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Backend\About;
 use App\Models\Backend\Banner;
+use App\Models\Backend\client;
 use App\Models\Backend\Education;
 use App\Models\Backend\Experience;
 use Illuminate\Http\Request;
@@ -56,7 +57,7 @@ class WebSiteController extends Controller
             ->where('status', '=', 1)
             ->get();
         // Support Data Show Of Frontend 
-        $supportDataShow = TechnicalSupport::select('*')
+        $clientDataShow = client::select('*')
             ->where('status', '=', 1)
             ->get();
         // Admin Profile Data Show Of Frontend 
@@ -69,7 +70,7 @@ class WebSiteController extends Controller
             'experienceDataShow',
             'serviceDataShow',
             'galleryDataShow',
-            'supportDataShow',
+            'clientDataShow',
             'WebSkills',
             'adminProfileDataShow'
         ));

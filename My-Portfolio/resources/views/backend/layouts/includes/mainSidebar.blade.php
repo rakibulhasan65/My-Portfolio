@@ -105,10 +105,10 @@
                   </li>
                   {{-- Technical Support  --}}
                   <li class="nav-item menu-open">
-                      <a href="{{ Route('support.index') }}" class="nav-link">
+                      <a href="{{ Route('client.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-headset"></i>
                           <p>
-                              Technical Support
+                              Client Review
                           </p>
                       </a>
                   </li>

@@ -5,13 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Backend\ClientController;
 use App\Http\Controllers\Backend\ContactDetailsController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\SkillsController;
 use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\GalleryImageController;
-use App\Http\Controllers\Backend\TechnicalSupportController;
 use App\Http\Controllers\Backend\WebsiteSettingController;
 
 
@@ -41,7 +41,7 @@ Route::middleware([
     // Services Route
     Route::resource('services', ServicesController::class);
     // Technical Support
-    Route::resource('support', TechnicalSupportController::class);
+    Route::resource('client', ClientController::class);
     // Contact Show Backend Route
     Route::get('/contact', [ContactDetailsController::class, 'contact'])->name('contact');
     Route::get('/contactMail/{id}', [ContactDetailsController::class, 'contactMail'])->name('contactMail');

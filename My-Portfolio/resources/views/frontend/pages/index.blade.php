@@ -305,23 +305,23 @@
     <div class="container-fluid py-5" id="testimonial">
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">SUPPORT</h1>
-                <h1 class="position-absolute text-uppercase text-primary">TECHNICAL SUPPORT</h1>
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Review</h1>
+                <h1 class="position-absolute text-uppercase text-primary">Client Review</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="owl-carousel testimonial-carousel">
-                        @foreach ($supportDataShow as $supportData)
+                        @foreach ($clientDataShow as $clientDataShow)
                             <div class="text-center">
                                 <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
                                 <h4 class="font-weight-light mb-4 text-sm">
-                                    {{ str_limit($supportData->description, $limit = 100) }}
+                                    {{ $clientDataShow->client_review }}
                                 </h4>
                                 <img class="img-fluid rounded-circle mx-auto mb-3"
-                                    src="{{ asset('backend/images/Support/' . $supportData->image) }}"
+                                    src="{{ asset('backend/images/Client/' . $clientDataShow->image) }}"
                                     style="width: 80px; height: 80px;">
-                                <h5 class="font-weight-bold m-0">{{ $supportData->name }}</h5>
-                                <span>{{ $supportData->profession }}</span>
+                                <h5 class="font-weight-bold m-0">{{ $clientDataShow->name }}</h5>
+                                <span>{{ $clientDataShow->country }}</span>
                             </div>
                         @endforeach
                     </div>
