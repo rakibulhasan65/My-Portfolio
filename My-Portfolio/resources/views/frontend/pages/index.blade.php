@@ -73,7 +73,7 @@
                             <h6>Name: <span class="text-secondary">{{ $aboutDataShow->name }}</span></h6>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Birthday: <span class="text-secondary">{{ $aboutDataShow->birth }}</span></h6>
+                            <h6>Birthday: <span class="text-secondary">{{ $aboutDataShow->birth }} Years</span></h6>
                         </div>
                         <div class="col-sm-6 py-2">
                             <h6>Degree: <span class="text-secondary">{{ $aboutDataShow->degree }}</span></h6>
