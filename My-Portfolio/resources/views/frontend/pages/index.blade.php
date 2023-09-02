@@ -1,205 +1,276 @@
 @extends('frontend/layouts/master')
 
 @section('content')
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="{{ $bannerDataShow->resumeVideo }}" id="video"
-                            allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Modal End -->
+    {{--    <!-- Video Modal Start -->--}}
+    {{--    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+    {{--        <div class="modal-dialog" role="document">--}}
+    {{--            <div class="modal-content">--}}
+    {{--                <div class="modal-body">--}}
+    {{--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+    {{--                        <span aria-hidden="true">&times;</span>--}}
+    {{--                    </button>--}}
+    {{--                    <!-- 16:9 aspect ratio -->--}}
+    {{--                    <div class="embed-responsive embed-responsive-16by9">--}}
+    {{--                        <iframe class="embed-responsive-item" src="{{ $bannerDataShow->resumeVideo }}" id="video"--}}
+    {{--                            allowscriptaccess="always" allow="autoplay"></iframe>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
+    {{--    <!-- Video Modal End -->--}}
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded border border-light shadow"
-                        src="{{ asset('backend/images/Banners/' . $bannerDataShow->image) }}" alt="Banner">
-                </div>
-                <div class="col-lg-7 text-center text-lg-left">
-                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
-                        {{ $bannerDataShow->name }}</h1>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">
-                        @foreach ($skillsDataShow as $skillsData)
-                            <span>{{ $skillsData->devSkillsCategory ?? 'null' }}</span>
-                        @endforeach
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="{{ asset('backend/images/Banners/' . $bannerDataShow->resume) }}"
-                            class="btn btn-outline-light mr-5">Download CV</a>
-                        <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="{{ $bannerDataShow->resumeVideo }}" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Play Video</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
+    {{--    <!-- Header Start -->--}}
+    {{--    <div class="container-fluid d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">--}}
+    {{--        <div class="backgroundVideo">--}}
+    {{--            <video autoplay muted loop id="myVideo">--}}
+    {{--                <source src="{{asset('frontend/background.mkv')}}" type="video/mp4">--}}
+    {{--            </video>--}}
+    {{--        </div>--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="row">--}}
+    {{--                <div class="col-lg-12 text-center text-lg-center">--}}
+    {{--                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>--}}
+    {{--                    <h1 class="display-3 text-uppercase  mb-2" style="-webkit-text-stroke: 2px #ffffff;color: #2d3738;">--}}
+    {{--                        {{ $bannerDataShow->name }}</h1>--}}
+    {{--                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>--}}
+    {{--                    <div class="typed-text d-none">--}}
+    {{--                        <span class="text-bold text-white">Web Developer</span>--}}
+    {{--                    </div>--}}
+    {{--                    <div class="d-flex align-items-center justify-content-center justify-content-lg-center pt-5">--}}
+    {{--                        <a href="{{ asset('backend/images/Banners/' . $bannerDataShow->resume) }}"--}}
+    {{--                            class="btn btn-outline-light mr-5">Download CV</a>--}}
+    {{--                        <button type="button" class="btn-play" data-toggle="modal"--}}
+    {{--                            data-src="{{ $bannerDataShow->resumeVideo }}" data-target="#videoModal">--}}
+    {{--                            <span></span>--}}
+    {{--                        </button>--}}
+    {{--                        <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Play Video</h5>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
 
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100"
-                        src="{{ asset('backend/images/About/' . $aboutDataShow->aboutImage) }}" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <h3 class="mb-4">{{ $aboutDataShow->aboutTitle }}</h3>
-                    <p>{{ str_limit($aboutDataShow->aboutDescription, $limit = 300) }}</p>
-                    <div class="row mb-3">
-                        <div class="col-sm-6 py-2">
-                            <h6>Name: <span class="text-secondary">{{ $aboutDataShow->name }}</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Birthday: <span class="text-secondary">{{ $aboutDataShow->birth }} Years</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Degree: <span class="text-secondary">{{ $aboutDataShow->degree }}</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Experience: <span class="text-secondary">{{ $aboutDataShow->experience }}</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Phone: <span class="text-secondary">{{ $aboutDataShow->phone }}</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Email: <span class="text-secondary">{{ $aboutDataShow->email }}</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Address: <span class="text-secondary">{{ $aboutDataShow->address }}</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Freelance: <span class="text-secondary">
-                                    @if ($aboutDataShow->freelance == 1)
-                                        Avaiable
-                                    @else
-                                        Not Avaiable
-                                    @endif
-                                </span></h6>
-                        </div>
-                    </div>
-                    <a href="#contact" class="btn btn-outline-primary mr-4">Hire Me</a>
-                    <a href="{{ Route('aboutMore', $aboutDataShow->id) }}" class="btn btn-outline-primary">More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
+    {{--    </div>--}}
+    {{--    <!-- Header End -->--}}
 
-    <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Education</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        @foreach ($educationDataShow as $educationData)
-                            <div class="position-relative mb-4">
-                                <i class="far fa-dot-circle text-primary position-absolute"
-                                    style="top: 2px; left: -32px;"></i>
-                                <h5 class="font-weight-bold mb-1">{{ $educationData->educationTitle }}</h5>
-                                <p class="mb-2"><strong>{{ $educationData->instituteName }}</strong> |
-                                    <small>{{ $educationData->passingYears }}</small>
-                                </p>
-                                <p>{{ str_limit($educationData->description, $limit = 100) }}</p>
-                            </div>
-                            <!--End Education -->
-                        @endforeach
-                        {{-- End Education Foreach  --}}
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Expericence</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        @foreach ($experienceDataShow as $experienceData)
-                            <div class="position-relative mb-4">
-                                <i class="far fa-dot-circle text-primary position-absolute"
-                                    style="top: 2px; left: -32px;"></i>
-                                <h5 class="font-weight-bold mb-1">{{ $experienceData->experienceTitle }}</h5>
-                                <p class="mb-2"><strong>{{ $experienceData->companyName }}</strong> |
-                                    <small>{{ $experienceData->years }}</small>
-                                </p>
-                                <p>{{ str_limit($experienceData->description, $limit = 100) }}</p>
-                            </div> <!-- Job Experiance End -->
-                        @endforeach
-                        <!-- foreach End -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Qualification End -->
+    {{--    <!-- About Start -->--}}
+    {{--    <div class="container-fluid" id="about">--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="position-relative d-flex align-items-center justify-content-center">--}}
+    {{--                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>--}}
+    {{--                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>--}}
+    {{--            </div>--}}
+    {{--            <div class="row align-items-center">--}}
+    {{--                <div class="col-lg-5 pb-4 pb-lg-0">--}}
+    {{--                    <img class="aboutImage"1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    =--}}
+    {{--                        src="{{ asset('backend/images/About/' . $aboutDataShow->aboutImage) }}" alt="">--}}
+    {{--                </div>--}}
+    {{--                <div class="col-lg-7">--}}
+    {{--                    <h3 class="mb-4">{{ $aboutDataShow->aboutTitle }}</h3>--}}
+    {{--                    <p>{{ str_limit($aboutDataShow->aboutDescription, $limit = 300) }}</p>--}}
+    {{--                    <div class="row mb-3">--}}
+    {{--                        <div class="col-sm-6 py-2">--}}
+    {{--                            <h6>Name: <span class="text-secondary">{{ $aboutDataShow->name }}</span></h6>--}}
+    {{--                        </div>--}}
+    {{--                        <div class="col-sm-6 py-2">--}}
+    {{--                            <h6>Birthday: <span class="text-secondary">{{ $aboutDataShow->birth }} Years</span></h6>--}}
+    {{--                        </div>--}}
+    {{--                        <div class="col-sm-6 py-2">--}}
+    {{--                            <h6>Degree: <span class="text-secondary">{{ $aboutDataShow->degree }}</span></h6>--}}
+    {{--                        </div>--}}
+    {{--                        <div class="col-sm-6 py-2">--}}
+    {{--                            <h6>Experience: <span class="text-secondary">{{ $aboutDataShow->experience }}</span></h6>--}}
+    {{--                        </div>--}}
+    {{--                        <div class="col-sm-6 py-2">--}}
+    {{--                            <h6>Phone: <span class="text-secondary">{{ $aboutDataShow->phone }}</span></h6>--}}
+    {{--                        </div>--}}
+    {{--                        <div class="col-sm-6 py-2">--}}
+    {{--                            <h6>Email: <span class="text-secondary">{{ $aboutDataShow->email }}</span></h6>--}}
+    {{--                        </div>--}}
+    {{--                        <div class="col-sm-6 py-2">--}}
+    {{--                            <h6>Address: <span class="text-secondary">{{ $aboutDataShow->address }}</span></h6>--}}
+    {{--                        </div>--}}
+    {{--                        <div class="col-sm-6 py-2">--}}
+    {{--                            <h6>Freelance: <span class="text-secondary">--}}
+    {{--                                    @if ($aboutDataShow->freelance == 1)--}}
+    {{--                                        Avaiable--}}
+    {{--                                    @else--}}
+    {{--                                        Not Avaiable--}}
+    {{--                                    @endif--}}
+    {{--                                </span></h6>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                    <a href="#contact" class="btn btn-outline-primary mr-4">Hire Me</a>--}}
+    {{--                    <a href="{{ Route('aboutMore', $aboutDataShow->id) }}" class="btn btn-outline-primary">More</a>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
+    {{--    <!-- About End -->--}}
 
-    <!-- Skill Start -->
-    <div class="container-fluid py-5" id="skill">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
-            </div>
-            <div class="row align-items-center">
-                @foreach ($WebSkills as $WebSkills)
-                    @if ($WebSkills->skillsType == 1)
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">{{ $WebSkills->title }}</h6>
-                                    <h6 class="font-weight-bold">{{ $WebSkills->percentage }}%</h6>
+    {{--    <!-- Qualification Start -->--}}
+    {{--    <div class="container-fluid py-5" id="qualification">--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="position-relative d-flex align-items-center justify-content-center">--}}
+    {{--                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>--}}
+    {{--                <h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>--}}
+    {{--            </div>--}}
+    {{--            <div class="row align-items-center">--}}
+    {{--                <div class="col-lg-6">--}}
+    {{--                    <h3 class="mb-4">My Education</h3>--}}
+    {{--                    <div class="border-left border-primary pt-2 pl-4 ml-2">--}}
+    {{--                        @foreach ($educationDataShow as $educationData)--}}
+    {{--                            <div class="position-relative mb-4">--}}
+    {{--                                <i class="far fa-dot-circle text-primary position-absolute"--}}
+    {{--                                    style="top: 2px; left: -32px;"></i>--}}
+    {{--                                <h5 class="font-weight-bold mb-1">{{ $educationData->educationTitle }}</h5>--}}
+    {{--                                <p class="mb-2"><strong>{{ $educationData->instituteName }}</strong> |--}}
+    {{--                                    <small>{{ $educationData->passingYears }}</small>--}}
+    {{--                                </p>--}}
+    {{--                                <p>{{ str_limit($educationData->description, $limit = 100) }}</p>--}}
+    {{--                            </div>--}}
+    {{--                            <!--End Education -->--}}
+    {{--                        @endforeach--}}
+    {{--                        --}}{{-- End Education Foreach  --}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--                <div class="col-lg-6">--}}
+    {{--                    <h3 class="mb-4">My Expericence</h3>--}}
+    {{--                    <div class="border-left border-primary pt-2 pl-4 ml-2">--}}
+    {{--                        @foreach ($experienceDataShow as $experienceData)--}}
+    {{--                            <div class="position-relative mb-4">--}}
+    {{--                                <i class="far fa-dot-circle text-primary position-absolute"--}}
+    {{--                                    style="top: 2px; left: -32px;"></i>--}}
+    {{--                                <h5 class="font-weight-bold mb-1">{{ $experienceData->experienceTitle }}</h5>--}}
+    {{--                                <p class="mb-2"><strong>{{ $experienceData->companyName }}</strong> |--}}
+    {{--                                    <small>{{ $experienceData->years }}</small>--}}
+    {{--                                </p>--}}
+    {{--                                <p>{{ str_limit($experienceData->description, $limit = 100) }}</p>--}}
+    {{--                            </div> <!-- Job Experiance End -->--}}
+    {{--                        @endforeach--}}
+    {{--                        <!-- foreach End -->--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
+    {{--    <!-- Qualification End -->--}}
+
+    {{--Header Section Start--}}
+    <div class="container allAboutSection">
+
+        <div class="row">
+            <div class="row justify-content-center">
+
+                    <div class="col-md-3 d-flex align-items-center">
+                        <div class="text-left">
+                            {{-- Right Side Info --}}
+                            <div class="pt-40">
+                                <div class="expertise mb-80">
+                                    <h6>Expertise</h6>
+                                    <span class="text-u mt-10 sub-title">Backend-END & WEB DEVELOPER</span>
                                 </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar"
-                                        aria-valuenow="{{ $WebSkills->percentage }}" aria-valuemin="0"
-                                        aria-valuemax="100">
+                                <div class="clientReviews">
+                                    <div class="rate-stars mb-10 fz-14">
+                        <span class="rate">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="ml-10">4.9</span>
+                        </span>
                                     </div>
+                                    <p>7000+ Clients Reviews</p>
                                 </div>
                             </div>
                         </div>
-                    @else
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">{{ $WebSkills->title }}</h6>
-                                    <h6 class="font-weight-bold">{{ $WebSkills->percentage }}%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar"
-                                        aria-valuenow="{{ $WebSkills->percentage }}" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
+                    </div>
+
+
+
+                {{--                    About Image And Text--}}
+                <div class="mb-50 col-md-6 aboutHeaderText text-center pt-5">
+                    <h5 class="text-u pt-5">HELLO, I'M</h5>
+                    <h1>{{ $aboutDataShow->name }}</h1>
+                    <p>PHP Laravel Based Developer in Bangladesh</p>
+                    <div class="aboutDetails text-center">
+
+                        <img src="{{ asset('backend/images/About/' . $aboutDataShow->aboutImage) }}" alt="">
+                    </div>
+                </div>
+
+                <div class="col-md-3 d-flex align-items-center">
+                    {{-- Left Side Info --}}
+                    <div class="text-right">
+                        <div class="pt-40">
+                            <div class="experience d-flex align-items-center justify-content-end mb-80">
+                                <h6 class="text-u mr-10">YEARS <br> OF EXPERIENCE</h6>
+                                <h2>1</h2>
+                            </div>
+
+                            <div class="feutuerWork">
+                                <span class="text-u mb-15 sub-title">FEATURED WORK</span>
+                                <h6>Laravel Vue Js Software Development</h6>
+                                <div class="underline mt-15 sub-title">
+                                    <a href="{{ Route('aboutMore', $aboutDataShow->id) }}" class="">EXPLORE</a>
                                 </div>
                             </div>
                         </div>
-                    @endif
-                @endforeach
+                    </div>
+                </div>
+
             </div>
+
         </div>
+
     </div>
-    <!-- Skill End -->
+    {{--Header Section End--}}
+
+{{--    <!-- Skill Start -->--}}
+{{--    <div class="container-fluid py-5" id="skill">--}}
+{{--        <div class="container">--}}
+{{--            <div class="position-relative d-flex align-items-center justify-content-center">--}}
+{{--                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>--}}
+{{--                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>--}}
+{{--            </div>--}}
+{{--            <div class="row align-items-center">--}}
+{{--                @foreach ($WebSkills as $WebSkills)--}}
+{{--                    @if ($WebSkills->skillsType == 1)--}}
+{{--                        <div class="col-md-6">--}}
+{{--                            <div class="skill mb-4">--}}
+{{--                                <div class="d-flex justify-content-between">--}}
+{{--                                    <h6 class="font-weight-bold">{{ $WebSkills->title }}</h6>--}}
+{{--                                    <h6 class="font-weight-bold">{{ $WebSkills->percentage }}%</h6>--}}
+{{--                                </div>--}}
+{{--                                <div class="progress">--}}
+{{--                                    <div class="progress-bar bg-primary" role="progressbar"--}}
+{{--                                         aria-valuenow="{{ $WebSkills->percentage }}" aria-valuemin="0"--}}
+{{--                                         aria-valuemax="100">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @else--}}
+{{--                        <div class="col-md-6">--}}
+{{--                            <div class="skill mb-4">--}}
+{{--                                <div class="d-flex justify-content-between">--}}
+{{--                                    <h6 class="font-weight-bold">{{ $WebSkills->title }}</h6>--}}
+{{--                                    <h6 class="font-weight-bold">{{ $WebSkills->percentage }}%</h6>--}}
+{{--                                </div>--}}
+{{--                                <div class="progress">--}}
+{{--                                    <div class="progress-bar bg-danger" role="progressbar"--}}
+{{--                                         aria-valuenow="{{ $WebSkills->percentage }}" aria-valuemin="0"--}}
+{{--                                         aria-valuemax="100"></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <!-- Skill End -->--}}
 
     <!-- Services Start -->
     <div class="container-fluid pt-5" id="service">
@@ -219,7 +290,7 @@
                         </div>
                         <p>{{ str_limit($serviceData->serviceDescription, $limit = 100) }}</p>
                         <a class="border-bottom border-primary text-decoration-none"
-                            href="{{ Route('ServicesMore', $serviceData->id) }}">Read More</a>
+                           href="{{ Route('ServicesMore', $serviceData->id) }}">Read More</a>
                     </div>
                     <!--End Services-->
                 @endforeach
@@ -251,11 +322,11 @@
                         <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                             <div class="position-relative overflow-hidden mb-2">
                                 <img class="img-fluid rounded w-100"
-                                    src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
-                                    alt="gallery">
+                                     src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
+                                     alt="gallery">
                                 <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                                     <a href="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
-                                        data-lightbox="portfolio">
+                                       data-lightbox="portfolio">
                                         <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                                     </a>
                                 </div>
@@ -265,11 +336,11 @@
                         <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                             <div class="position-relative overflow-hidden mb-2">
                                 <img class="img-fluid rounded w-100"
-                                    src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
-                                    alt="gallery">
+                                     src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
+                                     alt="gallery">
                                 <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                                     <a href="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
-                                        data-lightbox="portfolio">
+                                       data-lightbox="portfolio">
                                         <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                                     </a>
                                 </div>
@@ -279,18 +350,18 @@
                         <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
                             <div class="position-relative overflow-hidden mb-2">
                                 <img class="img-fluid rounded w-100"
-                                    src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
-                                    alt="gallery">
+                                     src="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
+                                     alt="gallery">
                                 <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                                     <a href="{{ asset('backend/images/Gallery/' . $galleryDataShow->galleryImage) }}"
-                                        data-lightbox="portfolio">
+                                       data-lightbox="portfolio">
                                         <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     @endif
-                    <!--//Web Design--->
+                <!--//Web Design--->
                     <!---//Web Design end---->
 
                     <!--//Web Development--->
@@ -329,8 +400,8 @@
                                     @endif
                                 </span>
                                 <img class="img-fluid rounded-circle mx-auto mb-3"
-                                    src="{{ asset('backend/images/Client/' . $clientDataShow->image) }}"
-                                    style="width: 80px; height: 80px;">
+                                     src="{{ asset('backend/images/Client/' . $clientDataShow->image) }}"
+                                     style="width: 80px; height: 80px;">
                                 <h5 class="font-weight-bold m-0">{{ $clientDataShow->name }}</h5>
                                 <span>{{ $clientDataShow->country }}</span>
                             </div>
@@ -342,7 +413,7 @@
     </div>
     <!-- Testimonial End -->
     <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
+    <div class="container-fluid py-5" id="contact" style="background-color: #1a1a1a;">
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
@@ -357,30 +428,32 @@
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
                                     <input type="text" class="form-control p-4" name="name"
-                                        placeholder="Your Name" required="required"
-                                        data-validation-required-message="Please enter your name" />
+                                           placeholder="Your Name" required="required"
+                                           data-validation-required-message="Please enter your name"/>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group col-sm-6">
                                     <input type="email" class="form-control p-4" name="email"
-                                        placeholder="Your Email" required="required"
-                                        data-validation-required-message="Please enter your email" />
+                                           placeholder="Your Email" required="required"
+                                           data-validation-required-message="Please enter your email"/>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <input type="text" class="form-control p-4" name="subject" placeholder="Subject"
-                                    required="required" data-validation-required-message="Please enter a subject" />
+                                       required="required" data-validation-required-message="Please enter a subject"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control py-3 px-4" rows="5" name="message" placeholder="Message" required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
+                                <textarea class="form-control py-3 px-4" rows="5" name="message" placeholder="Message"
+                                          required="required"
+                                          data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
                                 <button class="btn btn-outline-primary" type="submit">Send
-                                    Message</button>
+                                    Message
+                                </button>
                             </div>
                         </form>
                     </div>
