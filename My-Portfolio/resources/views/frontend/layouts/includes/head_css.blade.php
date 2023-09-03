@@ -17,3 +17,4 @@
 
 <!-- Customized Bootstrap Stylesheet -->
 <link href="{{ asset('frontend/assets') }}/css/style.css" rel="stylesheet">
+<link href="{{ asset('frontend/assets') }}/css/newStyle.css" rel="stylesheet">

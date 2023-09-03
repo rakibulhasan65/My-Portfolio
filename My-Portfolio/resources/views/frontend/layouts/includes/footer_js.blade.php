@@ -12,6 +12,21 @@
 <script src="{{ asset('frontend/assets') }}/mail/jqBootstrapValidation.min.js"></script>
 <script src="{{ asset('frontend/assets') }}/mail/contact.js"></script>
 
+<!-- jQuery -->
+<script src="{{ asset('frontend/assets') }}/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/jquery-migrate-3.4.0.min.js"></script>
+
+<!-- plugins -->
+<script src="{{ asset('frontend/assets') }}/js/plugins.js"></script>
+
+<script src="{{ asset('frontend/assets') }}/js/gsap.min.js"></script>
+<script src="{{ asset('frontend/assets') }}/js/ScrollSmoother.min.js"></script>
+<script src="{{ asset('frontend/assets') }}/js/ScrollTrigger.min.js"></script>
+<script src="{{ asset('frontend/assets') }}/js/smoother-script.js"></script>
+
+<!-- custom scripts -->
+<script src="{{ asset('frontend/assets') }}/js/scripts.js"></script>
+
 <!-- Template Javascript -->
 <script src="{{ asset('frontend/assets') }}/js/main.js"></script>
 <!-------toastr sweet alert------->
