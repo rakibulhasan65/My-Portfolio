@@ -499,7 +499,7 @@
 
 
     <section class="contact-crev section-padding">
-        <div class="contact-container">
+
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
@@ -579,7 +579,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+
     </section>
 
 

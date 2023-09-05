@@ -5403,27 +5403,27 @@ body.loaded {
     z-index: 4;
 }
 
-.contact-crev {
-    position: relative;
-    overflow: hidden;
-}
+/*.contact-crev {*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*}*/
 
-.contact-crev.no-crev:after {
-    display: none;
-}
+/*.contact-crev.no-crev:after {*/
+/*    display: none;*/
+/*}*/
 
-.contact-crev:after {
-    content: '';
-    width: 80vw;
-    height: 80vw;
-    border: 200px solid #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: -15vw;
-    right: -30vw;
-    opacity: .01;
-    pointer-events: none;
-}
+/*.contact-crev:after {*/
+/*    content: '';*/
+/*    width: 80vw;*/
+/*    height: 80vw;*/
+/*    border: 200px solid #fff;*/
+/*    border-radius: 50%;*/
+/*    position: absolute;*/
+/*    top: -15vw;*/
+/*    right: -30vw;*/
+/*    opacity: .01;*/
+/*    pointer-events: none;*/
+/*}*/
 
 .contact-crev input,
 .contact-crev textarea {
