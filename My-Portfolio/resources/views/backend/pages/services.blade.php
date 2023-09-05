@@ -37,7 +37,6 @@
                             <thead>
                                 <tr>
                                     <th>#Sl</th>
-                                    <th>Services Icon</th>
                                     <th>Services Image</th>
                                     <th>Services Title</th>
                                     <th>Description</th>
@@ -49,7 +48,6 @@
                                 @foreach ($servicesDataShow as $servicesShow)
                                     <tr>
                                         <td>{{ $servicesDataShow->firstItem() + $loop->index }}</td>
-                                        <td><i class="fas fa-{{ $servicesShow->serviceIcon }} bg-gray p-2"></i></td>
                                         <td>
                                             <div class="d-flex justify-content-center">
                                                 <img src="{{ asset('backend/images/Services/' . $servicesShow->ServicesImage) }}"
@@ -59,7 +57,7 @@
                                         <td>{{ $servicesShow->serviceTitle }}</td>
                                         <td>{{ str_limit($servicesShow->serviceDescription, $limit = 50) }}</td>
                                         <td>
-                                            {{-- switch 
+                                            {{-- switch
                                             <label class="switch mt-2">
                                                 <input type="checkbox" id="expSwitch">
                                                 <span class="slider round"></span>
@@ -130,18 +128,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-6 col-sm-12">
                                                                     <!---Main Update Modal Row Start----->
-                                                                    {{-- Services Icon  --}}
-                                                                    <div class="row form-group">
-                                                                        <div class="col-md-2">
-                                                                            <label for="serviceIcon">Services Icon</label>
-                                                                        </div>
-                                                                        <div class="col-md-10">
-                                                                            <input type="text" class="form-control"
-                                                                                name="serviceIcon"
-                                                                                placeholder="Experience Title"
-                                                                                value="{{ $servicesShow->serviceIcon }}">
-                                                                        </div>
-                                                                    </div>
+
                                                                     {{-- Services Title --}}
                                                                     <div class="row form-group">
                                                                         <div class="col-md-2">
@@ -258,16 +245,6 @@
                                         @method('POST')
                                         <div class="modal-body">
                                             <div class="m-4">
-                                                {{-- Services Icon  --}}
-                                                <div class="row form-group">
-                                                    <div class="col-2">
-                                                        <label for="serviceIcon">Services Icon</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <input type="text" class="form-control" name="serviceIcon"
-                                                            placeholder="Services Icon">
-                                                    </div>
-                                                </div>
                                                 {{-- Service Image Upload Add Feild  --}}
                                                 <div class="row form-group">
                                                     <div class="col-md-2">

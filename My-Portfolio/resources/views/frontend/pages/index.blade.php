@@ -79,7 +79,7 @@
             <div class="slide-har st1">
                 <div class="box">
                     <div class="item">
-                        <h4 class="d-flex align-items-center fz-70"><span>UI-UX Experience</span>
+                        <h4 class="d-flex align-items-center fz-70"><span>API Development</span>
                             <span class="fz-50 ml-50 stroke icon">*</span>
                         </h4>
                     </div>
@@ -89,24 +89,24 @@
                         </h4>
                     </div>
                     <div class="item">
-                        <h4 class="d-flex align-items-center fz-70"><span>Digital Marketing</span>
+                        <h4 class="d-flex align-items-center fz-70"><span>Web Design</span>
                             <span class="fz-50 ml-50 stroke icon">*</span>
                         </h4>
                     </div>
                     <div class="item">
-                        <h4 class="d-flex align-items-center fz-70"><span>Product Design</span>
+                        <h4 class="d-flex align-items-center fz-70"><span>Wordpress Customize</span>
                             <span class="fz-50 ml-50 stroke icon">*</span>
                         </h4>
                     </div>
                     <div class="item">
-                        <h4 class="d-flex align-items-center fz-70"><span>Mobile Solutions</span>
+                        <h4 class="d-flex align-items-center fz-70"><span>Wordpress Development</span>
                             <span class="fz-50 ml-50 stroke icon">*</span>
                         </h4>
                     </div>
                 </div>
                 <div class="box">
                     <div class="item">
-                        <h4 class="d-flex align-items-center fz-70"><span>UI-UX Experience</span>
+                        <h4 class="d-flex align-items-center fz-70"><span>API Development</span>
                             <span class="fz-50 ml-50 stroke icon">*</span>
                         </h4>
                     </div>
@@ -116,17 +116,17 @@
                         </h4>
                     </div>
                     <div class="item">
-                        <h4 class="d-flex align-items-center fz-70"><span>Digital Marketing</span>
+                        <h4 class="d-flex align-items-center fz-70"><span>Web Design</span>
                             <span class="fz-50 ml-50 stroke icon">*</span>
                         </h4>
                     </div>
                     <div class="item">
-                        <h4 class="d-flex align-items-center fz-70"><span>Product Design</span>
+                        <h4 class="d-flex align-items-center fz-70"><span>Wordpress Customize</span>
                             <span class="fz-50 ml-50 stroke icon">*</span>
                         </h4>
                     </div>
                     <div class="item">
-                        <h4 class="d-flex align-items-center fz-70"><span>Mobile Solutions</span>
+                        <h4 class="d-flex align-items-center fz-70"><span>Wordpress Development</span>
                             <span class="fz-50 ml-50 stroke icon">*</span>
                         </h4>
                     </div>
@@ -153,51 +153,25 @@
                 </div>
                 <div class="col-lg-7 offset-lg-1">
                     <div class="serv-list2">
-                        <div class="item pt-30 pb-30 bord-thin-top">
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <div class="icon-img-50 md-mb30">
-                                        <img src="assets/imgs/serv-icons/0.png" alt="">
+                        @foreach($serviceDataShow as $serviceData)
+                            <div class="item pt-30 pb-30 bord-thin-top">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="icon-img-50 md-mb30">
+                                            <img src="{{asset('backend/images/Services/'.$serviceData->ServicesImage)}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <h6>{{$serviceData->serviceTitle}}</h6>
+                                    </div>
+                                    <div class="col-lg-6 offset-lg-1">
+                                        <p>{{$serviceData->serviceDescription}}</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <h6>Digital Product Design</h6>
-                                </div>
-                                <div class="col-lg-6 offset-lg-1">
-                                    <p>Creating a higher spacing and how people move through a unique.</p>
-                                </div>
                             </div>
-                        </div>
-                        <div class="item pt-30 pb-30 bord-thin-top">
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <div class="icon-img-50 mb-30">
-                                        <img src="assets/imgs/serv-icons/1.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <h6>Branding &amp; Design</h6>
-                                </div>
-                                <div class="col-lg-6 offset-lg-1">
-                                    <p>Creating a higher spacing and how people move through a unique.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item pt-30 bord-thin-top">
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <div class="icon-img-50 mb-30">
-                                        <img src="assets/imgs/serv-icons/2.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <h6>Web Development</h6>
-                                </div>
-                                <div class="col-lg-6 offset-lg-1">
-                                    <p>Creating a higher spacing and how people move through a unique.</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
+
                     </div>
                 </div>
             </div>
@@ -500,85 +474,85 @@
 
     <section class="contact-crev section-padding">
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="sec-lg-head md-mb80">
-                            <h6 class="dot-titl-non mb-10 wow fadeIn"
-                                style="visibility: visible; animation-name: fadeIn;">Get In Touch</h6>
-                            <h2 class="fz-50 d-rotate wow animated" style="visibility: visible;">
-                                <span class="rotate-text">Let's make your brand brilliant!</span>
-                            </h2>
-                            <p class="fz-15 mt-10 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">If
-                                you would like to work with us or just want to
-                                get in
-                                touch, we’d love to hear from you!</p>
-                            <div class="phone fz-30 fw-600 mt-30 underline wow fadeIn"
-                                 style="visibility: visible; animation-name: fadeIn;">
-                                <a href="#0">+1 840 841 25 69</a>
-                            </div>
-                            <ul class="rest social-text d-flex mt-60">
-                                <li class="mr-30">
-                                    <a href="#0" class="hover-this"><span class="hover-anim">Facebook</span></a>
-                                </li>
-                                <li class="mr-30">
-                                    <a href="#0" class="hover-this"><span class="hover-anim">Twitter</span></a>
-                                </li>
-                                <li class="mr-30">
-                                    <a href="#0" class="hover-this"><span class="hover-anim">LinkedIn</span></a>
-                                </li>
-                                <li>
-                                    <a href="#0" class="hover-this"><span class="hover-anim">Instagram</span></a>
-                                </li>
-                            </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="sec-lg-head md-mb80">
+                        <h6 class="dot-titl-non mb-10 wow fadeIn"
+                            style="visibility: visible; animation-name: fadeIn;">Get In Touch</h6>
+                        <h2 class="fz-50 d-rotate wow animated" style="visibility: visible;">
+                            <span class="rotate-text">Let's make your brand brilliant!</span>
+                        </h2>
+                        <p class="fz-15 mt-10 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">If
+                            you would like to work with us or just want to
+                            get in
+                            touch, we’d love to hear from you!</p>
+                        <div class="phone fz-30 fw-600 mt-30 underline wow fadeIn"
+                             style="visibility: visible; animation-name: fadeIn;">
+                            <a href="#0">+1 840 841 25 69</a>
                         </div>
+                        <ul class="rest social-text d-flex mt-60">
+                            <li class="mr-30">
+                                <a href="#0" class="hover-this"><span class="hover-anim">Facebook</span></a>
+                            </li>
+                            <li class="mr-30">
+                                <a href="#0" class="hover-this"><span class="hover-anim">Twitter</span></a>
+                            </li>
+                            <li class="mr-30">
+                                <a href="#0" class="hover-this"><span class="hover-anim">LinkedIn</span></a>
+                            </li>
+                            <li>
+                                <a href="#0" class="hover-this"><span class="hover-anim">Instagram</span></a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-lg-6 offset-lg-1 valign">
-                        <div class="full-width">
-                            <form id="contact-form" method="post" action="contact.php" novalidate="true">
+                </div>
+                <div class="col-lg-6 offset-lg-1 valign">
+                    <div class="full-width">
+                        <form id="contact-form" method="post" action="contact.php" novalidate="true">
 
-                                <div class="messages"></div>
+                            <div class="messages"></div>
 
-                                <div class="controls row">
+                            <div class="controls row">
 
-                                    <div class="col-lg-6">
-                                        <div class="form-group mb-30">
-                                            <input id="form_name" type="text" name="name" placeholder="Name"
-                                                   required="required">
-                                        </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-30">
+                                        <input id="form_name" type="text" name="name" placeholder="Name"
+                                               required="required">
                                     </div>
+                                </div>
 
-                                    <div class="col-lg-6">
-                                        <div class="form-group mb-30">
-                                            <input id="form_email" type="email" name="email" placeholder="Email"
-                                                   required="required">
-                                        </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-30">
+                                        <input id="form_email" type="email" name="email" placeholder="Email"
+                                               required="required">
                                     </div>
+                                </div>
 
-                                    <div class="col-12">
-                                        <div class="form-group mb-30">
-                                            <input id="form_subject" type="text" name="subject" placeholder="Subject">
-                                        </div>
+                                <div class="col-12">
+                                    <div class="form-group mb-30">
+                                        <input id="form_subject" type="text" name="subject" placeholder="Subject">
                                     </div>
+                                </div>
 
-                                    <div class="col-12">
-                                        <div class="form-group has-error has-danger">
+                                <div class="col-12">
+                                    <div class="form-group has-error has-danger">
                                             <textarea id="form_message" name="message" placeholder="Message" rows="4"
                                                       required="required"></textarea>
-                                        </div>
-                                        <div class="mt-30">
-                                            <button type="submit" class="butn butn-full butn-bord radius-30 disabled">
-                                                <span class="text">Let's Talk</span>
-                                            </button>
-                                        </div>
                                     </div>
-
+                                    <div class="mt-30">
+                                        <button type="submit" class="butn butn-full butn-bord radius-30 disabled">
+                                            <span class="text">Let's Talk</span>
+                                        </button>
+                                    </div>
                                 </div>
-                            </form>
-                        </div>
+
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
 
     </section>
 

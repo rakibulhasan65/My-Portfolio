@@ -25,13 +25,12 @@ class ServicesController extends Controller
     public function store(Request $request)
     {
         $serviceAdd = new Services;
-        $serviceAdd->serviceIcon = $request->serviceIcon;
         $servicesImage = $request->ServicesImage;
         if ($servicesImage) {
             $servicesImage = $request->file('ServicesImage');
             $newFileName = time() . '-' . rand() . '.' . $servicesImage->getClientOriginalExtension();
             $fileLocation = public_path('backend/images/Services/' . $newFileName);
-            Image::make($servicesImage)->resize(500, 500)->save($fileLocation);
+            Image::make($servicesImage)->resize(50, 50)->save($fileLocation);
             $serviceAdd->ServicesImage = $newFileName;
         }
         $serviceAdd->serviceTitle = $request->serviceTitle;
@@ -58,7 +57,6 @@ class ServicesController extends Controller
     public function update(Request $request, $id)
     {
         $serviceUpdate = Services::find($id);
-        $serviceUpdate->serviceIcon = $request->serviceIcon;
         $servicesImage = $request->ServicesImage;
         if ($servicesImage) {
             File::exists('backend/images/Services/' . $serviceUpdate->ServicesImage);
