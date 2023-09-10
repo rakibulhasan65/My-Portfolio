@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use App\Models\Backend\Profession;
 use App\Models\Backend\Services;
 use App\Models\Backend\TechnicalSupport;
-use App\Models\Backend\Gallery\GalleryCategory;
+use App\Models\Backend\Gallery;
 use App\Models\Backend\Skills;
 use App\Models\Backend\WebsiteSetting;
 use App\Models\User;
@@ -53,7 +53,7 @@ class WebSiteController extends Controller
             ->where('status', '=', 1)
             ->get();
         // Gallery Data Show Of Frontend
-        $galleryDataShow = GalleryCategory::select('*')
+        $galleryDataShow = Gallery::select('*')
             ->where('status', '=', 1)
             ->get();
         // Support Data Show Of Frontend

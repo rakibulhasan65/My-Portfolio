@@ -134,7 +134,7 @@
             </div>
         </div>
     </section>
-
+{{--    Our Services --}}
     <section class="serv-box section-padding pb-0 sub-bg position-re">
         <div class="container pt-30">
             <div class="row">
@@ -197,7 +197,7 @@
                         <div class="item-img o-hidden">
                             <a href="project-details1.html">
                                 <div class="inner wow animated" style="visibility: visible;">
-                                    <img src="assets/imgs/freelancer/works2/1.jpg" alt="image">
+                                    <img src="{{asset('backend/images/Gallery')}}/1.jpg" alt="image">
                                 </div>
                             </a>
                         </div>
@@ -213,7 +213,7 @@
                         <div class="item-img o-hidden">
                             <a href="project-details1.html">
                                 <div class="inner wow animated" style="visibility: visible;">
-                                    <img src="assets/imgs/freelancer/works2/2.jpg" alt="image">
+                                    <img src="{{asset('backend/images/Gallery')}}/2.jpg" alt="image">
                                 </div>
                             </a>
                         </div>
@@ -229,7 +229,7 @@
                         <div class="item-img o-hidden">
                             <a href="project-details1.html">
                                 <div class="inner wow animated" style="visibility: visible;">
-                                    <img src="assets/imgs/freelancer/works2/3.jpg" alt="image">
+                                    <img src="{{asset('backend/images/Gallery')}}/3.jpg" alt="image">
                                 </div>
                             </a>
                         </div>
@@ -244,7 +244,7 @@
                         <div class="item-img o-hidden">
                             <a href="project-details1.html">
                                 <div class="inner wow animated" style="visibility: visible;">
-                                    <img src="assets/imgs/freelancer/works2/4.jpg" alt="image">
+                                    <img src="{{asset('backend/images/Gallery')}}/4.jpg" alt="image">
                                 </div>
                             </a>
                         </div>
@@ -259,7 +259,7 @@
                         <div class="item-img o-hidden">
                             <a href="project-details1.html">
                                 <div class="inner wow animated" style="visibility: visible;">
-                                    <img src="assets/imgs/freelancer/works2/5.jpg" alt="image">
+                                    <img src="{{asset('backend/images/Gallery')}}/5.jpg" alt="image">
                                 </div>
                             </a>
                         </div>
@@ -275,7 +275,7 @@
                         <div class="item-img o-hidden">
                             <a href="project-details1.html">
                                 <div class="inner wow animated" style="visibility: visible;">
-                                    <img src="assets/imgs/freelancer/works2/6.jpg" alt="image">
+                                    <img src="{{asset('backend/images/Gallery')}}/6.jpg" alt="image">
                                 </div>
                             </a>
                         </div>
@@ -336,10 +336,11 @@
                 </div>
                 <div class="col-lg-5 offset-lg-1 valign">
                     <div class="exp-items full-width">
+                        @foreach($experienceDataShow as $experienceData)
                         <div class="item d-flex pb-30 pt-30 mb-30 bord-thin-top bord-thin-bottom">
                             <div class="title">
-                                <h6>Android Studio</h6>
-                                <p class="fz-12">Junior Product Designer</p>
+                                <h6>{{$experienceData->companyName}}</h6>
+                                <p class="fz-12">{{$experienceData->experienceTitle}}</p>
                             </div>
                             <div class="date ml-auto text-right">
                                             <span class="icon">
@@ -347,37 +348,10 @@
                                                     <i class="fas fa-arrow-right"></i>
                                                 </a>
                                             </span>
-                                <p class="fz-12">2014 - 2015</p>
+                                <p class="fz-12">{{$experienceData->years}}</p>
                             </div>
                         </div>
-                        <div class="item d-flex pb-30 mb-30 bord-thin-bottom">
-                            <div class="title">
-                                <h6>Slack</h6>
-                                <p class="fz-12">UI/UX Designer &amp; Developer</p>
-                            </div>
-                            <div class="date ml-auto text-right">
-                                            <span class="icon">
-                                                <a href="page-about.html">
-                                                    <i class="fas fa-arrow-right"></i>
-                                                </a>
-                                            </span>
-                                <p class="fz-12">2015 - 2019</p>
-                            </div>
-                        </div>
-                        <div class="item d-flex pb-30 bord-thin-bottom">
-                            <div class="title">
-                                <h6>Apple</h6>
-                                <p class="fz-12">ios Developer</p>
-                            </div>
-                            <div class="date ml-auto text-right">
-                                            <span class="icon">
-                                                <a href="page-about.html">
-                                                    <i class="fas fa-arrow-right"></i>
-                                                </a>
-                                            </span>
-                                <p class="fz-12">2019 - 2021</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

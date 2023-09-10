@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
-            $table->string('experienceTitle')->nullable();
             $table->string('companyName')->nullable();
+            $table->string('experienceTitle')->nullable();
             $table->string('years')->nullable();
             $table->string('description')->nullable();
             $table->integer('status')->nullable();
