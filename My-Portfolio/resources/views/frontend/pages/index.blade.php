@@ -134,7 +134,7 @@
             </div>
         </div>
     </section>
-{{--    Our Services --}}
+    {{--    Our Services --}}
     <section class="serv-box section-padding pb-0 sub-bg position-re">
         <div class="container pt-30">
             <div class="row">
@@ -158,7 +158,8 @@
                                 <div class="row">
                                     <div class="col-lg-2">
                                         <div class="icon-img-50 md-mb30">
-                                            <img src="{{asset('backend/images/Services/'.$serviceData->ServicesImage)}}" alt="">
+                                            <img src="{{asset('backend/images/Services/'.$serviceData->ServicesImage)}}"
+                                                 alt="">
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
@@ -308,49 +309,33 @@
                         </div>
                     </div>
                     <div class="skill-item d-flex justify-content-between md-mb50">
-                        <div class="item text-center">
-                            <div class="icon-img-60 m-auto">
-                                <img src="assets/imgs/freelancer/skills/figma.png" alt="">
+                        @foreach($DevSkillsData as $DevSkillsData)
+                            <div class="item text-center">
+                                <div class="icon-img-60 m-auto">
+                                    <img src="{{asset('backend/images/Skills/'.$DevSkillsData->skillImage)}}" alt="">
+                                </div>
+                                <span class="mt-15">{{$DevSkillsData->skillsType}}</span>
                             </div>
-                            <span class="mt-15">Figma</span>
-                        </div>
-                        <div class="item text-center">
-                            <div class="icon-img-60 m-auto">
-                                <img src="assets/imgs/freelancer/skills/wordpress.png" alt="">
-                            </div>
-                            <span class="mt-15">WordPress</span>
-                        </div>
-                        <div class="item text-center">
-                            <div class="icon-img-60 m-auto">
-                                <img src="assets/imgs/freelancer/skills/angular.png" alt="">
-                            </div>
-                            <span class="mt-15">Angular</span>
-                        </div>
-                        <div class="item text-center">
-                            <div class="icon-img-60 m-auto">
-                                <img src="assets/imgs/freelancer/skills/webflow.png" alt="">
-                            </div>
-                            <span class="mt-15">Webflow</span>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1 valign">
                     <div class="exp-items full-width">
                         @foreach($experienceDataShow as $experienceData)
-                        <div class="item d-flex pb-30 pt-30 mb-30 bord-thin-top bord-thin-bottom">
-                            <div class="title">
-                                <h6>{{$experienceData->companyName}}</h6>
-                                <p class="fz-12">{{$experienceData->experienceTitle}}</p>
-                            </div>
-                            <div class="date ml-auto text-right">
+                            <div class="item d-flex pb-30 pt-30 mb-30 bord-thin-top bord-thin-bottom">
+                                <div class="title">
+                                    <h6>{{$experienceData->companyName}}</h6>
+                                    <p class="fz-12">{{$experienceData->experienceTitle}}</p>
+                                </div>
+                                <div class="date ml-auto text-right">
                                             <span class="icon">
                                                 <a href="page-about.html">
                                                     <i class="fas fa-arrow-right"></i>
                                                 </a>
                                             </span>
-                                <p class="fz-12">{{$experienceData->years}}</p>
+                                    <p class="fz-12">{{$experienceData->years}}</p>
+                                </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>

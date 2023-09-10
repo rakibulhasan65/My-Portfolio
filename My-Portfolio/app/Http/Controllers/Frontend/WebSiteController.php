@@ -45,7 +45,7 @@ class WebSiteController extends Controller
             ->where('status', '=', 1)
             ->get();
         // Skills Data Show Of Frontend
-        $WebSkills = Skills::select('*')
+        $DevSkillsData = Skills::select('*')
             ->where('status', '=', 1)
             ->get();
         // Services Data Show Of Frontend
@@ -71,7 +71,7 @@ class WebSiteController extends Controller
             'serviceDataShow',
             'galleryDataShow',
             'clientDataShow',
-            'WebSkills',
+            'DevSkillsData',
             'adminProfileDataShow'
         ));
     }

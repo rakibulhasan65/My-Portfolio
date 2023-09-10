@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Backend\Skills;
+use File;
 use Illuminate\Http\Request;
+use Image;
 
 class SkillsController extends Controller
 {
@@ -23,9 +25,17 @@ class SkillsController extends Controller
     public function store(Request $request)
     {
         $skillsData = new Skills;
-        $skillsData->title = $request->title;
+        $skillImage = $request->file('skillImage');
+        if ($skillImage) {
+            $customName = time() . '-' . rand() . '.' . $skillImage->getClientOriginalExtension();
+            $location = public_path('backend/images/Skills/' . $customName);
+            // Use the Intervention Image library to resize and save the image
+            Image::make($skillImage) // Pass the file instance here
+            ->resize(400, 400)
+                ->save($location);
+            $skillsData->skillImage = $customName;
+        }
         $skillsData->skillsType = $request->skillsType;
-        $skillsData->percentage = $request->percentage;
         $skillsData->status = $request->status;
         $skillsData->save();
         $notification = array(
@@ -48,10 +58,16 @@ class SkillsController extends Controller
     public function update(Request $request, $id)
     {
         $skillsData = Skills::find($id);
-        $skillsData->title = $request->title;
-        $skillsData->percentage = $request->percentage;
+        $skillImage = $request->file('skillImage');
+        if ($skillImage) {
+            $customName = time() . '-' . rand() . '.' . $skillImage->getClientOriginalExtension();
+            $location = public_path('backend/images/Skills/' . $customName);
+            Image::make($customName)->resize(400, 400)->save($location);
+            $skillsData->skillImage = $customName;
+        }
+        $skillsData->skillsType = $request->skillsType;
         $skillsData->status = $request->status;
-        $skillsData->save();
+        $skillsData->update();
         $notification = array(
             'message' => 'Successfully Update Your Data',
             'alert-type' => 'info'

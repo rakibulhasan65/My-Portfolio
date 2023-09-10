@@ -39,9 +39,8 @@
 
                                 <tr>
                                     <th>#Sl</th>
-                                    <th>Title</th>
-                                    <th>Skills Type</th>
-                                    <th>Percentage</th>
+                                    <th>Skills Image</th>
+                                    <th>Skills Name</th>
                                     <th>Status</th>
                                     <th colspan="2">Action</th>
                                 </tr>
@@ -50,15 +49,8 @@
                                 @foreach ($skillsDataShow as $skillsData)
                                     <tr>
                                         <td>{{ $skillsDataShow->firstItem() + $loop->index }}</td>
-                                        <td>{{ $skillsData->title }}</td>
-                                        <td>
-                                            @if ($skillsData->skillsType == 1)
-                                                Design
-                                            @else
-                                                Development
-                                            @endif
-                                        </td>
-                                        <td>{{ $skillsData->percentage }} %</td>
+                                        <td><img src="{{asset('backend/images/Skills/'.$skillsData->skillImage)}}" style="height: 80px;width: 80px;"  alt="{{$skillsData->skillImage}}"></td>
+                                        <td>{{ $skillsData->skillsType }}</td>
                                         <td>
                                             @if ($skillsData->status == 1)
                                                 <span class="badge badge-info">Active</span>
@@ -131,39 +123,25 @@
                                                                 {{-- Title  --}}
                                                                 <div class="row form-group">
                                                                     <div class="col-2">
-                                                                        <label for="title">Title</label>
+                                                                        <label for="skillImage">Skill Image</label>
                                                                     </div>
                                                                     <div class="col-10">
-                                                                        <input type="text" class="form-control"
-                                                                            name="title" placeholder="Title"
-                                                                            value="{{ $skillsData->title }}">
+                                                                        <input type="file" class="form-control"
+                                                                            name="skillImage">
                                                                     </div>
                                                                 </div>
 
                                                                 {{-- Skills Type  --}}
-                                                                <div class="row form-group">
-                                                                    <div class="col-2">
-                                                                        <label for="skillsType">Skills Type</label>
-                                                                    </div>
-                                                                    <div class="col-10">
-                                                                        <select name="skillsType" class="form-control"
-                                                                            id="">
-                                                                            <option value="{{ $skillsData->skillsType }}">
-                                                                            </option>
-                                                                            <option value="1">Design</option>
-                                                                            <option value="2">Devlopment</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
+
                                                                 {{-- Percentage --}}
                                                                 <div class="row form-group">
                                                                     <div class="col-2">
-                                                                        <label for="percentage">Percentage</label>
+                                                                        <label for="skillsType">Skills Name</label>
                                                                     </div>
                                                                     <div class="col-10">
                                                                         <input type="text" class="form-control"
-                                                                            name="percentage" placeholder="Percentage"
-                                                                            value="{{ $skillsData->percentage }}">
+                                                                            name="skillsType" placeholder="Skills Name"
+                                                                            value="{{ $skillsData->skillsType }}">
                                                                     </div>
                                                                 </div>
 
@@ -235,34 +213,22 @@
                                                 {{-- Title  --}}
                                                 <div class="row form-group">
                                                     <div class="col-2">
-                                                        <label for="title">Title</label>
+                                                        <label for="skillImage">Skills Image</label>
                                                     </div>
                                                     <div class="col-10">
-                                                        <input type="text" class="form-control" name="title"
-                                                            placeholder="Title">
+                                                        <input type="file" class="form-control" name="skillImage"
+                                                            >
                                                     </div>
                                                 </div>
-                                                {{-- Skills Type  --}}
-                                                <div class="row form-group">
-                                                    <div class="col-2">
-                                                        <label for="skillsType">Skills Type</label>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <select name="skillsType" class="form-control" id="">
-                                                            <option value="">Selected</option>
-                                                            <option value="1">Design</option>
-                                                            <option value="2">Devlopment</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
+
                                                 {{-- Percentage --}}
                                                 <div class="row form-group">
                                                     <div class="col-2">
-                                                        <label for="percentage">Percentage</label>
+                                                        <label for="skillsType">Skills Name</label>
                                                     </div>
                                                     <div class="col-10">
-                                                        <input type="text" class="form-control" name="percentage"
-                                                            placeholder="Percentage">
+                                                        <input type="text" class="form-control" name="skillsType"
+                                                            placeholder="Skills Name">
                                                     </div>
                                                 </div>
 

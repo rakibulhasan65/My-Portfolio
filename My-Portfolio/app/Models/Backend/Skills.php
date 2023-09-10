@@ -9,9 +9,8 @@ class Skills extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title',
+        'skillImage',
         'skillsType',
-        'percentage',
         'status',
     ];
 }
